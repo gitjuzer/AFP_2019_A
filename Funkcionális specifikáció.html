@@ -1,3 +1,13 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+</style>
+
 <h1>Funkcionális specifikáció</h1>
 
 
@@ -33,7 +43,51 @@ Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyot
 
 
 <h2>6. Követelmény lista</h2>
-
+<!-- Még nincs kész, majd ha lesz időm folytatom. -->
+<table>
+	<tr>
+		<th>Modul</th>
+		<th>ID</th>
+		<th>Név</th>
+		<th>v.</th>
+		<th>Kifejtés</th>
+	</tr>
+	<tr>
+		<td>Kompatibilitás</td>
+		<td>K1</td>
+		<td>Webböngésző kompatibilitás</td>
+		<td>1.0</td>
+		<td>A szoftver futtatásához szükséges webböngésző minimális verziószáma:<br>
+		- Firefox 63.0<br>- Google Chrome 70.0.3538<br>- Opera 55<br>- Safari 12.0.1	
+		</td>
+	</tr>
+	<tr>
+		<td>Kompatibilitás</td>
+		<td>K2</td>
+		<td>Android kompatibilitás</td>
+		<td>1.0</td>
+		<td>Az applikáció futtatásához szükséges minimális Android verzió: Android 5.0 Lollipop (21. API szint)</td>
+	</tr>
+	<tr>
+		<td>Jogosultság</td>
+		<td>K3</td>
+		<td>Bejelentkezési felület</td>
+		<td>1.0</td>
+		<td>A felhasználó az email címe és a jelszava segítségével bejelentkezhet.<br>
+			Ha a megadott email cím vagy jelszó nem megfelelő, akkor a felhasználó hibaüzenetet kap.	
+		</td>
+	</tr>
+	<tr>
+		<td>Jogosultság</td>
+		<td>K4</td>
+		<td>Regisztráció</td>
+		<td>1.0</td>
+		<td>A felhasználó a felhasználói nevének, email címének és jelszavának megadásával regisztrálja magát.<br>
+		A jelszó tárolása kódolva történik az adatbázisban.	Ha valamelyik adat ezek közül hiányzik vagy nem felel meg a követelményeknek,<br>
+		akkor a rendszer értesíti erről a felhasználót.
+		</td>
+	</tr>
+</table>
 
 <h2>7. Képernyőtervek</h2>
 
