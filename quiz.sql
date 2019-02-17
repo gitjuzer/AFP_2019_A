@@ -55,3 +55,67 @@ CREATE TABLE IF NOT EXISTS `Quiz`.`scores` (
     REFERENCES `Quiz`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
+  CONSTRAINT `FK_scores_task`
+    FOREIGN KEY (`task_id`)
+    REFERENCES `Quiz`.`task` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Quiz`.`question_types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Quiz`.`question_types` (
+  `id` INT NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Quiz`.`questions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Quiz`.`questions` (
+  `id` INT NOT NULL,
+  `question` VARCHAR(250) NOT NULL,
+  `task_id` INT NOT NULL,
+  `type_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FK_questions_task_idx` (`task_id` ASC) VISIBLE,
+  INDEX `FK_questions_question_types_idx` (`type_id` ASC) VISIBLE,
+  CONSTRAINT `FK_questions_task`
+    FOREIGN KEY (`task_id`)
+    REFERENCES `Quiz`.`task` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_questions_question_types`
+    FOREIGN KEY (`type_id`)
+    REFERENCES `Quiz`.`question_types` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Quiz`.`answers`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Quiz`.`answers` (
+  `id` INT NOT NULL,
+  `answer` VARCHAR(250) NOT NULL,
+  `question_id` INT NOT NULL,
+  `correct` TINYINT(1) NULL,
+  `pair_id` INT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FK_answers_questions_idx` (`question_id` ASC) VISIBLE,
+  CONSTRAINT `FK_answers_questions`
+    FOREIGN KEY (`question_id`)
+    REFERENCES `Quiz`.`questions` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
