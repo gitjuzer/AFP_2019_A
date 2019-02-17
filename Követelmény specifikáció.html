@@ -27,7 +27,7 @@
 <p>
 	Legyen egy bejentkezési utáni felület, ahol a felhasználó, a regisztrált csoportja (diák, tanár, szülõ, stb.) alapján különbözõ opciókban részesül.<br>
 	A Diák számára legyenek kvízek, tesztek, üzenetek, órarend és érdemjegyek menüpontok elérhetõk.<br>
-	A tanár legyen képes teszteket, kvízeket létrehozni,órarendjét látni, üzeneteket küldeni diákoknak és szülõknek,<br>
+	A tanár legyen képes teszteket, kvízeket létrehozni, órarendjét látni, üzeneteket küldeni diákoknak és szülõknek,<br>
 	valamint osztályait tudja menedzselni, itt jegyeket, rovásokat, és dicsérteket tudjon beírni.<br>
 	A szülõ szerepe sokkal egyszerûbb. A gyerekük órarendjét, jegyeit, rovásait, dicséreteiket, valamint üzeneteit láthatják.
 </p>
@@ -44,43 +44,85 @@
     <li>Bejelentkezés után központi felület, ahol ki lehet választani a különbözõ menüpontokat.</li>
     <li>Diák felület
 		<ul>
-        <li>Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
-			<ul>
-            <li>A kvíz kitöltése közben az eltelt idõ legyen számolva.</li>
-            <li>Helyes válasz esetén a felhasználó pontot kap.</li>
-            <li>A kapott pontszám függjön az eltelt idõtõl.</li>
-            <li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-			</ul>
-		</li>
-		<li>Teszt feladat típus, amely hasonlít a Kvízre, de a felhasználó érdemjegyet kap.
-			<ul>
-            <li>A Teszt kitöltése közben az eltelt idõ legyen számolva.</li>
-            <li>Helyes válasz esetén a felhasználó pontot kap.</li>
-            <li>A kapott pontszám függjön az eltelt idõtõl.</li>
-            <li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-			<li>Érdemjegy adása a pontszámok alapján, a pont és idõhatárt a tanár szabja meg</li>
-			</ul>
-		</li>
-		<li>Üzenet felület</li>
-		<li>Órarend felület
-			<ul>
-			<li>A diák heti órarendje</li>
-			<li>Kidolgozott naptár</li>
-			<li>Az óra helye (melyik terem)</li>
-			<li>Az óra idõpontja</li>
-			<li>Az órát melyik tanár tartja</li>
-			<li>Szünetek feltüntetése</li>
-			</ul>
-		</li>
-		<li>Érdemjegyek felülte
-			<ul>
-			<li>Érdemjegyek feltüntetése különbözõ tárgyakból.</li>
-			<li>Rovások feltüntetése</li>
-			<li>Dicséretek feltüntetése</li>
-			</ul>
-		</li>
+			<li>Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
+				<ul>
+					<li>A kvíz kitöltése közben az eltelt idõ legyen számolva.</li>
+					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
+					<li>A kapott pontszám függjön az eltelt idõtõl.</li>
+					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
+				</ul>
+			</li>
+			<li>Teszt feladat típus, amely hasonlít a Kvízre, de a felhasználó érdemjegyet kap.
+				<ul>
+					<li>A Teszt kitöltése közben az eltelt idõ legyen számolva.</li>
+					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
+					<li>A kapott pontszám függjön az eltelt idõtõl.</li>
+					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
+					<li>Érdemjegy adása a pontszámok alapján, a pont és idõhatárt a tanár szabja meg</li>
+				</ul>
+			</li>
+			<li>Üzenet felület</li>
+				<ul>
+					<li>Új, nem ovasott üzenetek</li>
+					<li>Olvasott üzenetek</li>
+					<li>Fontos üzenetek</li>
+					<li>Üzenet küldése</li>
+				</ul>
+			<li>Órarend felület
+				<ul>
+					<li>A diák heti órarendje</li>
+					<li>Kidolgozott naptár</li>
+					<li>Az óra helye (melyik terem) és idõpontja</li>
+					<li>Az órát melyik tanár tartja</li>
+					<li>Szünetek feltüntetése</li>
+				</ul>
+			</li>
+			<li>Érdemjegyek felülte
+				<ul>
+					<li>Érdemjegyek feltüntetése különbözõ tárgyakból.</li>
+					<li>Rovások feltüntetése</li>
+					<li>Dicséretek feltüntetése</li>
+				</ul>
+			</li>
 		</ul>
 	</li>	
+	<li>Tanár / Oktatói felület
+		<ul>
+			<li>Kvíz és Teszt létrehozó felület
+				<ul>
+					<li>Lehessen választani, hogy Kvíz vagy Teszt típusú a kérdõív</li>
+					<li>Kérdések megírása</li>
+					<li>Lehetséges válaszok megírása, és a helyes válasz kiválasztása</li>
+					<li>Ponthatár megadása</li>
+					<li>Idõhatár megadása</li>
+				</ul>
+			</li>
+			<li>Üzenet felület</li>
+				<ul>
+					<li>Új, nem ovasott üzenetek</li>
+					<li>Olvasott üzenetek</li>
+					<li>Fontos üzenetek</li>
+					<li>Üzenet küldése</li>
+				</ul>
+			<li>Órarend felület
+				<ul>
+					<li>A tanár heti órarendje</li>
+					<li>Kidolgozott naptár</li>
+					<li>Az óra helye (melyik terem) és idõpontja</li>
+					<li>Az órán hány és mely diákok vesznek részt.</li>
+					<li>Szünetek feltüntetése</li>
+				</ul>
+			</li>
+			<li>Érdemjegyek felülte
+				<ul>
+					<li>Érdemjegyek adása diákoknak</li>
+					<li>Rovások adása diákoknak</li>
+					<li>Dicséretek adása diákoknak</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	
     <li>Admin felület</li>
     <li>Új feladatok hozzáadása</li>
 </ol>
