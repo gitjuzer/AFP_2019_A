@@ -1,11 +1,12 @@
 <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 10px;
-}
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
 </style>
 
 <h1>Funkcionális specifikáció</h1>
@@ -21,18 +22,18 @@ th, td {
 
 <p>
 
-A megrendelő szeretné kibővíteni az általa nyújtott oktatási szolgáltatások elérhetőségét, hogy versenytársaihoz képest így jusson piaci előnyökhöz.<br>
-Egy új rendszer előállítását rendelte meg, amely interneten keresztül modern megoldásokat használva működik.<br>
-A rendszer segítséget nyújt azok számára, akik valamilyen módon szeretnék tudásukat elmélyíteni egy adott területen, vagy új
-ismereteket szeretnének szerezni.<br>
-A XXI. század megköveteli, hogy mindez hálózaton is elérhető legyen, ennek megfelelően Android alkalmazást és weboldalt is a megrendelő rendelkezésére kell bocsátani.<br>
-Eddig a megrendelő csak számítógépen való gyors írás elsajátításához használt egy Stamina nevű alkalmazást.<br>
-Ez a fajta tanulás megtetszett a diákoknak, és a tanárok is felismerték, hogy egy játékos oktatóprogrammal eredményesebbé, szórakoztatóbbá tehetik az oktatást,
- mint a hagyományos, táblára írásos módszerrel.<br>
-Ezért elkezdtek keresni számukra megfelelő, létező programokat. Találtak többet is (pl.:Kahoot), viszont ezek nem tetszettek nekik.<br>
-Egy olyan programra lenne szükségük, amellyel a diákok önnálóan tudnak feladatot megoldani, és a többi játékos pontszámához képest tudják viszonyítani magukat.<br>
-Mindezek mellet a megrendelőnek szüksége van a saját logojuk feltüntetésére is.<br>
-Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyott alkalmazást, ami sokkal könnyebbé teheti számukra az oktatást.<br>
+    A megrendelő szeretné kibővíteni az általa nyújtott oktatási szolgáltatások elérhetőségét, hogy versenytársaihoz képest így jusson piaci előnyökhöz.<br>
+    Egy új rendszer előállítását rendelte meg, amely interneten keresztül modern megoldásokat használva működik.<br>
+    A rendszer segítséget nyújt azok számára, akik valamilyen módon szeretnék tudásukat elmélyíteni egy adott területen, vagy új
+    ismereteket szeretnének szerezni.<br>
+    A XXI. század megköveteli, hogy mindez hálózaton is elérhető legyen, ennek megfelelően Android alkalmazást és weboldalt is a megrendelő rendelkezésére kell bocsátani.<br>
+    Eddig a megrendelő csak számítógépen való gyors írás elsajátításához használt egy Stamina nevű alkalmazást.<br>
+    Ez a fajta tanulás megtetszett a diákoknak, és a tanárok is felismerték, hogy egy játékos oktatóprogrammal eredményesebbé, szórakoztatóbbá tehetik az oktatást,
+    mint a hagyományos, táblára írásos módszerrel.<br>
+    Ezért elkezdtek keresni számukra megfelelő, létező programokat. Találtak többet is (pl.:Kahoot), viszont ezek nem tetszettek nekik.<br>
+    Egy olyan programra lenne szükségük, amellyel a diákok önnálóan tudnak feladatot megoldani, és a többi játékos pontszámához képest tudják viszonyítani magukat.<br>
+    Mindezek mellet a megrendelőnek szüksége van a saját logojuk feltüntetésére is.<br>
+    Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyott alkalmazást, ami sokkal könnyebbé teheti számukra az oktatást.<br>
 
 </p>
 
@@ -45,86 +46,93 @@ Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyot
 <h2>6. Követelmény lista</h2>
 
 <table>
-	<tr>
-		<th>Modul</th>
-		<th>ID</th>
-		<th>Név</th>
-		<th>v.</th>
-		<th>Kifejtés</th>
-	</tr>
-	<tr>
-		<td>Kompatibilitás</td>
-		<td>K1</td>
-		<td>Webböngésző kompatibilitás</td>
-		<td>1.0</td>
-		<td>A szoftver futtatásához szükséges webböngésző minimális verziószáma:<br>
-		- Firefox 63.0<br>- Google Chrome 70.0.3538<br>- Opera 55<br>- Safari 12.0.1	
-		</td>
-	</tr>
-	<tr>
-		<td>Kompatibilitás</td>
-		<td>K2</td>
-		<td>Android kompatibilitás</td>
-		<td>1.0</td>
-		<td>Az applikáció futtatásához szükséges minimális Android verzió: Android 5.0 Lollipop (21. API szint)</td>
-	</tr>
-	<tr>
-		<td>Jogosultság</td>
-		<td>K3</td>
-		<td>Bejelentkezési felület</td>
-		<td>1.0</td>
-		<td>A felhasználó az email címe és a jelszava segítségével bejelentkezhet.<br>
-			Ha a megadott email cím vagy jelszó nem megfelelő, akkor a felhasználó hibaüzenetet kap.	
-		</td>
-	</tr>
-	<tr>
-		<td>Jogosultság</td>
-		<td>K4</td>
-		<td>Regisztráció</td>
-		<td>1.0</td>
-		<td>A felhasználó a felhasználói nevének, email címének és jelszavának megadásával regisztrálja magát.<br>
-		A jelszó tárolása kódolva történik az adatbázisban.	Ha valamelyik adat ezek közül hiányzik vagy nem felel meg a követelményeknek,<br>
-		akkor a rendszer értesíti erről a felhasználót.
-		</td>
-	</tr>
-	<tr>
-		<td>Jogosultság</td>
-		<td>K5</td>
-		<td>Jogosultsági szintek</td>
-		<td>1.0</td>
-		<td>- Admin : új feladat feltöltése<br>
-		- Felhasználó : feladatok kitöltése, toplista megtekintése, jelszó módosítása <br>														
-		- Vendég : regisztráció, belépés</td>
-	</tr>
-	<tr>
-		<td>Modifikáció</td>
-		<td>K6</td>
-		<td>Jelszó módosítása</td>
-		<td>1.0</td>
-		<td>A felhasználó módosítani tudja saját jelszavát. Ehhez szükséges a régi és az új jelszavának megadása, valamint az új megerősítése.</td>
-	</tr>
-	<tr>
-		<td>Feladattípus</td>
-		<td>K7</td>
-		<td>Kvíz</td>
-		<td>1.0</td>
-		<td>Több kérdésből áll, a feladat a helyes válasz kiválasztása több lehetőség közül.
-		A felhasználó az eltelt idő függvényében pontot kap.</td>
-	</tr>
-	<tr>
-		<td>Statisztika</td>
-		<td>K8</td>
-		<td>Toplista</td>
-		<td>1.0</td>
-		<td>Egy lista a játékosok pontszámairól, a lista elején a legtöbb pontot elért felhasználó található.</td>
-	</tr>
-	<tr>
-		<td>Jogosultság</td>
-		<td>K9</td>
-		<td>Admin felület</td>
-		<td>1.0</td>
-		<td>Felület az admin fiókkal rendelkező felhasználó számára. Tartalmaz egy felületet az új feladatok feltöltéséhez.</td>
-	</tr>
+    <tr>
+        <th>Modul</th>
+        <th>ID</th>
+        <th>Név</th>
+        <th>v.</th>
+        <th>Kifejtés</th>
+    </tr>
+    <tr>
+        <td>Kompatibilitás</td>
+        <td>K1</td>
+        <td>Webböngésző kompatibilitás</td>
+        <td>1.0</td>
+        <td>
+            A szoftver futtatásához szükséges webböngésző minimális verziószáma:<br>
+            - Firefox 63.0<br>- Google Chrome 70.0.3538<br>- Opera 55<br>- Safari 12.0.1
+        </td>
+    </tr>
+    <tr>
+        <td>Kompatibilitás</td>
+        <td>K2</td>
+        <td>Android kompatibilitás</td>
+        <td>1.0</td>
+        <td>Az applikáció futtatásához szükséges minimális Android verzió: Android 5.0 Lollipop (21. API szint)</td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K3</td>
+        <td>Bejelentkezési felület</td>
+        <td>1.0</td>
+        <td>
+            A felhasználó az email címe és a jelszava segítségével bejelentkezhet.<br>
+            Ha a megadott email cím vagy jelszó nem megfelelő, akkor a felhasználó hibaüzenetet kap.
+        </td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K4</td>
+        <td>Regisztráció</td>
+        <td>1.0</td>
+        <td>
+            A felhasználó a felhasználói nevének, email címének és jelszavának megadásával regisztrálja magát.<br>
+            A jelszó tárolása kódolva történik az adatbázisban.	Ha valamelyik adat ezek közül hiányzik vagy nem felel meg a követelményeknek,<br>
+            akkor a rendszer értesíti erről a felhasználót.
+        </td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K5</td>
+        <td>Jogosultsági szintek</td>
+        <td>1.0</td>
+        <td>
+            - Admin : új feladat feltöltése<br>
+            - Felhasználó : feladatok kitöltése, toplista megtekintése, jelszó módosítása <br>
+            - Vendég : regisztráció, belépés
+        </td>
+    </tr>
+    <tr>
+        <td>Modifikáció</td>
+        <td>K6</td>
+        <td>Jelszó módosítása</td>
+        <td>1.0</td>
+        <td>A felhasználó módosítani tudja saját jelszavát. Ehhez szükséges a régi és az új jelszavának megadása, valamint az új megerősítése.</td>
+    </tr>
+    <tr>
+        <td>Feladattípus</td>
+        <td>K7</td>
+        <td>Kvíz</td>
+        <td>1.0</td>
+        <td>
+            Több kérdésből áll, a feladat a helyes válasz kiválasztása több lehetőség közül.
+            A felhasználó az eltelt idő függvényében pontot kap.
+        </td>
+    </tr>
+    <tr>
+        <td>Statisztika</td>
+        <td>K8</td>
+        <td>Toplista</td>
+        <td>1.0</td>
+        <td>Egy lista a játékosok pontszámairól, a lista elején a legtöbb pontot elért felhasználó található.</td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K9</td>
+        <td>Admin felület</td>
+        <td>1.0</td>
+        <td>Felület az admin fiókkal rendelkező felhasználó számára. Tartalmaz egy felületet az új feladatok feltöltéséhez.</td>
+    </tr>
 </table>
 
 <h2>7. Képernyőtervek</h2>
@@ -137,3 +145,10 @@ Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyot
 
 
 <h2>10. Forgatókönyv</h2>
+
+
+<h2>11. Fogalomszótár</h2>
+<p>[web-service]:különböző programnyelveken írt és különböző platformokon futó szoftveralkalmazások interneten keresztül történő adatcseréjére használt vebszolgáltatások.</p>
+<p>[multiplatform]: több környezetben futtatható alkalmazás</p>
+<p>[main menu]: A fő menü, amely a weboldal indulásakor megjelenik</p>
+<p>[final menu]: A játék végén megjelenő panel, amely a statisztikát mutatja</p>
