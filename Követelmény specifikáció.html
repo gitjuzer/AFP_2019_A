@@ -16,20 +16,69 @@
 
 
 <h2>3. Követelmény lista</h2>
+<p>
+	A projektünk megvalósításához elengedhetetlenek azok a részek amikbõl felépül a projektünk, de ahoz hogy ezeket tudjuk jól és érdemesen implementálni, elõsször felkell õket vázolnunk.
+</p>
+<p>	
+	A egyik legfontosabb lépés az a bejentkezési felület amibõl felépül majd az egész rendszer. Itt tudunk majd hozzá férné a rendszer többi részeihez.<br>
+	Innen érhetõ el a Regisztrációs rész, ahol a felhasználók regisztrálhatnak a játékos tanulás rendszerbe. Ide jó lenne egy jelszó megváltoztatásos rendszert készíteni,
+	amibõl kifojólag lehet majd egy "Elfelejtettem a jelszavamat / felhasználómat" felület is.
+</p>
+<p>
+	Legyen egy bejentkezési utáni felület, ahol a felhasználó, a regisztrált csoportja (diák, tanár, szülõ, stb.) alapján különbözõ opciókban részesül.<br>
+	A Diák számára legyenek kvízek, tesztek, üzenetek, órarend és érdemjegyek menüpontok elérhetõk.<br>
+	A tanár legyen képes teszteket, kvízeket létrehozni,órarendjét látni, üzeneteket küldeni diákoknak és szülõknek,<br>
+	valamint osztályait tudja menedzselni, itt jegyeket, rovásokat, és dicsérteket tudjon beírni.<br>
+	A szülõ szerepe sokkal egyszerûbb. A gyerekük órarendjét, jegyeit, rovásait, dicséreteiket, valamint üzeneteit láthatják.
+</p>
+<p>
+	Ezeket kívûl létezzen egy Admin felület, ahol a rendszergazdák tudják a rendszert kezelni. Itt tudjanak a tanároknak tényleges tanár jogosultságok adni.<br>
+	A feladatuk, hogy a regisztrált felhasználok tényleg jó csoportokba kerüljenek, és természetesen a rendszer hibamentes mûködése. Ezenken kívûl tudjanak õk is feladatokat létrehozni<br>
+	és üzeneteket küldeni minden felhasználonak a rendszerben.
+</p>
 <ol>
     <li>Bejelentkezési felület</li>
     <li>Regisztráció</li>
     <li>Jelszó megváltoztatása</li>
-    <li>Bejelentkezés után központi felület, ahol ki lehet választani a teszteket vagy meg lehet tekinteni a toplistát.</li>
-    <li>
-        Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
-        <ul>
+	<li>Elfelejtettem a jelszavam / felhasználom felület</li>
+    <li>Bejelentkezés után központi felület, ahol ki lehet választani a különbözõ menüpontokat.</li>
+    <li>Diák felület
+		<ul>
+        <li>Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
+			<ul>
             <li>A kvíz kitöltése közben az eltelt idõ legyen számolva.</li>
             <li>Helyes válasz esetén a felhasználó pontot kap.</li>
             <li>A kapott pontszám függjön az eltelt idõtõl.</li>
             <li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-        </ul>
-    </li>
+			</ul>
+		</li>
+		<li>Teszt feladat típus, amely hasonlít a Kvízre, de a felhasználó érdemjegyet kap.
+			<ul>
+            <li>A Teszt kitöltése közben az eltelt idõ legyen számolva.</li>
+            <li>Helyes válasz esetén a felhasználó pontot kap.</li>
+            <li>A kapott pontszám függjön az eltelt idõtõl.</li>
+            <li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
+			<li>Érdemjegy adása a pontszámok alapján, a pont és idõhatárt a tanár szabja meg</li>
+			</ul>
+		</li>
+		<li>Üzenet felület</li>
+		<li>Órarend felület
+			<ul>
+			<li>A diák heti órarendje</li>
+			<li>Kidolgozott naptár</li>
+			<li>Az óra helye (melyik terem)</li>
+			<li>Az óra idõpontja</li>
+			<li>Az órát melyik tanár tartja</li>
+			<li>Szünetek feltüntetése</li>
+			</ul>
+		</li>
+		<li>Érdemjegyek felülte
+			<ul>
+			<li>
+			</ul>
+		</li>
+		</ul>
+	</li>	
     <li>Admin felület</li>
     <li>Új feladatok hozzáadása</li>
 </ol>
