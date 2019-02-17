@@ -1,177 +1,181 @@
-<h1>Követelmény specifikáció</h1>
+<!DOCTYPE html>
+<html lang="hu-HU">
+<meta charset="UTF-8">
+<body>
+<h1>KÃ¶vetelmÃ©ny specifikÃ¡ciÃ³</h1>
 
 
-<h2>1. Áttekintés</h2>
+<h2>1. ÃttekintÃ©s</h2>
 
 
-<h2>2. Vágyálom rendszer</h2>
+<h2>2. VÃ¡gyÃ¡lom rendszer</h2>
 <p>
-    A projekt célja egy olyan rendszer, ami játékos tanulás, gyakorlás lehetõségét biztosítja. A rendszer elérhetõ lenne több platformon, weben és androidon is.<br>
-    Regisztrációt követõen lehetõleg több típusú feladat közül választhat a felhasználó. Látványos, színes felülettel rendelkezik a program, hogy felkeltse a felhasználók figyelmét. A szórakoztatóbb tanulás érdekében játékos elemeket tartalmaznak az egyes feladatok.<br>
-    A rendszer lehetõséget nyújt a felhasználók teljesítményének tárolására (toplista), ennek segítségével másokkal is összemérhetik a tudásukat.<br>
-    A rendszerben szükséges egy pontozási rendszer, amely a helyesen megválaszolt feladványok után adja a felhasználónak a pontokat.<br>
-    Ez a pontozási rendszer optimális esetben függene a feladatokhoz meghatározott idõtõl is.<br>
-    A rendszernek lenne egy admin felülete is, ahol az admin fiókkal bejelentkezett felhasználó fel tudná tölteni a feladványokat.
+    A projekt cÃ©lja egy olyan rendszer, ami jÃ¡tÃ©kos tanulÃ¡s, gyakorlÃ¡s lehetÅ‘sÃ©gÃ©t biztosÃ­tja. A rendszer elÃ©rhetÅ‘ lenne tÃ¶bb platformon, weben Ã©s androidon is.<br>
+    RegisztrÃ¡ciÃ³t kÃ¶vetÅ‘en lehetÅ‘leg tÃ¶bb tÃ­pusÃº feladat kÃ¶zÃ¼l vÃ¡laszthat a felhasznÃ¡lÃ³. LÃ¡tvÃ¡nyos, szÃ­nes felÃ¼lettel rendelkezik a program, hogy felkeltse a felhasznÃ¡lÃ³k figyelmÃ©t. A szÃ³rakoztatÃ³bb tanulÃ¡s Ã©rdekÃ©ben jÃ¡tÃ©kos elemeket tartalmaznak az egyes feladatok.<br>
+    A rendszer lehetÅ‘sÃ©get nyÃºjt a felhasznÃ¡lÃ³k teljesÃ­tmÃ©nyÃ©nek tÃ¡rolÃ¡sÃ¡ra (toplista), ennek segÃ­tsÃ©gÃ©vel mÃ¡sokkal is Ã¶sszemÃ©rhetik a tudÃ¡sukat.<br>
+    A rendszerben szÃ¼ksÃ©ges egy pontozÃ¡si rendszer, amely a helyesen megvÃ¡laszolt feladvÃ¡nyok utÃ¡n adja a felhasznÃ¡lÃ³nak a pontokat.<br>
+    Ez a pontozÃ¡si rendszer optimÃ¡lis esetben fÃ¼ggene a feladatokhoz meghatÃ¡rozott idÅ‘tÅ‘l is.<br>
+    A rendszernek lenne egy admin felÃ¼lete is, ahol az admin fiÃ³kkal bejelentkezett felhasznÃ¡lÃ³ fel tudnÃ¡ tÃ¶lteni a feladvÃ¡nyokat.
 </p>
 
 
-<h2>3. Követelmény lista</h2>
+<h2>3. KÃ¶vetelmÃ©ny lista</h2>
 <p>
-	A projektünk megvalósításához elengedhetetlenek azok a részek amikbõl felépül a projektünk, de ahoz hogy ezeket tudjuk jól és érdemesen implementálni, elõsször felkell õket vázolnunk.
+	A projektÃ¼nk megvalÃ³sÃ­tÃ¡sÃ¡hoz elengedhetetlenek azok a rÃ©szek amikbÅ‘l felÃ©pÃ¼l a projektÃ¼nk, de ahoz hogy ezeket tudjuk jÃ³l Ã©s Ã©rdemesen implementÃ¡lni, elÅ‘sszÃ¶r felkell Å‘ket vÃ¡zolnunk.
 </p>
 <p>	
-	A egyik legfontosabb lépés az a bejentkezési felület amibõl felépül majd az egész rendszer. Itt tudunk majd hozzá férné a rendszer többi részeihez.<br>
-	Innen érhetõ el a Regisztrációs rész, ahol a felhasználók regisztrálhatnak a játékos tanulás rendszerbe. Ide jó lenne egy jelszó megváltoztatásos rendszert készíteni,
-	amibõl kifojólag lehet majd egy "Elfelejtettem a jelszavamat / felhasználómat" felület is.
+	A egyik legfontosabb lÃ©pÃ©s az a bejentkezÃ©si felÃ¼let amibÅ‘l felÃ©pÃ¼l majd az egÃ©sz rendszer. Itt tudunk majd hozzÃ¡ fÃ©rnÃ© a rendszer tÃ¶bbi rÃ©szeihez.<br>
+	Innen Ã©rhetÅ‘ el a RegisztrÃ¡ciÃ³s rÃ©sz, ahol a felhasznÃ¡lÃ³k regisztrÃ¡lhatnak a jÃ¡tÃ©kos tanulÃ¡s rendszerbe. Ide jÃ³ lenne egy jelszÃ³ megvÃ¡ltoztatÃ¡sos rendszert kÃ©szÃ­teni,
+	amibÅ‘l kifojÃ³lag lehet majd egy "Elfelejtettem a jelszavamat / felhasznÃ¡lÃ³mat" felÃ¼let is.
 </p>
 <p>
-	Legyen egy bejentkezési utáni felület, ahol a felhasználó, a regisztrált csoportja (diák, tanár, szülõ, stb.) alapján különbözõ opciókban részesül.<br>
-	A Diák számára legyenek kvízek, tesztek, üzenetek, órarend és érdemjegyek menüpontok elérhetõk.<br>
-	A tanár legyen képes teszteket, kvízeket létrehozni, órarendjét látni, üzeneteket küldeni diákoknak és szülõknek,<br>
-	valamint osztályait tudja menedzselni, itt jegyeket, rovásokat, és dicsérteket tudjon beírni.<br>
-	A szülõ szerepe sokkal egyszerûbb. A gyerekük órarendjét, jegyeit, rovásait, dicséreteiket, valamint üzeneteit láthatják.
+	Legyen egy bejentkezÃ©si utÃ¡ni felÃ¼let, ahol a felhasznÃ¡lÃ³, a regisztrÃ¡lt csoportja (diÃ¡k, tanÃ¡r, szÃ¼lÅ‘, stb.) alapjÃ¡n kÃ¼lÃ¶nbÃ¶zÅ‘ opciÃ³kban rÃ©szesÃ¼l.<br>
+	A DiÃ¡k szÃ¡mÃ¡ra legyenek kvÃ­zek, tesztek, Ã¼zenetek, Ã³rarend Ã©s Ã©rdemjegyek menÃ¼pontok elÃ©rhetÅ‘k.<br>
+	A tanÃ¡r legyen kÃ©pes teszteket, kvÃ­zeket lÃ©trehozni, Ã³rarendjÃ©t lÃ¡tni, Ã¼zeneteket kÃ¼ldeni diÃ¡koknak Ã©s szÃ¼lÅ‘knek,<br>
+	valamint osztÃ¡lyait tudja menedzselni, itt jegyeket, rovÃ¡sokat, Ã©s dicsÃ©rteket tudjon beÃ­rni.<br>
+	A szÃ¼lÅ‘ szerepe sokkal egyszerÅ±bb. A gyerekÃ¼k Ã³rarendjÃ©t, jegyeit, rovÃ¡sait, dicsÃ©reteiket, valamint Ã¼zeneteit lÃ¡thatjÃ¡k.
 </p>
 <p>
-	Ezeket kívûl létezzen egy Admin felület, ahol a rendszergazdák tudják a rendszert kezelni. Itt tudjanak a tanároknak tényleges tanár jogosultságok adni.<br>
-	A feladatuk, hogy a regisztrált felhasználok tényleg jó csoportokba kerüljenek, és természetesen a rendszer hibamentes mûködése. Ezenken kívûl tudjanak õk is feladatokat létrehozni<br>
-	és üzeneteket küldeni minden felhasználonak a rendszerben.
+	Ezeket kÃ­vÅ±l lÃ©tezzen egy Admin felÃ¼let, ahol a rendszergazdÃ¡k tudjÃ¡k a rendszert kezelni. Itt tudjanak a tanÃ¡roknak tÃ©nyleges tanÃ¡r jogosultsÃ¡gok adni.<br>
+	A feladatuk, hogy a regisztrÃ¡lt felhasznÃ¡lok tÃ©nyleg jÃ³ csoportokba kerÃ¼ljenek, Ã©s termÃ©szetesen a rendszer hibamentes mÅ±kÃ¶dÃ©se. Ezenken kÃ­vÅ±l tudjanak Å‘k is feladatokat lÃ©trehozni<br>
+	Ã©s Ã¼zeneteket kÃ¼ldeni minden felhasznÃ¡lonak a rendszerben.
 </p>
 
-<h3>Követelmény lista felsorolása prioritás szerint:</h3>
+<h3>KÃ¶vetelmÃ©ny lista felsorolÃ¡sa prioritÃ¡s szerint:</h3>
 <ol>
-    <li>Bejelentkezési felület</li>
-    <li>Regisztráció</li>
-    <li>Jelszó megváltoztatása</li>
-	<li>Elfelejtettem a jelszavam / felhasználom felület</li>
-    <li>Bejelentkezés után központi felület, ahol ki lehet választani a különbözõ menüpontokat.</li>
-    <li>Diák felület
+    <li>BejelentkezÃ©si felÃ¼let</li>
+    <li>RegisztrÃ¡ciÃ³</li>
+    <li>JelszÃ³ megvÃ¡ltoztatÃ¡sa</li>
+	<li>Elfelejtettem a jelszavam / felhasznÃ¡lom felÃ¼let</li>
+    <li>BejelentkezÃ©s utÃ¡n kÃ¶zponti felÃ¼let, ahol ki lehet vÃ¡lasztani a kÃ¼lÃ¶nbÃ¶zÅ‘ menÃ¼pontokat.</li>
+    <li>DiÃ¡k felÃ¼let
 		<ul>
-			<li>Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
+			<li>KvÃ­z feladat tÃ­pus, ahol tÃ¶bb kÃ©rdÃ©s kÃ¶zÃ¼l kell a helyeset kivÃ¡lasztani.
 				<ul>
-					<li>A kvíz kitöltése közben az eltelt idõ legyen számolva.</li>
-					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
-					<li>A kapott pontszám függjön az eltelt idõtõl.</li>
-					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
+					<li>A kvÃ­z kitÃ¶ltÃ©se kÃ¶zben az eltelt idÅ‘ legyen szÃ¡molva.</li>
+					<li>Helyes vÃ¡lasz esetÃ©n a felhasznÃ¡lÃ³ pontot kap.</li>
+					<li>A kapott pontszÃ¡m fÃ¼ggjÃ¶n az eltelt idÅ‘tÅ‘l.</li>
+					<li>A kitÃ¶ltÃ©s vÃ©gÃ©n elÃ©rt pontszÃ¡mok Ã©s toplista megjelenik.</li>
 				</ul>
 			</li>
-			<li>Teszt feladat típus, amely hasonlít a Kvízre, de a felhasználó érdemjegyet kap.
+			<li>Teszt feladat tÃ­pus, amely hasonlÃ­t a KvÃ­zre, de a felhasznÃ¡lÃ³ Ã©rdemjegyet kap.
 				<ul>
-					<li>A Teszt kitöltése közben az eltelt idõ legyen számolva.</li>
-					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
-					<li>A kapott pontszám függjön az eltelt idõtõl.</li>
-					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-					<li>Érdemjegy adása a pontszámok alapján, a pont és idõhatárt a tanár szabja meg</li>
+					<li>A Teszt kitÃ¶ltÃ©se kÃ¶zben az eltelt idÅ‘ legyen szÃ¡molva.</li>
+					<li>Helyes vÃ¡lasz esetÃ©n a felhasznÃ¡lÃ³ pontot kap.</li>
+					<li>A kapott pontszÃ¡m fÃ¼ggjÃ¶n az eltelt idÅ‘tÅ‘l.</li>
+					<li>A kitÃ¶ltÃ©s vÃ©gÃ©n elÃ©rt pontszÃ¡mok Ã©s toplista megjelenik.</li>
+					<li>Ã‰rdemjegy adÃ¡sa a pontszÃ¡mok alapjÃ¡n, a pont Ã©s idÅ‘hatÃ¡rt a tanÃ¡r szabja meg</li>
 				</ul>
 			</li>
-			<li>Üzenet felület
+			<li>Ãœzenet felÃ¼let
 				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
+					<li>Ãšj, nem ovasott Ã¼zenetek</li>
+					<li>Olvasott Ã¼zenetek</li>
+					<li>Fontos Ã¼zenetek</li>
+					<li>Ãœzenet kÃ¼ldÃ©se</li>
 				</ul>
 			</li>
-			<li>Órarend felület
+			<li>Ã“rarend felÃ¼let
 				<ul>
-					<li>A diák heti órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és idõpontja</li>
-					<li>Az órát melyik tanár tartja</li>
-					<li>Szünetek feltüntetése</li>
+					<li>A diÃ¡k heti Ã³rarendje</li>
+					<li>Kidolgozott naptÃ¡r</li>
+					<li>Az Ã³ra helye (melyik terem) Ã©s idÅ‘pontja</li>
+					<li>Az Ã³rÃ¡t melyik tanÃ¡r tartja</li>
+					<li>SzÃ¼netek feltÃ¼ntetÃ©se</li>
 				</ul>
 			</li>
-			<li>Érdemjegyek felülte
+			<li>Ã‰rdemjegyek felÃ¼lte
 				<ul>
-					<li>Érdemjegyek feltüntetése különbözõ tárgyakból.</li>
-					<li>Rovások feltüntetése</li>
-					<li>Dicséretek feltüntetése</li>
+					<li>Ã‰rdemjegyek feltÃ¼ntetÃ©se kÃ¼lÃ¶nbÃ¶zÅ‘ tÃ¡rgyakbÃ³l.</li>
+					<li>RovÃ¡sok feltÃ¼ntetÃ©se</li>
+					<li>DicsÃ©retek feltÃ¼ntetÃ©se</li>
 				</ul>
 			</li>
 		</ul>
 	</li>	
-	<li>Tanár / Oktatói felület
+	<li>TanÃ¡r / OktatÃ³i felÃ¼let
 		<ul>
-			<li>Kvíz és Teszt létrehozó felület
+			<li>KvÃ­z Ã©s Teszt lÃ©trehozÃ³ felÃ¼let
 				<ul>
-					<li>Lehessen választani, hogy Kvíz vagy Teszt típusú a kérdõív</li>
-					<li>Kérdések megírása</li>
-					<li>Lehetséges válaszok megírása, és a helyes válasz kiválasztása</li>
-					<li>Ponthatár megadása</li>
-					<li>Idõhatár megadása</li>
+					<li>Lehessen vÃ¡lasztani, hogy KvÃ­z vagy Teszt tÃ­pusÃº a kÃ©rdÅ‘Ã­v</li>
+					<li>KÃ©rdÃ©sek megÃ­rÃ¡sa</li>
+					<li>LehetsÃ©ges vÃ¡laszok megÃ­rÃ¡sa, Ã©s a helyes vÃ¡lasz kivÃ¡lasztÃ¡sa</li>
+					<li>PonthatÃ¡r megadÃ¡sa</li>
+					<li>IdÅ‘hatÃ¡r megadÃ¡sa</li>
 				</ul>
 			</li>
-			<li>Üzenet felület
+			<li>Ãœzenet felÃ¼let
 				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
+					<li>Ãšj, nem ovasott Ã¼zenetek</li>
+					<li>Olvasott Ã¼zenetek</li>
+					<li>Fontos Ã¼zenetek</li>
+					<li>Ãœzenet kÃ¼ldÃ©se</li>
 				</ul>
 			</li>
-			<li>Órarend felület
+			<li>Ã“rarend felÃ¼let
 				<ul>
-					<li>A tanár heti órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és idõpontja</li>
-					<li>Az órán hány és mely diákok vesznek részt.</li>
-					<li>Szünetek feltüntetése</li>
+					<li>A tanÃ¡r heti Ã³rarendje</li>
+					<li>Kidolgozott naptÃ¡r</li>
+					<li>Az Ã³ra helye (melyik terem) Ã©s idÅ‘pontja</li>
+					<li>Az Ã³rÃ¡n hÃ¡ny Ã©s mely diÃ¡kok vesznek rÃ©szt.</li>
+					<li>SzÃ¼netek feltÃ¼ntetÃ©se</li>
 				</ul>
 			</li>
-			<li>Érdemjegyek felülte
+			<li>Ã‰rdemjegyek felÃ¼lte
 				<ul>
-					<li>Érdemjegyek adása diákoknak</li>
-					<li>Rovások adása diákoknak</li>
-					<li>Dicséretek adása diákoknak</li>
+					<li>Ã‰rdemjegyek adÃ¡sa diÃ¡koknak</li>
+					<li>RovÃ¡sok adÃ¡sa diÃ¡koknak</li>
+					<li>DicsÃ©retek adÃ¡sa diÃ¡koknak</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-	<li>Szülõi felület
+	<li>SzÃ¼lÅ‘i felÃ¼let
 		<ul>	
-			<li>Üzenet felület
+			<li>Ãœzenet felÃ¼let
 				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
+					<li>Ãšj, nem ovasott Ã¼zenetek</li>
+					<li>Olvasott Ã¼zenetek</li>
+					<li>Fontos Ã¼zenetek</li>
+					<li>Ãœzenet kÃ¼ldÃ©se</li>
 				</ul>
 			</li>
-			<li>Órarend felület
+			<li>Ã“rarend felÃ¼let
 				<ul>
-					<li>A szülõ gyerekének órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és idõpontja</li>
-					<li>Az órát melyik tanár tartja</li>
-					<li>Szünetek feltüntetése</li>
+					<li>A szÃ¼lÅ‘ gyerekÃ©nek Ã³rarendje</li>
+					<li>Kidolgozott naptÃ¡r</li>
+					<li>Az Ã³ra helye (melyik terem) Ã©s idÅ‘pontja</li>
+					<li>Az Ã³rÃ¡t melyik tanÃ¡r tartja</li>
+					<li>SzÃ¼netek feltÃ¼ntetÃ©se</li>
 				</ul>
 			</li>
-			<li>Érdemjegyek felülte
+			<li>Ã‰rdemjegyek felÃ¼lte
 				<ul>
-					<li>A szülé gyerekének érdemjegyeinek feltüntetése különbözõ tárgyakból.</li>
-					<li>A szülé gyerekének rovásainak feltüntetése</li>
-					<li>A szülõ gyerekének dicséreteinek feltüntetése</li>
+					<li>A szÃ¼lÃ© gyerekÃ©nek Ã©rdemjegyeinek feltÃ¼ntetÃ©se kÃ¼lÃ¶nbÃ¶zÅ‘ tÃ¡rgyakbÃ³l.</li>
+					<li>A szÃ¼lÃ© gyerekÃ©nek rovÃ¡sainak feltÃ¼ntetÃ©se</li>
+					<li>A szÃ¼lÅ‘ gyerekÃ©nek dicsÃ©reteinek feltÃ¼ntetÃ©se</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-    <li>Admin felület
+    <li>Admin felÃ¼let
 		<ul>
-			<li>Teljes rendszer hozzáférés</li>
-			<li>Felhasználói kezelõ rendszer</li>
+			<li>Teljes rendszer hozzÃ¡fÃ©rÃ©s</li>
+			<li>FelhasznÃ¡lÃ³i kezelÅ‘ rendszer</li>
 				<ul>
-					<li>Felhasználók felvétele</li>
-					<li>Felhasználok levétele</li>
-					<li>Felhasználó csoport megváltoztatása</li>
-					<li>Felhasználói név megváltoztatása</li>
-					<li>Felhasználó jelszõ megváltoztatása</li>
+					<li>FelhasznÃ¡lÃ³k felvÃ©tele</li>
+					<li>FelhasznÃ¡lok levÃ©tele</li>
+					<li>FelhasznÃ¡lÃ³ csoport megvÃ¡ltoztatÃ¡sa</li>
+					<li>FelhasznÃ¡lÃ³i nÃ©v megvÃ¡ltoztatÃ¡sa</li>
+					<li>FelhasznÃ¡lÃ³ jelszÅ‘ megvÃ¡ltoztatÃ¡sa</li>
 				</ul>
-			<li>Új feladatok hozzáadása (Tesztek / Kvízek)</li>
-			<li>Üzenet felület
+			<li>Ãšj feladatok hozzÃ¡adÃ¡sa (Tesztek / KvÃ­zek)</li>
+			<li>Ãœzenet felÃ¼let
 				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
+					<li>Ãšj, nem ovasott Ã¼zenetek</li>
+					<li>Olvasott Ã¼zenetek</li>
+					<li>Fontos Ã¼zenetek</li>
+					<li>Ãœzenet kÃ¼ldÃ©se</li>
 				</ul>
 			</li>
 		<ul>
@@ -181,38 +185,39 @@
 
 <h2>4. Jelenlegi helyzet</h2>
 <p>
-    A megrendelõ szeretné kibõvíteni az általa nyújtott oktatási szolgáltatások elérhetõségét, hogy versenytársaihoz képest így jusson piaci elõnyökhöz.<br>
-    Egy új rendszer elõállítását rendelte meg, amely interneten keresztül modern megoldásokat használva mûködik.<br>
-    A rendszer segítséget nyújt azok számára, akik valamilyen módon szeretnék tudásukat elmélyíteni egy adott területen, vagy új
-    ismereteket szeretnének szerezni.<br>
-    A XXI. század megköveteli, hogy mindez hálózaton is elérhetõ legyen, ennek megfelelõen Android alkalmazást és weboldalt is a megrendelõ rendelkezésére kell bocsátani.<br>
-    Eddig a megrendelõ csak számítógépen való gyors írás elsajátításához használt egy Stamina nevû alkalmazást.<br>
-    Ez a fajta tanulás megtetszett a diákoknak, és a tanárok is felismerték, hogy egy játékos oktatóprogrammal eredményesebbé, szórakoztatóbbá tehetik az oktatást,
-    mint a hagyományos, táblára írásos módszerrel.<br>
-    Ezért elkezdtek keresni számukra megfelelõ, létezõ programokat. Találtak többet is (pl.:Kahoot), viszont ezek nem tetszettek nekik.<br>
-    Egy olyan programra lenne szükségük, amellyel a diákok önnálóan tudnak feladatot megoldani, és a többi játékos pontszámához képest tudják viszonyítani magukat.<br>
-    Mindezek mellet a megrendelõnek szüksége van a saját logojuk feltüntetésére is.<br>
-    Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyott alkalmazást, ami sokkal könnyebbé teheti számukra az oktatást.<br>
+    A megrendelÅ‘ szeretnÃ© kibÅ‘vÃ­teni az Ã¡ltala nyÃºjtott oktatÃ¡si szolgÃ¡ltatÃ¡sok elÃ©rhetÅ‘sÃ©gÃ©t, hogy versenytÃ¡rsaihoz kÃ©pest Ã­gy jusson piaci elÅ‘nyÃ¶khÃ¶z.<br>
+    Egy Ãºj rendszer elÅ‘Ã¡llÃ­tÃ¡sÃ¡t rendelte meg, amely interneten keresztÃ¼l modern megoldÃ¡sokat hasznÃ¡lva mÅ±kÃ¶dik.<br>
+    A rendszer segÃ­tsÃ©get nyÃºjt azok szÃ¡mÃ¡ra, akik valamilyen mÃ³don szeretnÃ©k tudÃ¡sukat elmÃ©lyÃ­teni egy adott terÃ¼leten, vagy Ãºj
+    ismereteket szeretnÃ©nek szerezni.<br>
+    A XXI. szÃ¡zad megkÃ¶veteli, hogy mindez hÃ¡lÃ³zaton is elÃ©rhetÅ‘ legyen, ennek megfelelÅ‘en Android alkalmazÃ¡st Ã©s weboldalt is a megrendelÅ‘ rendelkezÃ©sÃ©re kell bocsÃ¡tani.<br>
+    Eddig a megrendelÅ‘ csak szÃ¡mÃ­tÃ³gÃ©pen valÃ³ gyors Ã­rÃ¡s elsajÃ¡tÃ­tÃ¡sÃ¡hoz hasznÃ¡lt egy Stamina nevÅ± alkalmazÃ¡st.<br>
+    Ez a fajta tanulÃ¡s megtetszett a diÃ¡koknak, Ã©s a tanÃ¡rok is felismertÃ©k, hogy egy jÃ¡tÃ©kos oktatÃ³programmal eredmÃ©nyesebbÃ©, szÃ³rakoztatÃ³bbÃ¡ tehetik az oktatÃ¡st,
+    mint a hagyomÃ¡nyos, tÃ¡blÃ¡ra Ã­rÃ¡sos mÃ³dszerrel.<br>
+    EzÃ©rt elkezdtek keresni szÃ¡mukra megfelelÅ‘, lÃ©tezÅ‘ programokat. TalÃ¡ltak tÃ¶bbet is (pl.:Kahoot), viszont ezek nem tetszettek nekik.<br>
+    Egy olyan programra lenne szÃ¼ksÃ©gÃ¼k, amellyel a diÃ¡kok Ã¶nnÃ¡lÃ³an tudnak feladatot megoldani, Ã©s a tÃ¶bbi jÃ¡tÃ©kos pontszÃ¡mÃ¡hoz kÃ©pest tudjÃ¡k viszonyÃ­tani magukat.<br>
+    Mindezek mellet a megrendelÅ‘nek szÃ¼ksÃ©ge van a sajÃ¡t logojuk feltÃ¼ntetÃ©sÃ©re is.<br>
+    Ezen okokbÃ³l kifolyÃ³lag megkÃ©rtek minket, hogy csinÃ¡ljuk meg nekik a vÃ¡gyott alkalmazÃ¡st, ami sokkal kÃ¶nnyebbÃ© teheti szÃ¡mukra az oktatÃ¡st.<br>
 </p>
 
 
-<h2>5. Jelenlegi üzleti folyamatok modellje</h2>
+<h2>5. Jelenlegi Ã¼zleti folyamatok modellje</h2>
 
 
-<h2>6. Igényelt üzleti folyamatok modellje</h2>
+<h2>6. IgÃ©nyelt Ã¼zleti folyamatok modellje</h2>
 
 
-<h2>7. Fogalomszótár</h2>
-<p>[bug]: fejlesztési hiba ami által a program nem a várt eredményt hozza</p>
-<p>[main menu]: A fõ menü, amely a weboldal/program indulásakor megjelenik</p>
-<p>[gameboard]: Játék közben, a különbözõ elemeket tartalmazó felület</p>
-<p>[backend]: A kiszolgáló, ahonnan az alkalmazást el lehet érni</p>
-<p>[frontend]:  egy réteg ami feladata a rendszerbõl kijutó adatok prezentálása, illetve a bejövõ adatok fogadása</p>
-<p>[web-service]:különbözõ programnyelveken írt és különbözõ platformokon futó szoftveralkalmazások interneten keresztül történõ adatcseréjére használt vebszolgáltatások.</p>
-<p>[multiplatform]: több környezetben futtatható alkalmazás</p>
-<p>[main menu]: A fõ menü, amely a weboldal indulásakor megjelenik</p>
-<p>[final menu]: A játék végén megjelenõ panel, amely a statisztikát mutatja</p>
-
+<h2>7. FogalomszÃ³tÃ¡r</h2>
+<p>[bug]: fejlesztÃ©si hiba ami Ã¡ltal a program nem a vÃ¡rt eredmÃ©nyt hozza</p>
+<p>[main menu]: A fÅ‘ menÃ¼, amely a weboldal/program indulÃ¡sakor megjelenik</p>
+<p>[gameboard]: JÃ¡tÃ©k kÃ¶zben, a kÃ¼lÃ¶nbÃ¶zÅ‘ elemeket tartalmazÃ³ felÃ¼let</p>
+<p>[backend]: A kiszolgÃ¡lÃ³, ahonnan az alkalmazÃ¡st el lehet Ã©rni</p>
+<p>[frontend]:  egy rÃ©teg ami feladata a rendszerbÅ‘l kijutÃ³ adatok prezentÃ¡lÃ¡sa, illetve a bejÃ¶vÅ‘ adatok fogadÃ¡sa</p>
+<p>[web-service]:kÃ¼lÃ¶nbÃ¶zÅ‘ programnyelveken Ã­rt Ã©s kÃ¼lÃ¶nbÃ¶zÅ‘ platformokon futÃ³ szoftveralkalmazÃ¡sok interneten keresztÃ¼l tÃ¶rtÃ©nÅ‘ adatcserÃ©jÃ©re hasznÃ¡lt vebszolgÃ¡ltatÃ¡sok.</p>
+<p>[multiplatform]: tÃ¶bb kÃ¶rnyezetben futtathatÃ³ alkalmazÃ¡s</p>
+<p>[main menu]: A fÅ‘ menÃ¼, amely a weboldal indulÃ¡sakor megjelenik</p>
+<p>[final menu]: A jÃ¡tÃ©k vÃ©gÃ©n megjelenÅ‘ panel, amely a statisztikÃ¡t mutatja</p>
+</body>
+</html>
 
 
 
