@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="hu-HU">
 <meta charset="UTF-8">
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+</style>
 <body>
 <h1>Követelmény specifikáció</h1>
 
@@ -49,173 +59,95 @@
 
 
 <h2>6. Követelmény lista</h2>
-<p>
-	A projektünk megvalósításához elengedhetetlenek azok a részek amikből felépül a projektünk, de ahoz hogy ezeket tudjuk jól és érdemesen implementálni, elősször felkell őket vázolnunk.
-</p>
-<p>	
-	A egyik legfontosabb lépés az a bejentkezési felület amiből felépül majd az egész rendszer. Itt tudunk majd hozzá férné a rendszer többi részeihez.<br>
-	Innen érhető el a Regisztrációs rész, ahol a felhasználók regisztrálhatnak a játékos tanulás rendszerbe. Ide jó lenne egy jelszó megváltoztatásos rendszert készíteni,
-	amiből kifojólag lehet majd egy "Elfelejtettem a jelszavamat / felhasználómat" felület is.
-</p>
-<p>
-	Legyen egy bejentkezési utáni felület, ahol a felhasználó, a regisztrált csoportja (diák, tanár, szülő, stb.) alapján különböző opciókban részesül.<br>
-	A Diák számára legyenek kvízek, tesztek, üzenetek, órarend és érdemjegyek menüpontok elérhetők.<br>
-	A tanár legyen képes teszteket, kvízeket létrehozni, órarendjét látni, üzeneteket küldeni diákoknak és szülőknek,<br>
-	valamint osztályait tudja menedzselni, itt jegyeket, rovásokat, és dicsérteket tudjon beírni.<br>
-	A szülő szerepe sokkal egyszerűbb. A gyerekük órarendjét, jegyeit, rovásait, dicséreteiket, valamint üzeneteit láthatják.
-</p>
-<p>
-	Ezeket kívűl létezzen egy Admin felület, ahol a rendszergazdák tudják a rendszert kezelni. Itt tudjanak a tanároknak tényleges tanár jogosultságok adni.<br>
-	A feladatuk, hogy a regisztrált felhasználok tényleg jó csoportokba kerüljenek, és természetesen a rendszer hibamentes működése. Ezenken kívűl tudjanak ők is feladatokat létrehozni<br>
-	és üzeneteket küldeni minden felhasználonak a rendszerben.
-</p>
-
-
-<h3>Követelmény lista felsorolása prioritás szerint:</h3>
-<ol>
-    <li>Bejelentkezési felület</li>
-    <li>Regisztráció</li>
-    <li>Jelszó megváltoztatása</li>
-	<li>Elfelejtettem a jelszavam / felhasználom felület</li>
-    <li>Bejelentkezés után központi felület, ahol ki lehet választani a különböző menüpontokat.</li>
-	<br>
-    <li>Diák felület
-		<ul>
-			<li>Kvíz feladat típus, ahol több kérdés közül kell a helyeset kiválasztani.
-				<ul>
-					<li>A kvíz kitöltése közben az eltelt idő legyen számolva.</li>
-					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
-					<li>A kapott pontszám függjön az eltelt időtől.</li>
-					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-				</ul>
-			</li>
-			<li>Teszt feladat típus, amely hasonlít a Kvízre, de a felhasználó érdemjegyet kap.
-				<ul>
-					<li>A Teszt kitöltése közben az eltelt idő legyen számolva.</li>
-					<li>Helyes válasz esetén a felhasználó pontot kap.</li>
-					<li>A kapott pontszám függjön az eltelt időtől.</li>
-					<li>A kitöltés végén elért pontszámok és toplista megjelenik.</li>
-					<li>Érdemjegy adása a pontszámok alapján, a pont és időhatárt a tanár szabja meg</li>
-				</ul>
-			</li>
-			<li>Üzenet felület
-				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
-				</ul>
-			</li>
-			<li>Órarend felület
-				<ul>
-					<li>A diák heti órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és időpontja</li>
-					<li>Az órát melyik tanár tartja</li>
-					<li>Szünetek feltüntetése</li>
-				</ul>
-			</li>
-			<li>Elektronikus napló  felülte
-				<ul>
-					<li>Érdemjegyek feltüntetése különböző tárgyakból.</li>
-					<li>Rovások feltüntetése</li>
-					<li>Dicséretek feltüntetése</li>
-				</ul>
-			</li>
-		</ul>
-	</li>	
-	<br>
-	<li>Tanár / Oktatói felület
-		<ul>
-			<li>Kvíz és Teszt létrehozó felület
-				<ul>
-					<li>Lehessen választani, hogy Kvíz vagy Teszt típusú a kérdőív</li>
-					<li>Kérdések megírása</li>
-					<li>Lehetséges válaszok megírása, és a helyes válasz kiválasztása</li>
-					<li>Ponthatár megadása</li>
-					<li>Időhatár megadása</li>
-				</ul>
-			</li>
-			<li>Üzenet felület
-				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
-				</ul>
-			</li>
-			<li>Órarend felület
-				<ul>
-					<li>A tanár heti órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és időpontja</li>
-					<li>Az órán hány és mely diákok vesznek részt.</li>
-					<li>Szünetek feltüntetése</li>
-				</ul>
-			</li>
-			<li>Elektronikus napló  felülte
-				<ul>
-					<li>Érdemjegyek adása diákoknak</li>
-					<li>Rovások adása diákoknak</li>
-					<li>Dicséretek adása diákoknak</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<br>
-	<li>Szülői felület
-		<ul>	
-			<li>Üzenet felület
-				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
-				</ul>
-			</li>
-			<li>Órarend felület
-				<ul>
-					<li>A szülő gyerekének órarendje</li>
-					<li>Kidolgozott naptár</li>
-					<li>Az óra helye (melyik terem) és időpontja</li>
-					<li>Az órát melyik tanár tartja</li>
-					<li>Szünetek feltüntetése</li>
-				</ul>
-			</li>
-			<li>Elektronikus napló felülte
-				<ul>
-					<li>A szülé gyerekének érdemjegyeinek feltüntetése különböző tárgyakból.</li>
-					<li>A szülé gyerekének rovásainak feltüntetése</li>
-					<li>A szülő gyerekének dicséreteinek feltüntetése</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<br>
-    <li>Admin felület
-		<ul>
-			<li>Teljes rendszer hozzáférés</li>
-			<li>Felhasználói kezelő rendszer</li>
-				<ul>
-					<li>Felhasználók felvétele</li>
-					<li>Felhasználok levétele</li>
-					<li>Felhasználó csoport megváltoztatása</li>
-					<li>Felhasználói név megváltoztatása</li>
-					<li>Felhasználó jelsző megváltoztatása</li>
-				</ul>
-			<li>Új feladatok hozzáadása (Tesztek / Kvízek)</li>
-			<li>Üzenet felület
-				<ul>
-					<li>Új, nem ovasott üzenetek</li>
-					<li>Olvasott üzenetek</li>
-					<li>Fontos üzenetek</li>
-					<li>Üzenet küldése</li>
-				</ul>
-			</li>
-			<li>Érdemjegy javító / Kezelő felület</li>
-		<ul>
-    </li>
-</ol>
+<table>
+    <tr>
+        <th>Modul</th>
+        <th>ID</th>
+        <th>Név</th>
+        <th>v.</th>
+        <th>Kifejtés</th>
+    </tr>
+    <tr>
+        <td>Kompatibilitás</td>
+        <td>K1</td>
+        <td>Webböngésző kompatibilitás</td>
+        <td>1.0</td>
+        <td>
+            A szoftver futtatásához szükséges webböngésző minimális verziószáma:<br>
+            - Firefox 63.0<br>- Google Chrome 70.0.3538<br>- Opera 55<br>- Safari 12.0.1
+        </td>
+    </tr>
+    <tr>
+        <td>Kompatibilitás</td>
+        <td>K2</td>
+        <td>Android kompatibilitás</td>
+        <td>1.0</td>
+        <td>Az applikáció futtatásához szükséges minimális Android verzió: Android 5.0 Lollipop (21. API szint)</td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K3</td>
+        <td>Bejelentkezési felület</td>
+        <td>1.0</td>
+        <td>
+            A felhasználó az email címe és a jelszava segítségével bejelentkezhet.<br>
+            Ha a megadott email cím vagy jelszó nem megfelelő, akkor a felhasználó hibaüzenetet kap.
+        </td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K4</td>
+        <td>Regisztráció</td>
+        <td>1.0</td>
+        <td>
+            A felhasználó a felhasználói nevének, email címének és jelszavának megadásával regisztrálja magát.<br>
+            A jelszó tárolása kódolva történik az adatbázisban.	Ha valamelyik adat ezek közül hiányzik vagy nem felel meg a követelményeknek,<br>
+            akkor a rendszer értesíti erről a felhasználót.
+        </td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K5</td>
+        <td>Jogosultsági szintek</td>
+        <td>1.0</td>
+        <td>
+            - Admin : új feladat feltöltése<br>
+            - Felhasználó : feladatok kitöltése, toplista megtekintése, jelszó módosítása <br>
+            - Vendég : regisztráció, belépés
+        </td>
+    </tr>
+    <tr>
+        <td>Modifikáció</td>
+        <td>K6</td>
+        <td>Jelszó módosítása</td>
+        <td>1.0</td>
+        <td>A felhasználó módosítani tudja saját jelszavát. Ehhez szükséges a régi és az új jelszavának megadása, valamint az új megerősítése.</td>
+    </tr>
+    <tr>
+        <td>Feladattípus</td>
+        <td>K7</td>
+        <td>Kvíz</td>
+        <td>1.0</td>
+        <td>
+            Több kérdésből áll, a feladat a helyes válasz kiválasztása több lehetőség közül.
+            A felhasználó az eltelt idő függvényében pontot kap.
+        </td>
+    </tr>
+    <tr>
+        <td>Statisztika</td>
+        <td>K8</td>
+        <td>Toplista</td>
+        <td>1.0</td>
+        <td>Egy lista a játékosok pontszámairól, a lista elején a legtöbb pontot elért felhasználó található.</td>
+    </tr>
+    <tr>
+        <td>Jogosultság</td>
+        <td>K9</td>
+        <td>Admin felület</td>
+        <td>1.0</td>
+        <td>Felület az admin fiókkal rendelkező felhasználó számára. Tartalmaz egy felületet az új feladatok feltöltéséhez.</td>
+    </tr>
+</table>
 
 <h2>7. Fogalomszótár</h2>
 <p>[bug]: fejlesztési hiba ami által a program nem a várt eredményt hozza</p>
