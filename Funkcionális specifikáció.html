@@ -154,20 +154,25 @@ A rendszer webes felületen legyen elérhető.
 <p>
 	A játékos oktatás projekthez / rendszerhez a különböző felhasználok / személyek más-más fajta módon fognak interaktiválni. A használati esetek feladata, hogy leírja a különböző felhasználok<br>
 	vagy "szereplők" hogyan fognak a rendszerhez viszonyulni, hogyan fogják használni, és mihez is fognak majd hozzáférni.<br>
-    Már megvannak adva a különböző felhasználói csoportok és, hogy milyen dolgokhoz milyen hozzáféréseik vannak. Ezek alapján kell megírni a használati eseteket.<br>
+    Már megvannak adva a különböző felhasználói szerepkörök és, hogy milyen dolgokhoz milyen hozzáféréseik vannak. Ezek alapján kell megírni a használati eseteket.<br>
+    Fontos, hogy egy felhasználó tartozhat több szerepkörhöz is. Lehet, hogy egy TANÁR SZÜLŐ is, esetleg ADMIN is.<br>
+    Lényeges, hogy a DIÁK szerepkör felhasználói nem lehetnek egyik másik szerepkörben sem.<br>
 </p>
 <p>
-    Négy felhasználói csoportunk van: Admin, Diák, Tanár, és Szülő. Itt lekell írni, hogy milyen fajta módon, hogyan fogják használni a rendszert.<br>
+    Négy felhasználói szerepköreink vannak: ADMIN, DIÁK, TANÁR, és SZÜLŐ. Itt lekell írni, hogy milyen fajta módon, hogyan fogják használni a rendszert.<br>
     Fontos, hogy a különböző rendszer használatokhoz csak az férjen hozzá akinek hozzá kell férnie. Azt nem szabad megengedni, hogy egy Szülő akinek a legminimálisabb a interaktivitása a<br>
-    rendszerrel az Admin jogosultságokat kapjon, ez fordítva is igaz.<br>   
+    rendszerrel az Admin jogosultságokat kapjon, ez fordítva is igaz.<br> 
+    Ha egy felhasználó több szerepkörhöz tartozik, akkor ki kell lépné-e a jelenlegi szerepköréböl és átjelentkezni a másikba.<br>
+    A felhasználó bejelentkezés után választhat szerepkörök közül.
 </p>
 <h3>A különböző használati esetek Felhasználok szerint:</h3>
 <ul>
-    <li>Admin:
+    <li>ADMIN:
         <ul>
+            <li>Az Admin beléphet mindegyik más szerepkörbe, hogy az hibamentes működését ellenőrizhesse.</li>
             <li>Az Admin(ok) feladata a rendszer probléma mentes működése. Ez egyben jár azzal, hogy az egész rendszerhez van hozzáférésük.</li>
             <li>Az Admin(ok)nak hozzákell tudni férniük a felhasználók listájához, ahol mindent átváltoztathatnak egy felhasználó profilján.</li>
-            <li>Tudniuk kell a felhasználók jogosultságait, csoportját, jelszavát, és felhasználó nevét módosítani.</li>
+            <li>Tudniuk kell a felhasználók jogosultságait, szerepkörét, jelszavát, és felhasználó nevét módosítani.</li>
             <li>Továbbá képesnek kell lenniűk arra, hogy felhasználókat vegyenek fel rendszerbe és, hogy rakjanak le belőle.</li>
             <li>Fontos, hogy ők is képesek feladatok létrehozni, mint a tanárok.</li>
             <li>Képesek üzenetet küldeni az összes felhasználónak, valamint globális üzeneteket, amelyet mindenki megkap egyszerre.</li>
@@ -175,19 +180,21 @@ A rendszer webes felületen legyen elérhető.
         </ul>
     </li>
     <br>
-    <li>Diák:
+    <li>DIÁK:
         <ul>
+            <li>A Diák nem léphet át másik szerepkörbe.</li>
             <li>A Diák képes interaktiválni saját Tanár- és Szülőjével, és a többi Diákkal.</li>
             <li>A Diák számára elérhető egy Kvíz felület, ahol Pontokat tud szerezni időre. A végső pontszámot egy Toplistába írjuk.</li>
             <li>A Diák eltud érni egy Teszt felületet, amely megegyezik a Kvíz felülettel, de a pontszám alapján érdemjegyet kap.</li>
-            <li>Ezen kívűl képes üzeneteket küldeni és fogadni a Tanár és Szülő csoportoktól.</li>
+            <li>Ezen kívűl képes üzeneteket küldeni és fogadni a Tanár és Szülő szerepkörökből.</li>
             <li>Van egy órarendje, ahol láthatja hol, mikor, és kivel lesz az órája. Valamint láthatja a szüneteket.</li>
             <li>Elérhető számára egy elektronikus napló, ahol láthatja érdemjegyeit, rovásait, és dicséreteit.</li>
         </ul>
     </li>
     <br>
-    <li>Tanár:
+    <li>TANÁR:
         <ul>
+            <li>A Tanár képes átlépni, másik szerepkörbe, ha az egyik Diák a gyermeke, és/vagy ha Admin a rendszerben.</li>
             <li>A Tanár mindegyik felhasználóval tud kommunikálni, de az Adminnál sokkal kevesebb jogosultsága van.</li>
             <li>A Diák általi elérhető Kvíz és Teszteket tudja létrehozni, ponthatárt és időhatárt megszabni.</li>
             <li>Üzeneteket tud küldeni és fogadni a Diák és Szülőtöl. Még az Adminnak is tudnak küldeni.</li>
@@ -199,6 +206,7 @@ A rendszer webes felületen legyen elérhető.
     <br>
     <li>Szülő:
         <ul>
+            <li>A Szülő képes átlépni másik szerepkörbe, ha jelenleg Tanár a rendszerben, és/vagy ha Admin a rendszerben.</li>
             <li>A szülő csak saját Diákjával és a Diák Tanárjával tud kommunikálni.</li>
             <li>Üzeneteket tud küldeni és fogadni, de csak nagyon limitált módon.</li>
             <li>Láthatja a gyerek órarendjét.</li>
