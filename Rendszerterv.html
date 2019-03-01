@@ -117,6 +117,38 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 
 <h2>10) Implementációs terv</h2>
 
+<h3>Backend</h3>
+
+<p>
+Backend részen a kiszolgáló egy php-ban készült REST szolgáltatás lesz.<br>
+Ez csatlakozik egy php myadminos szerver oldali adatbázishoz, ahonnan eljárások segítségével képes lesz adatokat lekérni, és felvinni, 
+valamint képes továbbküldeni, és fogadni a kliens/kliensek által szolgáltatott adatokat.<br>
+
+<br>
+
+Metódusai:
+<ul>
+
+<li>Regisztráció</li>
+<li>Login</li>
+<li>Logout</li>
+<li>Jelszóváltoztatás</li>
+<li>Lekérdezés feladatonként (kérdés és hozzátartozó válaszok)</li>
+<li>Lekérdezés feladattípusokként</li>
+<li>Játékosok Toplistájának lekérdezése</li>
+<li>Saját eredmény lekérdezése</li>
+<li>Aktuális válasz ellenőrzése/felvitele adatbázisba</li>
+<li>Pontszám számítása/felvitele adatbázisba</li>
+<li>Feladatok feltöltése (csak adminnak)</li>
+<li>minden user lekérdezése (csak adminnak)</li>
+
+</ul>
+
+</p>
+
+
+
+
 
 <h2>11) Tesztterv</h2>
 
