@@ -245,6 +245,7 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 </p>
 <h2>3) Üzleti folyamatok modellje</h2>
 
+<p><img src="UzletiFolyamatokAbra.png"></p>
 
 <h2>4) Követelmények</h2>
 <p>
@@ -372,6 +373,22 @@ A php backend-ben konfigurációs állományokat kell létrehozni, azokban táro
 <br>
 A web alkalmazás esetén a szerver címét, szükséges adatokat szintén konfigurációs állományba helyezzük, vagy Angular esetén például az environments/environment.prod.ts fájlba.
 </p>
+
+<p>
+Rendszer bővíthetősége:<br>
+A REST api esetén a felépítéséből adódóan egyszerűen lehet bővíteni a rendszert. Szükség esetén hozzá kell adni egy/több új endpoint-ot.
+<br>
+Az Angular keretrendszer modulokból és komponensekből áll, ez lehetővé teszi a hatékony bővíthetőséget és újrahasználhatóságot.
+</p>
+
+<p>
+Biztonsági funkciók:<br>
+A REST api-nak van egy user beléptető végpontja. Sikeres belépés után egy egyedi api kulcsot kap a kliens program. A további kérésekhez el kell küldenie ezt a kulcsot a szervernek. Ezzel biztosítjuk, hogy csak hitelesített felhasználók férhessenek az adatokhoz.
+</p>
+
+
+
+
 
 <h2>9) Adatbázis terv</h2>
 <p><img src="datamodelv2.png" alt="adatmodell"></p>
