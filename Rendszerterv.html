@@ -10,7 +10,7 @@
         padding: 5px;
     }	
 	
-	p{
+	p, h3, h4, table{
 		margin-left: 30px;
 	}
 </style>
@@ -322,18 +322,22 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 
 <h2>8) Architekturális terv</h2>
 <p>
-	<ul>
-		<li>
-		Backend:
-		A rendszerhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk.
-		A kliens oldali programokat egy php alapú REST api szolgálja ki, ez csatlakozik az adatbázis szerverhez.
-		A kliensekkel JSON objektumokkal kommunikál.
-		</li>
-		<li>
-		Web Kliens:
-		A web alkalmazás Angular JS keretrendszer használatával készül el.
-		A rest api-hoz a user belépését követően egyedi api-key segítségével lehet hozzáférni, ez biztosítja, hogy illetéktelen 				felhasználók ne módosíthassák az adatokat.</li>
-	</ul>
+Backend:<br>
+A rendszerhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk.
+A kliens oldali programokat egy php alapú REST api szolgálja ki, ez csatlakozik az adatbázis szerverhez.
+A kliensekkel JSON objektumokkal kommunikál.
+</p>
+
+<p>
+Web Kliens:<br>
+A web alkalmazás Angular JS keretrendszer használatával készül el.A rest api-hoz a user belépését követően egyedi api-key segítségével lehet hozzáférni, ez biztosítja, hogy illetéktelen felhasználók ne módosíthassák az adatokat.
+</p>
+
+<p>
+Változások kezelése:<br>
+A php backend-ben konfigurációs állományokat kell létrehozni, azokban tároljuk el például az adatbázis szerver címét és a szükséges belépési adatokat. A konfigurációs fájlok átírásával könnyedén alkalmazkodhatunk egy esetleges változáshoz.
+<br>
+A web alkalmazás esetén a szerver címét, szükséges adatokat szintén konfigurációs állományba helyezzük, vagy Angular esetén például az environments/environment.prod.ts fájlba.
 </p>
 
 <h2>9) Adatbázis terv</h2>
