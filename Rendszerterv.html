@@ -19,7 +19,22 @@
 
 
 <h2>1. Konceptuális</h2>
-
+<p style="text-align: justify;">
+A rendszer célja, hogy a felhasználók egy egyszerű és játékos környezetben tudjanak tanulni. Célunk, hogy egy olyan programot létrehozzunk,
+amelyben a felhasználok, különböző szerepkörökben tudnak a rendszerrel interaktiválni.
+Fontos, hogy a rendszer használhatósága egyszerű legyen. Minden felhasználónak érthető legyen, hogy mit és hogyan lehet a rendszerben 
+csinálni.
+<br>
+A felhasználók különböző szerepközökben, különböző dolgokat látnak és csinálhatnak. A szerepköröknek más-más céljuk és rendszeren belüli
+dolgokkal interaktiválhatnak.
+Minden szerepkörben elérhető lesz, egy Órarend, egy Elektronikus napló, és egy Üzenet felület, de mindegyikhez a különböző szerepkörök máshogy
+viszonyulnak. A Diákoknak és Tanároknak elérhető lesz egy Kvíz és Teszt felület, a Tanár itt tud létrehozni feladatokat a Diákoknak,
+a Diák időre töltheti ki a feladatokat, amelyekre pontokat kap helyes válasz esetén, és a végén egy Toplistában láthatja eredményét. 
+<br>
+A programunk azért készül, hogy segítse a tanulást az iskolákban, a Diákoknak és a Tanároknok számára egyaránt. A felhasználók szívesebben
+dolgoznak egy számítógépes felületen, ahol mindent láthatnak (Elektronikus napló, Órarend, Üzenetek, stb.), és mindent elérhetnek
+könnyen és gyorsan. A felhasználók könnyen tudják tartani a kapcsolatot egymás között, és akármilyen hibát azonnal tudnak jelezni.
+</p>
 
 <h2>2. Nagyvonalú</h2>
 
@@ -293,7 +308,20 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 
 
 <h2>8) Architekturális terv</h2>
+<p>
+<ul>
+<li>Backend:
+A rendszerhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk.
+A kliens oldali programokat egy php alapú REST api szolgálja ki, ez csatlakozik az adatbázis szerverhez.
+A kliensekkel JSON objektumokkal kommunikál.
+</li>
 
+<li>
+Web Kliens:
+A web alkalmazás Angular JS keretrendszer használatával készül el.
+A rest api-hoz a user belépését követően egyedi api-key segítségével lehet hozzáférni, ez biztosítja, hogy illetéktelen felhasználók ne módosíthassák az adatokat.</li>
+</ul>
+</p>
 
 <h2>9) Adatbázis terv</h2>
 <img src="datamodelv2.png" alt="adatmodell">
