@@ -66,7 +66,8 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 		<td>Egy felhasználó név és egy jelszó segítségével, a jelszónak tartalmaznia kell legalább 6 karaktert, 1 nagybetűt és 1 számot.</td>
 		<td>A felhasználóknak tudnia kell bejelentkezni a rendszerbe, hogy elérhessék annak többi részét.
 			Minden felhasználónak, van egy felhasználóneve és jelszava amivel beléphet a rendszerbe.
-			A jelszónak fontos a védelme, azért kell hozzá ennyi lépés.</td>
+			A jelszónak fontos a védelme, azért kell hozzá ennyi lépés.
+		</td>
 	</tr>
 	<tr>
         <td>Egy regisztrációs felület, ahol a felhasználók szerepköröket választhatnak.</td>
@@ -74,14 +75,16 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 		<td>Egy regisztráció gomb segítségével, amely jól látható és a belépés gomb mellett található.</td>
 		<td>A felhasználóknak muszály regisztrálniuk, hogy betudjanak jelentkezni a programba.
 			Regisztráláskor a felhasználó szerepköröket tud választani, amelyek fontosak
-			ahoz hogy, jogosultsági szinteket adjunk.</td>
+			ahoz hogy, jogosultsági szinteket adjunk.
+		</td>
 	</tr>
 	<tr>
         <td>Jogosutsági szinteket, ahol megkülönböztetjük a szerepköröket.</td>
 		<td>A különböző szerepkörökhöz, különböző jogosultsági szinteket társítunk.</td>
 		<td>Szerepkörökből jogosultsági szinteket.</td>
 		<td>Regisztrálásnál a felhasználó szerepkört választ. Minden szerepkörnek különböző
-			elérései vannak, így mást látnak. Fontos, hogy ne minden szerepkör lássa ugyan azokat a dolgokat.</td>
+			elérései vannak, így mást látnak. Fontos, hogy ne minden szerepkör lássa ugyan azokat a dolgokat.
+		</td>
 	</tr>
 	<tr>
         <td>Felhasználó név módosítása.</td>
@@ -89,7 +92,8 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 		<td>Egy gomb segítségével elérhető egy felület ahol a felhasználó nevet lehet módosítani.</td>
 		<td>Ha a felhasználó nincs megelégedve azonosítójával, vagy esetleg a felhasználó neve
 			helytelen, gúnyos, sértő, stb. Akkor a felhasználó vagy nagyobb jogosultsággal lévők
-			itt tudják megváltoztatni.</td>
+			itt tudják megváltoztatni.
+		</td>
 	</tr>
 	<tr>
         <td>Jelszó módosítása.</td>
@@ -110,46 +114,91 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>Egy "Főmenü" felület az összes felhasználónak.</td>
+		<td>A bejelentkezés után ez a felület jelenjen meg az összes szerepkör számára.</td>
+		<td>Egy külön felület létrehozásával, ahonnan elérhető az összes további felület, az egyes szerepkörök mást láthatnak itt.</td>
+		<td>Szükséges létrehozni egy ilyen felületet, hogy minden egy helyen megtalálható legyen.
+			Itt lesz található a Felhasználó név és Jelszó módosítása, Feladat megoldó felület,
+			az Üzenet felület, az elektronikus napló felület, az Órarend felület, és az Adminok
+			számára, az Admin felület.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>Egy "Feladatok" felület, ahol elérhető a Kvíz és Teszt típusok.</td>
+		<td>A főmenün belül egy gombra kattintva elérhető a "Feladatok" felület, ahol feladattípusokat lehet elvégezni.</td>
+		<td>Egy külön felületet hozunk létre, amely a Főmenün belül lesz elérhető, ide csak a Diák és Tanár tud belépni.</td>
+		<td>Itt lesznek elérhetők különböző feladat típusok amelyeket a Diák tud elvégezni eredményekért,
+			amelyek lehetnek érdemjegyek is. A Tanár itt tudja ezeket a feladattípusokat létrehozni a Diákok számára.
+			A Szülő szerepkör ide nem léphet be.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+        <td>Egy "Kvíz" formájában lévő feladatípus.</td>
+		<td>A főmenüben elérhető "Feladatok" menün belül elérhető "Kvíz" gombra kattintva elérhető.</td>
+		<td>Jogosultsági szintek, gombok, és a Tanár szerepkör összességével lehet létrehozni egy Kvízt.</td>
+		<td>A Diák és Tanár szerepkörnek elérhető egy Kvíz felület, ahol feladatokat kell megoldani időre.
+			A Tanár tudja létrehozni ezeket a kvízeket, a Diák pedig kitölteni.
+			A Diák pontotokat kap a kvíz megoldásáért, és egy Toplistában láthatja eredményét.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+        <td>Egy "Teszt" formájában lévő feladatípus.</td>
+		<td>A főmenüben elérhető "Feladatok" menün belül elérhető "Teszt" gombra kattintva elérhető.</td>
+		<td>Jogosultsági szintek, gombok, és a Tanár szerepkör összességével lehet létrehozni egy Tesztet</td>
+		<td>A Diák és Tanár szerepkörnek elérhető egy Teszt felület, ahol feladatokat kell megoldani időre.
+			A Tanár tudja létrehozni ezeket a teszteket, a Diák pedig kitölteni.
+			A Diák pontotokat kap a tesztek megoldásáért, a pontok és az hátra maradt idő alapján érdemjegyet kaphat.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+        <td>Egy "Toplista", amely a Kvíz / Teszt felület után jelenik meg.</td>
+		<td>A kvíz, és a Teszt után lehet megjeleníteni, hogyha azt a Tanár engedélyzi.</td>
+		<td>A Tanár szerepkör egy külön beállítással tudja engedélyezni, hogy a Toplista megjelennyen-e.</td>
+		<td>A Diákok láthatják eredményeiket egy Toplistában, hogy a Tanár engedélyezi azt.
+			Itt láthatják pontszámaikat, mennyi idő alatt teljesítette a kvízt / tesztet, érdemjegyüket, és
+			hogy milyen pozícióban vannak.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+        <td>Egy "Üzenet" felület az összes szerepkörnek.</td>
+		<td>A főmenün belül, külön elérhető üzenet gombra kattintva elérhető egy üzenet felület.</td>
+		<td>A főmenün belül egy "Üzenet" gombra kattintva elérhető a felület, ahol a felhasználók egymást között tudnak
+			üzeneteket küldeni.
+		</td>
+		<td>Fontos egy ilyen iskolai rendszerben, hogy a felhasználók között meglegyen a kellő kommunikálás,
+			ezért készítünk egy ilyen felületet, hogy mindenki elérhessen akárkit.
+		</td>
 	</tr>
 	<tr>
-        <td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+        <td>Egy "Órarend" felület az összes szerepkörnek.</td>
+		<td>A főmenün belül, külön elérhető üzenet gombra kattintva elérhető egy órarend felület.</td>
+		<td>A főmenün belül egy "Órarend" gombra kattintva elérhető a felület, ahol a felhasználók
+			láthatják hol, mikor lesz órájuk.
+		</td>
+		<td>Fontos, hogy minden felhasználó tudja mikor, hol, kivel lesz órájuk.
+			Ez a felület azért készül, hogy szemen tudják tartani a felhasználók az aktivitásukat.
+		</td>
+	</tr>
+	<tr>
+        <td>Egy "Elektronikus" napló felület az összes szerepkörnek.</td>
+		<td>A főmenün belül, külön elérhető üzenet gombra kattintva elérhető egy Elektronikus napló felület.</td>
+		<td>A főmenün belül egy Üzenet gombra kattintva elérhető a felület, ahol a felhasználók elérhetik
+			a különböző eredményeiket.
+		</td>
+		<td>A felhasználóknak nyomon kell tudniuk követni teljesítményeiket. Itt láthatóak a
+			Diák érdemjegyei, rovásai, dicséretei. A Tanár itt tudja ezeket adni egy Diáknak.
+			A Szülő pedig láthatja a Diák-ja eredményeit.
+		</td>
+	</tr>
+	<tr>
+        <td>Egy "Admin" felület, az Admin szerepkörben, vagy jogosultsággal lévőknek.</td>
+		<td>Egy külön felület a Főmenün belül, ahol elérhető egy gomb megnyomásával.</td>
+		<td>Egy gomb megnyomásával a főmenün, az Admin-nok elérhetnek egy,
+			a rendszer szintte teljes működését képest vezérelni lévő felületet.</td>
+		<td>Az Admin szerepkörben lévők, illetve Admin jogosultsággal lévőknek fontos,
+			hogy elérhessenek egy ilyen felület. Felhasználók adatait, jelszavait, eredményeit
+			itt tudják módosítnai, valamint egyéb triviális, vagy nagyobb dolgokat is.
+		</td>
 	</tr>
 </table>
 <br>
