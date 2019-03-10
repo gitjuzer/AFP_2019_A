@@ -13,6 +13,10 @@
 	p, h3, h4, table{
 		margin-left: 30px;
 	}
+
+	.kapcs{
+		text-align: center; 
+	}
 </style>
 
 <h1>Rendszerterv</h1>
@@ -53,7 +57,7 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 </p>
 <br>
 <h3>Megfeleltetés:</h3>
-<table>
+<table style="width: 96%">
 	<tr>
         <th>Mit</th>
         <th>Hogyan</th>
@@ -474,7 +478,7 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 
 <h2>7) Absztrakt domain modell</h2>
 <h3>Fogalomszótár</h3>
-<table>
+<table style="width: 96%">
     <tr>
         <th>Fogalom</th>
 		<th>Magyarázat</th>
@@ -570,7 +574,93 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 		<td>Olyan speciális felület, ahol az admin szerepkörben, vagy admin jogosultsággal 
 			való felhasználók modósíthatják magát a program egyes részeit.</td>
 	</tr>
-</table>		
+</table>
+<br>
+<h3>Kapcsolatok</h3>
+<table style="width: 30%">
+	<tr>
+		<th>Komponens</th>
+		<th>Kapcsolatai</th>
+	</tr>
+	<tr>
+		<td rowspan="2" class="kapcs">Felhasználó</td>
+		<td>Szerepkörök</td>
+	</tr>
+	<tr>
+		<td>Jogosultsági szintek</td>
+	</tr>
+	<tr>
+		<td rowspan="4" class="kapcs">Szerepkörök</td>
+		<td>Diák</td>
+	</tr>
+	<tr>
+		<td>Tanár</td>
+	</tr>
+	<tr>
+		<td>Szülő</td>
+	</tr>
+	<tr>
+		<td>Admin</td>
+	</tr>
+	<tr>
+		<td rowspan="5" class="kapcs">Bejelentkezés</td>
+		<td>Regisztrálás</td>
+	<tr>
+		<td>Elfelejtett bejelentkezési adatok</td>
+	</tr>
+	<tr>
+		<td>Felhasználó név</td>
+	</tr>
+	<tr>
+		<td>Jelszó</td>
+	</tr>
+	<tr>
+		<td>Főmenü</td>
+	</tr>
+	<tr>
+		<td rowspan="8" class="kapcs">Főmenü</td>
+		<td>Felhasználó megváltoztatása</td>
+	</tr>
+	<tr>
+		<td>Jelszó megváltoztatása</td>
+	</tr>
+	<tr>
+		<td>Tananyag</td>
+	</tr>
+	<tr>
+		<td>Feladatok</td>
+	</tr>
+	<tr>
+		<td>Üzenetek</td>
+	</tr>
+	<tr>
+		<td>Órarend</td>
+	</tr>
+	<tr>
+		<td>Elektronikus napló</td>
+	</tr>
+	<tr>
+		<td>Admin felület</td>
+	</tr>
+	<tr>
+		<td rowspan="3" class="kapcs">Feladatok</td>
+		<td>Feladattípusok</td>
+	</tr>
+	<tr>
+		<td>Toplista</td>
+	</tr>
+	<tr>
+		<td>Gameboard</td>
+	</tr>
+	<tr>
+		<td rowspan="2" class="kapcs">Feladattípusok</td>
+		<td>Kvíz</td>	
+	</tr>
+	<tr>
+		<td>Teszt</td>
+	</tr>
+</table>
+
 <br>
 <h2>8) Architekturális terv</h2>
 <p>
