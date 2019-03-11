@@ -2,12 +2,12 @@
 
 class DatabaseConnection {
 
-    $server;
-    $username;
-    $password;
-    $db;
+    var $server;
+    var $username;
+    var $password;
+    var $db;
 
-    $connection;
+    var $connection;
 
     public function getConnection() {
         $con = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname) or die("Connection failed: " . mysqli_connect_error());
