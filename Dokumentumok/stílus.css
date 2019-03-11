@@ -29,7 +29,7 @@ p, h3, h4, table{
 
 main{
     margin: 0 auto;
-    width: 97%;
+    width: 92%;
     padding-top: 50px;
 }
 
@@ -42,8 +42,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 92%;
     width: 100%;
-    padding: 1px;
     background: #647cf9;
 }
 
@@ -59,7 +59,9 @@ header a {
 }
 
 header .logo {
-    font-weight: 700;   
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 160%;
 }
 
 header nav {
