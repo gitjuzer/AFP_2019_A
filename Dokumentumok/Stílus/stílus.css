@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-header, footer{
-    display: block;
-}
-
 html, body {
+    margin: 0px;
+    padding: 0px;
     width: 100%;
     height: 100%;
     font-family: 'Roboto';
+    background-color: rgb(223, 223, 223);
 }
 
 table, th, td {
@@ -30,11 +29,15 @@ p, h3, h4, table{
 main{
     margin: 0 auto;
     width: 93%;
-    padding-top: 50px; 
-    background-color: white;
+    padding-top: 60px; 
+    background-color: rgb(223, 223, 223);
 }
 
-.konténer{
+header, footer{
+    display: block;
+}
+
+.KontHeader{
     margin: 0 auto;
     width: 93%;
 }
@@ -45,10 +48,10 @@ header {
     left: 0;
     bottom: 92%;
     width: 100%;
-    background: #647cf9;
+    background: rgb(20, 80, 103)
 }
 
-header .konténer {
+header .KontHeader {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -59,7 +62,7 @@ header a {
     text-decoration: none;
 }
 
-header .logo {
+header .logoh {
     font-weight: 700;
     margin-top: 10px;
     font-size: 160%;
@@ -80,5 +83,51 @@ header nav ul li {
 }
 
 header nav ul li a.active {
+    font-weight: bold;
+}
+
+footer {
+    position: static;
+    width: 100%;
+    background: rgb(20, 80, 103)
+}
+
+footer .KontFooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.KontFooter{
+    margin: 0 auto;
+    width: 93%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .logof {
+    font-weight: 300;
+    margin-top: 13px;
+    font-size: 110%;
+}
+
+footer nav {
+    margin-left: auto;
+}
+
+footer nav ul {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+footer nav ul li a.active {
     font-weight: bold;
 }
