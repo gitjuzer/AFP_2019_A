@@ -1,8 +1,11 @@
-package hu.tanuloapp.afp2.authentication;
+package hu.tanuloapp.afp2.authentication.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import hu.tanuloapp.afp2.authentication.fragments.LoginFragment;
+import hu.tanuloapp.afp2.authentication.fragments.RegistrationFragment;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
 

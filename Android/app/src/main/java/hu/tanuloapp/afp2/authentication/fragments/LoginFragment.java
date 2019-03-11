@@ -1,4 +1,4 @@
-package hu.tanuloapp.afp2.authentication;
+package hu.tanuloapp.afp2.authentication.fragments;
 
 
 import android.os.Bundle;
