@@ -24,11 +24,11 @@ p, h3, h4, table{
 }
 
 ol{
-    margin-left: 40%;
+    margin-left: 36%;
 }
 
 .ol2{
-    margin-left: 43%;
+    margin-left: 38%;
 }
 
 ol li{
@@ -78,13 +78,16 @@ h2{
 	text-align: center; 
 }
 
+.tj{
+    margin-top: -1px;
+}
+
 main{
     margin: 0 auto;
-    width: 97%;
-    padding-top: 60px; 
+    width: 75%;
     background-color: rgb(238, 238, 238);
     border: 1px solid black;
-    font-size: 102%;
+    font-size: 103%;
 }
 
 header, footer{
@@ -94,14 +97,13 @@ header, footer{
 
 .KontHeader{
     margin: 0 auto;
-    width: 93%;
+    width: 75%;
 }
 
 header {
     position: static;
     top: 0;
     left: 0;
-    bottom: 92%;
     width: 100%;
     background: rgb(20, 80, 103)
 }
@@ -155,7 +157,7 @@ footer .KontFooter {
 
 .KontFooter{
     margin: 0 auto;
-    width: 93%;
+    width: 75%;
 }
 
 footer a {
