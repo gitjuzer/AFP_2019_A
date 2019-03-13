@@ -19,8 +19,32 @@ th, td {
 }	
 	
 p, h3, h4, table{
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+ol{
+    margin-left: 40%;
+}
+
+.ol2{
+    margin-left: 43%;
+}
+
+ol li{
+    padding: 13px;
+    font-size: 120%;
+}
+
+ol li a{
+    text-decoration: none;
+    color: black;
+}
+
+.link{
+    margin-left: 40px;
+    text-decoration: none;
+    color: black;
 }
 
 img{
@@ -41,7 +65,7 @@ img{
     height: 25%;
 }
 
-h1, h2{
+h2{
     text-align: center;
     border: 1px solid black;
     padding: 7px;
@@ -56,10 +80,11 @@ h1, h2{
 
 main{
     margin: 0 auto;
-    width: 95%;
+    width: 97%;
     padding-top: 60px; 
     background-color: rgb(238, 238, 238);
     border: 1px solid black;
+    font-size: 102%;
 }
 
 header, footer{
@@ -73,7 +98,7 @@ header, footer{
 }
 
 header {
-    position: fixed;
+    position: static;
     top: 0;
     left: 0;
     bottom: 92%;
