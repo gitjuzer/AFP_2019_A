@@ -30,6 +30,7 @@
 <main>
 
 <h1>1. Konceptuális és 2. Nagyvonalú</h1>
+<br>
 <p style="text-align: justify">
 A rendszer célja, hogy a felhasználók egy egyszerű és játékos környezetben tudjanak tanulni. Célunk, hogy egy olyan programot létrehozzunk,<br>
 amelyben a felhasználok, különböző szerepkörökben tudnak a rendszerrel interaktiválni.<br>
@@ -221,10 +222,12 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 	</tr>
 </table>
 <br>
+<br>
 <h1>3. Részletes</h1>
-
+<br>
 <br>
 <h2>1) Rendszer célja</h2>
+<br>
 <p style="text-align: justify;">A rendszer célja, hogy a felhasználó játékos körülmények között tud tanulni, különböző feladatokat megoldani. 
 A felhasználó pontszámokat kap arról, hogyan sikerült megoldania a feladatokat.
 Fontos, hogy a felhasználó könnyen el tudjon igazodni a felületeken ezért minimalista felhasználói felületet kap a program.
@@ -235,9 +238,10 @@ A rendszer az adatokat egy Web Service segítségével kapja az adatbázisból.
 Mivel az alkalmazást csak webes felületen, és Android alkalmazásban szeretnénk elérhetővé tenni, nem célunk hogy más, például IOS operációs rendszerrel rendelkező eszközön fusson.
 A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítményét a toplistán is megtekintheti.
 </p>
-
+<br>
 <br>
 <h2>2) Projekt terv</h2>
+<br>
 <p>
 <h3><u>Projektszerepkörök, felelősségek:</u></h3>
 <h4>Scrum master: Bocsi Dávid</h4>
@@ -380,12 +384,15 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	<li>Az adatmodell bemutatása megtörtént</li>	
 </ul>
 </p>
+<br>
+<br>
 <h2>3) Üzleti folyamatok modellje</h2>
-
+<br>
 <p><img src="Képek/UzletiFolyamatokAbra.png"></p>
-
+<br>
 <br>
 <h2>4) Követelmények</h2>
+<br>
 <p>
 <ul>
 	Funkcionális követelmények:
@@ -405,10 +412,10 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	</ul>
 </ul>
 </p>
-
+<br>
 <br>
 <h2>5) Funkcionális terv</h2>
-
+<br>
 <h3>Rendszerszereplők</h3>
 <ul>
 	<li>Admin</li>
@@ -476,9 +483,10 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	</ul>
 </ul>
 <h3>Képernyőtervek</h3>
-
+<br>
 <br>
 <h2>6) Fizikai környezet</h2>
+<br>
 <p>
 	<ul>
 		<li>Programunkat Android és web platformra hordozható eszközök(okostelefonok,táblagépek és PC-k)számára.</li>
@@ -493,9 +501,10 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 			</ul>
 	</ul>
 </p>
-
+<br>
 <br>
 <h2>7) Absztrakt domain modell</h2>
+<br>
 <h3>Fogalomszótár</h3>
 <table style="width: 96%;">
     <tr>
@@ -680,9 +689,10 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 		<td>Teszt</td>
 	</tr>
 </table>
-
+<br>
 <br>
 <h2>8) Architekturális terv</h2>
+<br>
 <p>
 Backend:<br>
 A rendszerhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk.
@@ -713,13 +723,15 @@ Az Angular keretrendszer modulokból és komponensekből áll, ez lehetővé tes
 Biztonsági funkciók:<br>
 A REST api-nak van egy user beléptető végpontja. Sikeres belépés után egy egyedi api kulcsot kap a kliens program. A további kérésekhez el kell küldenie ezt a kulcsot a szervernek. Ezzel biztosítjuk, hogy csak hitelesített felhasználók férhessenek az adatokhoz.
 </p>
-
+<br>
 <br>
 <h2>9) Adatbázis terv</h2>
+<br>
 <p><img src="Képek/datamodelv2.png" alt="adatmodell"></p>
-
+<br>
+<br>
 <h2>10) Implementációs terv</h2>
-
+<br>
 <h3>Backend</h3>
 
 <p>
@@ -763,10 +775,10 @@ ezáltal tud felvinni és lekérdezni adatokat az adatbázisból. Az eltelt idő
 <p>Az android alkalmazás Java nyelven készül és egy REST API-hoz csatlakozik. A kommunikáció az alkalmazás és a webszolgáltatás között JSON formátumban történik.<br>
 A felhasználói felületek XML fájlokban vannak implementálva.</p>
 
-
-
+<br>
+<br>
 <h2>11) Tesztterv</h2>
-
+<br>
 <p>
 A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata, ellenőrzése, a rendszer által megvalósított üzleti szolgáltatások verifikálása.
 </p>
@@ -801,12 +813,13 @@ Ezt a tesztet nem a fejlesztők végzik.<br>
 <li>Tesztelendő kijelzőméretek: 1280x720 (minimum), 1366x768, 1920x1080</li>
 
 </ul>
+<p>
 A teszt időtartama egy hét. <br>
 A tesztelés alatt a tesztelő felhasználók visszajelzéseket küldhetnek a fejlesztőknek, probléma/hiba felmerülése esetén. <br> 
 Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb. Sok hiba esetén a tesztelés ideje elhúzódhat plusz egy héttel.
-
-<br><br>
 </p>
+</p>
+<br><br>
 
 <h3>Tesztelendő funkciók</h3>
 
@@ -821,9 +834,9 @@ Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb. Sok hiba ese
 
 </ul>
 
-
+<p>
 <b>Android</b>
-
+</p>
 <ul>
 
 <li><b>Login felület:</b>
@@ -863,9 +876,9 @@ Az utolsó kérdés után pedig az eredménytáblát.
 </li>
 
 </ul>
-
+<p>
 <b>Web</b>
-
+</p>
 <ul>
 <li><b>Login felület:</b>
 <p>A login felület elrendezésének ellenőrzése:
@@ -904,7 +917,10 @@ Az utolsó kérdés után pedig az eredménytáblát.
 </ul>
 
 </p>
+<br>
+<br>
 <h2>12) Telepítési terv</h2>
+<br>
 <p><b>Androidos alkalmazás</b></p>
 
 <p>Töltse le az alkalmazást a Google áruházból, adja meg a szükséges engedélyeket és telepítse a programot!</p>
@@ -916,9 +932,10 @@ Az utolsó kérdés után pedig az eredménytáblát.
 <p>A szoftver webes felületéhez csak egy ajánlott böngésző telepítése szükséges
   (Google Chrome, Firefox, Opera, Safari), külön szoftver nem kell hozzá. 
 	A webszerverre közvetlenül az internetről kapcsolódnak rá a kliensek.</p>
-
+<br>
 <br>
 <h2>13) Karbantartási terv</h2>
+<br>
 <p>
 Az alkalmazás folyamatos üzemeltetése és karbantartása, mely magában foglalja a programhibák elhárítását, a belső igények változása miatti módosításokat,
 valamint a környezeti feltételek változása miatt megfogalmazott program-, illetve állománymódosítási igényeket.
@@ -934,7 +951,7 @@ Idő elteltével új kategóriákat kell hozzáadni a játékhoz, hogy fent tart
 <li>Perfective Maintenance: A szoftver hosszútávú használata érdekében végzett módosítások, új funkciók, a szoftver teljesítményének és működési megbízhatóságának javítása.</li>
 <li>Preventive Maintenance: Olyan problémák elhárítása, amelyek még nem tűnnek fontosnak, de később komoly problémákat okozhatnak.</li>
 </ul>
-
+<br>
 <br>
 </main>
 <footer>
