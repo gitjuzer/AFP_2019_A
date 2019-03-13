@@ -2,25 +2,61 @@
 <html lang="hu-HU">
 <meta charset="UTF-8">
 <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Stílus/stílus.css">
+    <link rel="shortcut icon" href="Stílus/favicon.ico">
     <title>Követelmény specifikáció</title>
-    <link rel="stylesheet" href="stílus.css">
 </head>
 <body>
-<h1>Követelmény specifikáció</h1>
+<header>
+	<div class="KontHeader">
+		<a class="logoh" href="Követelmény specifikáció.html">Követelmény specifikáció</a>
+			<nav>
+				<ul>
+					<li>
+						<a class="active" href="Követelmény specifikáció.html">Követelmény specifikáció</a>
+					</li>
+					<li>
+						<a href="Funkcionális specifikáció.html">Funkcionális specifikáció</a>
+					</li>
+					<li>
+						<a href="Rendszerterv.html">Rendszerterv</a>
+					</li>
+				</ul>
+			</nav>
+	</div>
+</header>
+<main> 
+<h2>Tartalom</h2>
 <br>
+<ol>
+    <li><a href="#1">Áttekintés</a></li>
+    <li><a href="#2">Jelenlegi helyzet</a></li>
+    <li><a href="#3">Vágyálom rendszer</a></li>
+    <li><a href="#4">Jelenlegi üzleti folyamatok modellje</a></li>
+    <li><a href="#5">Igényelt üzleti folyamatok modellje</a></li>
+    <li><a href="#6">Követelmény lista</a></li>
+    <li><a href="#7">Fogalomszótár</a></li>
+</ol>
+<br>
+<br>
+<a id="1"></a>
 <h2>1. Áttekintés</h2>
+<br>
 <p>
-
     A rendszer segít a fiataloknak a tanulásban, és a tanagyag könnyebb feldolgozásában. A felhsználók játékos formában tanulhatnak és ezáltal az oktatók érdekesebbé tehetik a tanórákat.<br>
     Különböző témák közül lehet választani, így mindenki megtalálja amire szüksége van. A felhasználókat külön szerepkörökhöz rendeljük pl.: oktató, tanuló. <br>
 	Az egyes szerepkörökhoz különböző jogosultságok társulnak. Mígg egy tanuló csak megoldani tudja a kész feladatokat, egy tanár akár személyre is szabhatja azokat vagy újakat hozhat létre. <br>
     A rendszer ingyenes, ezért bárki bárhonnan hozzáférhet a regisztrációt követően. Különböző feladatok találhatók az egyes témák végén amivel a felhasználó próbára teheti a tudását. <br>
 	Minden ilyen feladat megoldása után a a felhasználó	azonnal megkapja az eredményeket,így láthatja mely részeket oldotta meg hibásan.<br>
-    	
-
 </p>
-
+<br>
+<br>
+<a id="2"></a>
 <h2>2. Jelenlegi helyzet</h2>
+<br>
 <p>
     A megrendelő szeretné kibővíteni az általa nyújtott oktatási szolgáltatások elérhetőségét, hogy versenytársaihoz képest így jusson piaci előnyökhöz.<br>
     Egy új rendszer előállítását rendelte meg, amely interneten keresztül modern megoldásokat használva működik.<br>
@@ -35,8 +71,11 @@
     Mindezek mellet a megrendelőnek szüksége van a saját logojuk feltüntetésére is.<br>
     Ezen okokból kifolyólag megkértek minket, hogy csináljuk meg nekik a vágyott alkalmazást, ami sokkal könnyebbé teheti számukra az oktatást.<br>
 </p>
-
+<br>
+<br>
+<a id="3"></a>
 <h2>3. Vágyálom rendszer</h2>
+<br>
 <p>
     A projekt célja egy olyan rendszer, ami játékos tanulás, gyakorlás lehetőségét biztosítja. A rendszer elérhető több platformon, weben és androidon is.<br>
     Regisztrációt követően több típusú feladat közül választhat a felhasználó. Látványos, színes felülettel rendelkezik a program, hogy felkeltse a felhasználók figyelmét. A szórakoztatóbb tanulás érdekében játékos elemeket tartalmaznak az egyes feladatok.<br>
@@ -45,31 +84,36 @@
     Ez a pontozási rendszer optimális esetben függ a feladatokhoz meghatározott időtől is.<br>
     A rendszernek van egy admin felülete is, ahol az admin fiókkal bejelentkezett felhasználó fel tudja tölteni a feladványokat.
 </p>
-
-
+<br>
+<br>
+<a id="4"></a>
 <h2>4. Jelenlegi üzleti folyamatok modellje</h2>
-	
+<br>
 <p>
     A mai világban az oktatás nem használja ki a már meglévő technológiákat arra, hogy a tanulást sokkal szórakoztatóbbá és interaktívabbá tegye.	
     A jelenlegi világban a fiatalok egyre kevésbé hajlandóak a "klasszikus" módon tanulni, ezért a különböző oktatási intézmények  
     alternatív módszereket keresnek. Jelenleg a diákok tankönyvekből tanulnak és papír alapon adnak számot tudásukról, amely a XXI. században elavultnak számít. Ez  
     rengeteg nyomdai és nyomtatási költséget jelent. Az oktatóknak rengeteg időt elvesz az idejéből a dolgozatok egyesével való kijavítása.
     Illetve a dolgozatok megírása papíron is sokkal időigényesebb, mintha különböző alkalmazásokat használnánk a diákok számonkérésére.
-</p>
-
-
+</p>	
+<br>
+<br>
+<a id="5"></a>
 <h2>5. Igényelt üzleti folyamatok modellje</h2>
-
+<br>
 <p>
     A megrendelő a fő oldalon akar bejelentkezni (felhasználónév, jelszó), valamint a regisztrációt megkezdeni, mely egy új oldalon folytatódna (felh., jelszó, e-mail).
     Bejelentkezést követően lehetőséget, hozzáférést kell adni szerepkörtől függően az alkalmazás funkcióihoz.
     A feladatokat a tanár állíthatja össze, ezért ezeket részekre kell szedni. Kvíz mely konkrét választ vár. Kvíz, mely több válasz közüli lehetőséget kínál,
     ezen belül 1 vagy több helyes válasszal. Rajz feladat, és ezek tetszőleges kombinációja lenne egy feladatsor.
-
-<img src="Képek/businessModel.png" width="20%" height="20%">
-</p>
 <br>
+</p>
+<img src="Képek/businessModel.png" class="BM">
+<br>
+<br>
+<a id="6"></a>
 <h2>6. Követelmény lista</h2>
+<br>
 <table>
     <tr>
         <th>Modul</th>
@@ -192,8 +236,10 @@
     </tr>
 </table>
 <br>
-
+<br>
+<a id="7"></a>
 <h2>7. Fogalomszótár</h2>
+<br>
 <p>[bug]: fejlesztési hiba ami által a program nem a várt eredményt hozza</p>
 <p>[main menu]: A fő menü, amely a weboldal/program indulásakor megjelenik</p>
 <p>[gameboard]: Játék közben, a különböző elemeket tartalmazó felület</p>
@@ -203,6 +249,27 @@
 <p>[multiplatform]: több környezetben futtatható alkalmazás</p>
 <p>[main menu]: A fő menü, amely a weboldal indulásakor megjelenik</p>
 <p>[final menu]: A játék végén megjelenő panel, amely a statisztikát mutatja</p>
+<br>
+<br>
+</main>
+<footer>
+    <div class="KontFooter">
+		<a class="logof" href="Követelmény specifikáció.html">Vissza a tetejére</a>
+			<nav>
+				<ul>
+					<li>
+						<a class="active" href="Követelmény specifikáció.html">Követelmény specifikáció</a>
+					</li>
+					<li>
+						<a href="Funkcionális specifikáció.html">Funkcionális specifikáció</a>
+					</li>
+					<li>
+						<a href="Rendszerterv.html">Rendszerterv</a>
+					</li>
+				</ul>
+			</nav>
+	</div>
+</footer>
 </body>
 </html>
 

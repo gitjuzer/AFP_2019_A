@@ -1,14 +1,59 @@
 ﻿<!DOCTYPE html>
 <html lang="hu-HU">
-<meta charset="UTF-8">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="Stílus/stílus.css">
+	<link rel="shortcut icon" href="Stílus/favicon.ico">
 	<title>Rendszerterv</title>
-	<link rel="stylesheet" href="stílus.css">
 </head>
-<body>
-<h1>Rendszerterv</h1>
+<body>	
+<header>
+	<div class="KontHeader">
+		<a class="logoh" href="Rendszerterv.html">Rendszerterv</a>
+			<nav>
+				<ul>
+					<li>
+						<a href="Követelmény specifikáció.html">Követelmény specifikáció</a>
+					</li>
+					<li>
+						<a href="Funkcionális specifikáció.html">Funkcionális specifikáció</a>
+					</li>
+					<li>
+						<a class="active" href="Rendszerterv.html">Rendszerterv</a>
+					</li>
+				</ul>
+			</nav>
+	</div>
+</header>
+<main>
+<h2>Tartalom</h2>
 <br>
-<h2>1. Konceptuális és 2. Nagyvonalú</h2>
+<ol type="I">
+	<li><a href="#I">Konceptuális és Nagyvonalú rendszerterv</a></li>
+	<li><a href="#II">Részletes rendszerterv</a></li>
+</ol>
+<ol class="ol2">
+	<li><a href="#1">Rendszer célja</a></li>
+	<li><a href="#2">Projekt terv</a></li>
+	<li><a href="#3">Üzleti folyamatok modellje</a></li>
+	<li><a href="#4">Követelmények</a></li>
+	<li><a href="#5">Funkcionális terv</a></li>
+	<li><a href="#6">Fizikai környezet</a></li>
+	<li><a href="#7">Absztrakt domain modell</a></li>
+	<li><a href="#8">Architekturális terv</a></li>
+	<li><a href="#9">Adatbázis terv</a></li>
+	<li><a href="#10">Implementációs terv</a></li>
+	<li><a href="#11">Tesztterv</a></li>
+	<li><a href="#12">Telepítési terv</a></li>
+	<li><a href="#13">Karbantartási terv</a></li>			
+</ol>
+<br>
+<br>
+<a id="I"></a>
+<h2>1. Konceptuális és 2. Nagyvonalú rendszerterv</h2>
+<br>
 <p style="text-align: justify">
 A rendszer célja, hogy a felhasználók egy egyszerű és játékos környezetben tudjanak tanulni. Célunk, hogy egy olyan programot létrehozzunk,<br>
 amelyben a felhasználok, különböző szerepkörökben tudnak a rendszerrel interaktiválni.<br>
@@ -43,7 +88,7 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 </p>
 <br>
 <h3>Megfeleltetés:</h3>
-<table style="width: 96%">
+<table style="width: 94%">
 	<tr>
         <th>Mit</th>
         <th>Hogyan</th>
@@ -200,10 +245,30 @@ Minden dokumentumot, tervet, programot, képet és egyebet mi készítünk, ezek
 	</tr>
 </table>
 <br>
-<h1>3. Részletes</h1>
-
-
+<br>
+<a id="II"></a>
+<h2>3. Részletes rendszerterv</h2>
+<br>
+<ol>
+	<li><a href="#1">Rendszer célja</a></li>
+	<li><a href="#2">Projekt terv</a></li>
+	<li><a href="#3">Üzleti folyamatok modellje</a></li>
+	<li><a href="#4">Követelmények</a></li>
+	<li><a href="#5">Funkcionális terv</a></li>
+	<li><a href="#6">Fizikai környezet</a></li>
+	<li><a href="#7">Absztrakt domain modell</a></li>
+	<li><a href="#8">Architekturális terv</a></li>
+	<li><a href="#9">Adatbázis terv</a></li>
+	<li><a href="#10">Implementációs terv</a></li>
+	<li><a href="#11">Tesztterv</a></li>
+	<li><a href="#12">Telepítési terv</a></li>
+	<li><a href="#13">Karbantartási terv</a></li>			
+</ol>
+<br>
+<br>
+<a id="1"></a>
 <h2>1) Rendszer célja</h2>
+<br>
 <p style="text-align: justify;">A rendszer célja, hogy a felhasználó játékos körülmények között tud tanulni, különböző feladatokat megoldani. 
 A felhasználó pontszámokat kap arról, hogyan sikerült megoldania a feladatokat.
 Fontos, hogy a felhasználó könnyen el tudjon igazodni a felületeken ezért minimalista felhasználói felületet kap a program.
@@ -212,10 +277,13 @@ A rendszer használható Androidos eszközökön, alkalmazás formájában, vala
 felületen is elérhető.
 A rendszer az adatokat egy Web Service segítségével kapja az adatbázisból.
 Mivel az alkalmazást csak webes felületen, és Android alkalmazásban szeretnénk elérhetővé tenni, nem célunk hogy más, például IOS operációs rendszerrel rendelkező eszközön fusson.
-A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítményét a toplistán is megtekintheti.</p>
-
-
+A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítményét a toplistán is megtekintheti.
+</p>
+<br>
+<br>
+<a id="2"></a>
 <h2>2) Projekt terv</h2>
+<br>
 <p>
 <h3><u>Projektszerepkörök, felelősségek:</u></h3>
 <h4>Scrum master: Bocsi Dávid</h4>
@@ -358,11 +426,17 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	<li>Az adatmodell bemutatása megtörtént</li>	
 </ul>
 </p>
+<br>
+<br>
+<a id="3"></a>
 <h2>3) Üzleti folyamatok modellje</h2>
-
+<br>
 <p><img src="Képek/UzletiFolyamatokAbra.png"></p>
-
+<br>
+<br>
+<a id="4"></a>
 <h2>4) Követelmények</h2>
+<br>
 <p>
 <ul>
 	Funkcionális követelmények:
@@ -382,9 +456,11 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	</ul>
 </ul>
 </p>
-
+<br>
+<br>
+<a id="5"></a>
 <h2>5) Funkcionális terv</h2>
-
+<br>
 <h3>Rendszerszereplők</h3>
 <ul>
 	<li>Admin</li>
@@ -452,8 +528,12 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 	</ul>
 </ul>
 <h3>Képernyőtervek</h3>
-
+<a href="Funkcionális specifikáció.html#7" class="link"><b>Link:</b> Lásd a Funkcionális specifikációban.</a>
+<br>
+<br>
+<a id="6"></a>
 <h2>6) Fizikai környezet</h2>
+<br>
 <p>
 	<ul>
 		<li>Programunkat Android és web platformra hordozható eszközök(okostelefonok,táblagépek és PC-k)számára.</li>
@@ -468,11 +548,13 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 			</ul>
 	</ul>
 </p>
-
-
+<br>
+<br>
+<a id="7"></a>
 <h2>7) Absztrakt domain modell</h2>
+<br>
 <h3>Fogalomszótár</h3>
-<table style="width: 96%">
+<table style="width: 94%;">
     <tr>
         <th>Fogalom</th>
 		<th>Magyarázat</th>
@@ -569,6 +651,7 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 			való felhasználók modósíthatják magát a program egyes részeit.</td>
 	</tr>
 </table>
+
 <br>
 <h3>Kapcsolatok</h3>
 <table style="width: 30%">
@@ -654,9 +737,11 @@ A felhasználó a feladatsorok megoldása után pontszámokat kap. Teljesítmén
 		<td>Teszt</td>
 	</tr>
 </table>
-
 <br>
+<br>
+<a id="8"></a>
 <h2>8) Architekturális terv</h2>
+<br>
 <p>
 Backend:<br>
 A rendszerhez szükség van egy adatbázis szerverre, ebben az esetben MySql-t használunk.
@@ -687,16 +772,17 @@ Az Angular keretrendszer modulokból és komponensekből áll, ez lehetővé tes
 Biztonsági funkciók:<br>
 A REST api-nak van egy user beléptető végpontja. Sikeres belépés után egy egyedi api kulcsot kap a kliens program. A további kérésekhez el kell küldenie ezt a kulcsot a szervernek. Ezzel biztosítjuk, hogy csak hitelesített felhasználók férhessenek az adatokhoz.
 </p>
-
-
-
-
-
+<br>
+<br>
+<a id="9"></a>
 <h2>9) Adatbázis terv</h2>
+<br>
 <p><img src="Képek/datamodelv2.png" alt="adatmodell"></p>
-
+<br>
+<br>
+<a id="10"></a>
 <h2>10) Implementációs terv</h2>
-
+<br>
 <h3>Backend</h3>
 
 <p>
@@ -740,10 +826,11 @@ ezáltal tud felvinni és lekérdezni adatokat az adatbázisból. Az eltelt idő
 <p>Az android alkalmazás Java nyelven készül és egy REST API-hoz csatlakozik. A kommunikáció az alkalmazás és a webszolgáltatás között JSON formátumban történik.<br>
 A felhasználói felületek XML fájlokban vannak implementálva.</p>
 
-
-
+<br>
+<br>
+<a id="11"></a>
 <h2>11) Tesztterv</h2>
-
+<br>
 <p>
 A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata, ellenőrzése, a rendszer által megvalósított üzleti szolgáltatások verifikálása.
 </p>
@@ -778,12 +865,13 @@ Ezt a tesztet nem a fejlesztők végzik.<br>
 <li>Tesztelendő kijelzőméretek: 1280x720 (minimum), 1366x768, 1920x1080</li>
 
 </ul>
+<p>
 A teszt időtartama egy hét. <br>
 A tesztelés alatt a tesztelő felhasználók visszajelzéseket küldhetnek a fejlesztőknek, probléma/hiba felmerülése esetén. <br> 
 Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb. Sok hiba esetén a tesztelés ideje elhúzódhat plusz egy héttel.
-
-<br><br>
 </p>
+</p>
+<br><br>
 
 <h3>Tesztelendő funkciók</h3>
 
@@ -798,9 +886,9 @@ Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb. Sok hiba ese
 
 </ul>
 
-
+<p>
 <b>Android</b>
-
+</p>
 <ul>
 
 <li><b>Login felület:</b>
@@ -840,9 +928,9 @@ Az utolsó kérdés után pedig az eredménytáblát.
 </li>
 
 </ul>
-
+<p>
 <b>Web</b>
-
+</p>
 <ul>
 <li><b>Login felület:</b>
 <p>A login felület elrendezésének ellenőrzése:
@@ -881,7 +969,11 @@ Az utolsó kérdés után pedig az eredménytáblát.
 </ul>
 
 </p>
+<br>
+<br>
+<a id="12"></a>
 <h2>12) Telepítési terv</h2>
+<br>
 <p><b>Androidos alkalmazás</b></p>
 
 <p>Töltse le az alkalmazást a Google áruházból, adja meg a szükséges engedélyeket és telepítse a programot!</p>
@@ -893,8 +985,11 @@ Az utolsó kérdés után pedig az eredménytáblát.
 <p>A szoftver webes felületéhez csak egy ajánlott böngésző telepítése szükséges
   (Google Chrome, Firefox, Opera, Safari), külön szoftver nem kell hozzá. 
 	A webszerverre közvetlenül az internetről kapcsolódnak rá a kliensek.</p>
-
+<br>
+<br>
+<a id="13"></a>
 <h2>13) Karbantartási terv</h2>
+<br>
 <p>
 Az alkalmazás folyamatos üzemeltetése és karbantartása, mely magában foglalja a programhibák elhárítását, a belső igények változása miatti módosításokat,
 valamint a környezeti feltételek változása miatt megfogalmazott program-, illetve állománymódosítási igényeket.
@@ -910,6 +1005,27 @@ Idő elteltével új kategóriákat kell hozzáadni a játékhoz, hogy fent tart
 <li>Perfective Maintenance: A szoftver hosszútávú használata érdekében végzett módosítások, új funkciók, a szoftver teljesítményének és működési megbízhatóságának javítása.</li>
 <li>Preventive Maintenance: Olyan problémák elhárítása, amelyek még nem tűnnek fontosnak, de később komoly problémákat okozhatnak.</li>
 </ul>
+<br>
+<br>
+</main>
+<footer>
+    <div class="KontFooter">
+		<a class="logof" href="Rendszerterv.html">Vissza a tetejére</a>
+			<nav>
+				<ul>
+					<li>
+						<a href="Követelmény specifikáció.html">Követelmény specifikáció</a>
+					</li>
+					<li>
+						<a href="Funkcionális specifikáció.html">Funkcionális specifikáció</a>
+					</li>
+					<li>
+						<a class="active" href="Rendszerterv.html">Rendszerterv</a>
+					</li>
+				</ul>
+			</nav>
+	</div>
+</footer>
 </body>
 </html>
 
