@@ -23,3 +23,20 @@ function validateRegister() {
     registerState.html("Regisztráció sikeres.");
   }
 }
+function validateLogin() {
+  var loginUsername = $("#loginUsername").val();
+  var loginPasswd = $("#loginPasswd").val();
+  var loginState = $("#loginState");
+  if (loginUsername == "" || loginPasswd == "") {
+    loginState.css("color", "red");
+    loginState.html("Hiányzó felhasználónév vagy jelszó!");
+  } else if (loginUsername.length < 6 || loginPasswd.length < 6) {
+    loginState.css("color", "red");
+    loginState.html("Rövid felhasználónév vagy jelszó!");
+  } else {
+    Login();
+  }
+}
+function Login() {
+  location.href = "GameScreen.html";
+}
