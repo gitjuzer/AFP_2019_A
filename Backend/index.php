@@ -45,3 +45,23 @@ function getAllQuiz() {
     echo json_encode($response);
 }
 
+function getQuizById($id=0)
+{
+	global $connection;
+	$query="SELECT * FROM test";
+
+	if($id != 0)
+	{
+		$query.=" WHERE id=".$id." LIMIT 1";
+	}
+
+	$response=array();
+	$result=mysqli_query($connection, $query);
+	while($row=mysqli_fetch_array($result))
+	{
+		$response[]=$row;
+	}
+
+	header('Content-Type: application/json');
+	echo json_encode($response);
+}
