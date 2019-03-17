@@ -69,11 +69,17 @@
   border-radius: 40px;
 }
 
-#answerBtnClass{
+#answerBtnClass {
   width: 300px;
   height: 80px;
 }
 
-#answerBtnClass:hover{
-background-color: yellowgreen;
+#answerBtnClass:hover {
+  background-color: yellowgreen;
+}
+
+#progressbarStyle {
+  background: greenyellow;
+  width: 380px;
+  height: 25px;
 }
