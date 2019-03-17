@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-  />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h1 class="jumbotron text-center">Regisztráció</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4">
-          <h3>Felhasználónév:</h3>
-          <input
-            class="form-control"
-            placeholder="Felhasználónév"
-            id="username"
-            type="text"
-          />
-          <h3>Jelszó:</h3>
-          <input
-            class="form-control"
-            placeholder="Jelszó"
-            id="password"
-            type="password"
-          />
-          <h3>Jelszó mégegyszer:</h3>
-          <input
-            class="form-control"
-            placeholder="Jelszó mégegyszer"
-            id="password1x"
-            type="password"
-          /><br /><br />
-          <label id="registerState"></label><br /><br />
-          <button
-            class="btn btn-primary btn-md"
-            name="ellenoriz"
-            title="Regisztráció"
-            onclick="validateRegister()"
-          >
-            Regisztráció</button
-          ><br /><br />
-          <button onclick="toHomepage()" class="btn btn-primary btn-md">
-            Vissza a kezdőlapra
-          </button>
-        </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="jumbotron text-center">Regisztráció</h1>
       </div>
     </div>
-  </body>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <h3>Felhasználónév:</h3>
+        <input class="form-control" placeholder="Felhasználónév" id="username" type="text" />
+        <h3>Jelszó:</h3>
+        <input class="form-control" placeholder="Jelszó" id="password" type="password" />
+        <h3>Jelszó mégegyszer:</h3>
+        <input class="form-control" placeholder="Jelszó mégegyszer" id="password1x" type="password" /><br />
+        <label id="registerState"></label>
+        <button class="btn btn-primary btn-md" name="ellenoriz" title="Regisztráció" onclick="validateRegister()">
+          Regisztráció</button><br /><br />
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <br />
+        <button onclick="toHomepage()" class="btn btn-primary btn-md">
+          Vissza a kezdőlapra
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
