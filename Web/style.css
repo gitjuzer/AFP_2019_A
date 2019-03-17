@@ -6,8 +6,9 @@
 #questionRect {
   stroke: black;
   stroke-width: 5px;
-  fill: white;
+  fill: red;
   align-self: center;
+  fill-opacity: 0;
 }
 
 #menuBarColor {
@@ -59,4 +60,11 @@
 
 .show {
   display: block;
+}
+
+#labelid {
+  height: 100px;
+  width: 700px;
+  border: 5px solid black;
+  border-radius: 40px;
 }
