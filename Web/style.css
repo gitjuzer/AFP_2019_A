@@ -3,18 +3,20 @@
   color: red;
 }
 
-#questionRect{
+#questionRect {
   stroke: black;
   stroke-width: 5px;
   fill: white;
   align-self: center;
 }
 
-#menuBarColor{
+#menuBarColor {
   background-color: #3498DB;
 }
 
-
+#linkedPageClick {
+  cursor: pointer;
+}
 
 .dropbtn {
   background-color: #3498DB;
@@ -40,7 +42,7 @@
   background-color: #f1f1f1;
   min-width: 160px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -51,6 +53,10 @@
   display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+  background-color: #ddd;
+}
 
-.show {display: block;}
+.show {
+  display: block;
+}

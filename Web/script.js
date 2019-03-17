@@ -60,3 +60,14 @@ window.onclick = function(event) {
   }
 }
 
+function Logout(){
+  location.href="Homepage.html";
+}
+
+function toGameScreen() {
+  location.href = "GameScreen.html";
+}
+
+function toTopList() {
+  location.href = "TopList.html";
+}

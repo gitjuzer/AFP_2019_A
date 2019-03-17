@@ -13,12 +13,12 @@
         <div class="dropdown">
             <button onclick="dropdownMenu()" class="dropbtn">Menü</button>
             <div id="myDropdown" class="dropdown-content">
-                <a href="#quiz">Quiz játék</a>
+                <a onclick=toGameScreen() id="linkedPageClick">Quiz játék</a>
                 <a href="#jatek2">Játék 2</a>
                 <a href="#jatek3">Játék 3</a>
-                <a href="#toplista">Eredmények</a>
+                <a onclick=toTopList() id="linkedPageClick">Eredmények</a>
                 <a href="#passwordChange">Jelszóváltoztatás</a>
-                <a href="#logout">Kijelentkezés</a>
+                <a onclick=Logout() id="linkedPageClick">Kijelentkezés</a>
             </div>
         </div>
     </div>
