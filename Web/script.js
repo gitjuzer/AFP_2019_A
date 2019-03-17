@@ -47,7 +47,7 @@ function dropdownMenu() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -60,8 +60,8 @@ window.onclick = function(event) {
   }
 }
 
-function Logout(){
-  location.href="Homepage.html";
+function Logout() {
+  location.href = "Homepage.html";
 }
 
 function toGameScreen() {
@@ -70,4 +70,20 @@ function toGameScreen() {
 
 function toTopList() {
   location.href = "TopList.html";
+}
+
+function AAnswer() {
+
+}
+
+function BAnswer() {
+
+}
+
+function CAnswer() {
+
+}
+
+function DAnswer() {
+
 }
