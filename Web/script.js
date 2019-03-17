@@ -88,3 +88,24 @@ function DAnswer() {
 
 }
 
+function toPasswordChange() {
+  location.href = "PasswordChange.html";
+}
+
+function passwordChange() {
+  var oldPassword = $("#oldPassword").val();
+  var newPassword = $("#newPassword").val();
+  var newPasswordAgain = $("#newPasswordAgain").val();
+  var registerState = $("#passwordChangeState");
+
+  if (newPassword.length < 6 || newPasswordAgain.length < 6) {
+    registerState.css("color", "red");
+    registerState.html("A beírt jelszó nem lehet 6 karakternél rövidebb.");
+  } else if (newPassword != newPasswordAgain) {
+    registerState.css("color", "red");
+    registerState.html("A beírt jelszó nem egyezik.");
+  }
+  else {
+    toGameScreen();
+  }
+}
