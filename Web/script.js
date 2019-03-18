@@ -23,6 +23,7 @@ function validateRegister() {
     registerState.html("Regisztráció sikeres.");
   }
 }
+
 function validateLogin() {
   var loginUsername = $("#loginUsername").val();
   var loginPasswd = $("#loginPasswd").val();
@@ -34,13 +35,36 @@ function validateLogin() {
     loginState.css("color", "red");
     loginState.html("Rövid felhasználónév vagy jelszó!");
   } else {
-    Login();
+
+//Ez így majdnem jó csak mégse, de átkonvertálja
+    
+    //loginState.html(calc(loginPasswd));
+
+    //Login();
   }
 }
 function Login() {
   location.href = "GameScreen.html";
 }
-
+function calc(msg)
+{
+  var loginState = $("#loginState");
+	var strTxt = msg;
+	if( strTxt.length == 0 )
+	{
+		document.getElementById('loginPasswd').value = "";
+		return;
+	}
+	
+		if( strTxt.search("\r")>0 ) strTxt=replaceAll( "\r", "", strTxt );
+		var strHash = hex_sha256( strTxt );
+		strHash = strHash.toUpperCase();
+  
+    //Ez itt kiírja passwordboxba a generált kódot, de a loginState nem megy
+    //document.getElementById('loginPasswd').value = strHash;
+    loginState.html(strHash);
+	
+}
 
 
 function dropdownMenu() {
