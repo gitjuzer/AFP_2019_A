@@ -90,7 +90,7 @@ function registerUser() {
 
         $response = array(
             "status" => 1,
-            "status_message" => "User registered.";
+            "status_message" => "User registered."
         );
     } else {
         $response = array(
