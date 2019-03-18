@@ -15,12 +15,13 @@ switch($request_method) {
 		}
 		  else
 		{
-			 getAllQuiz()
+			 getAllQuiz();
 		}
         break;
     case 'POST':
         break;
     case 'PUT':
+        registerUser();
         break;
     case 'DELETE':
         break;
@@ -74,7 +75,23 @@ function registerUser() {
     $user = $data['user'];
 
     if(!checkIfUserExists($user)) {
+        $password = $data['password'];
+        if($data['email'] != null && !empty($data['email'])) {
+            $email = $data['email'];
+        } else {
+            $email = null;
+        }
+        $token = uniqid("");
 
+        $query = $connection->prepare("INSERT INTO user VALUES (?,?,?,?);");
+        $query->bind_param("ssss", $user, $password, $email, $token);
+        $query->execute();
+        $query->close();
+
+        $response = array(
+            "status" => 1,
+            "status_message" => "User registered."
+        );
     } else {
         $response = array(
             "status" => 0,
@@ -89,11 +106,22 @@ function registerUser() {
 function checkIfUserExists($user) {
     global $connection;
 
-    $query = $connection->prepare("SELECT username FROM user WHERE username=?";
+    $query = $connection->prepare("SELECT username FROM user WHERE username=?");
     $query->bind_param("s", $user);
     $query->execute();
     $result = $query->get_result();
     $query->close();
-
+    
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+ 
+    if($res != null && !empty($res)){
+        return true;
+    }
+    else {
+        return false;
+    }
     
 }
