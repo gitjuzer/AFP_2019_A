@@ -106,7 +106,7 @@ function registerUser() {
 function checkIfUserExists($user) {
     global $connection;
 
-    $query = $connection->prepare("SELECT username FROM user WHERE username=?";
+    $query = $connection->prepare("SELECT username FROM user WHERE username=?");
     $query->bind_param("s", $user);
     $query->execute();
     $result = $query->get_result();
