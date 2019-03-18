@@ -65,3 +65,35 @@ function getQuizById($id=0)
 	header('Content-Type: application/json');
 	echo json_encode($response);
 }
+
+
+
+function registerUser() {
+    global $connection;
+    $data = json_decode(file_get_contents("php://input"), true);
+    $user = $data['user'];
+
+    if(!checkIfUserExists($user)) {
+
+    } else {
+        $response = array(
+            "status" => 0,
+            "status_message" => "User already exists."
+        );
+    }
+
+    header("Content-Type: application/json");
+    echo json_encode($response);
+}
+
+function checkIfUserExists($user) {
+    global $connection;
+
+    $query = $connection->prepare("SELECT username FROM user WHERE username=?";
+    $query->bind_param("s", $user);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+
+    
+}
