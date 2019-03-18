@@ -94,6 +94,17 @@ function checkIfUserExists($user) {
     $query->execute();
     $result = $query->get_result();
     $query->close();
-
+    
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+ 
+    if($res != null && !empty($res)){
+        return true;
+    }
+    else {
+        return false;
+    }
     
 }
