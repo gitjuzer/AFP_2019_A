@@ -21,6 +21,7 @@ switch($request_method) {
     case 'POST':
         break;
     case 'PUT':
+        registerUser();
         break;
     case 'DELETE':
         break;
