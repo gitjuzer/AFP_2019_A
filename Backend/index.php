@@ -15,7 +15,7 @@ switch($request_method) {
 		}
 		  else
 		{
-			 getAllQuiz()
+			 getAllQuiz();
 		}
         break;
     case 'POST':
