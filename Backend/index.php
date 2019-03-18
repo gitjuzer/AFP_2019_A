@@ -74,7 +74,23 @@ function registerUser() {
     $user = $data['user'];
 
     if(!checkIfUserExists($user)) {
+        $password = $data['password'];
+        if($data['email'] != null && !empty($data['email'])) {
+            $email = $data['email'];
+        } else {
+            $email = null;
+        }
+        $token = uniqid("");
 
+        $query = $connection->prepare("INSERT INTO user VALUES (?,?,?,?);");
+        $query->bind_param("ssss", $user, $password, $email, $token);
+        $query->execute();
+        $query->close();
+
+        $response = array(
+            "status" => 1,
+            "status_message" => "User registered.";
+        );
     } else {
         $response = array(
             "status" => 0,
