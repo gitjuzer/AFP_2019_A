@@ -9,7 +9,7 @@ import hu.tanuloapp.afp2.authentication.fragments.RegistrationFragment;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
 
-    FragmentAdapter(FragmentManager fm) {
+    public FragmentAdapter(FragmentManager fm) {
         super(fm);
     }
 
