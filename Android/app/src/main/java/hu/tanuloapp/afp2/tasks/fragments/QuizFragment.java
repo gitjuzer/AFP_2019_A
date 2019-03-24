@@ -1,4 +1,4 @@
-package hu.tanuloapp.afp2.tasks;
+package hu.tanuloapp.afp2.tasks.fragments;
 
 
 import android.os.Bundle;
