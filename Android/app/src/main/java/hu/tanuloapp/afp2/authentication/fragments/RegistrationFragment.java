@@ -25,7 +25,6 @@ public class RegistrationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_registration, container, false);
 
         EditText username = view.findViewById(R.id.Name);
@@ -38,7 +37,20 @@ public class RegistrationFragment extends Fragment {
             String pass = password.getText().toString();
             String pass2 = password2.getText().toString();
             // TODO: 2019.03.24. login business logic
-            
+
+            if (user.isEmpty()){
+                username.setError("A felhasználó név nem lehet üres!");
+            }else if (pass.isEmpty()){
+                password.setError("A jelszó mező nem lehet üres!");
+            }else if (pass2.isEmpty()){
+                password2.setError("A jelszót meg kell erősíteni!");
+            }
+
+            if (!pass.equals(pass2)){
+                password.setError("A jelszavak nem egyeznek!");
+                password2.setError("A jelszavak nem egyeznek!");
+            }
+
         });
 
         return view;
