@@ -8,7 +8,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <body>
-
+    
+        <div class="row" id="menuBarColor">
+                <div class="col-sm-1"></div>
+                <div class="dropdown">
+                    <button onclick="dropdownMenu()" class="dropbtn">Menü</button>
+                    <div id="myDropdown" class="dropdown-content">
+                            <a onclick=toAdminPage() id="linkedPageClick">Admin menü</a>
+                            <a onclick=() id="linkedPageClick">Felhasználók</a>
+                            <a onclick=toAddQuestionPage() id="linkedPageClick">Feladatok létrehozása</a>
+                            <a onclick=() id="linkedPageClick">Diákok jegyei</a>
+                            <a onclick=() id="linkedPageClick">Üzenetküldés</a>
+				            <a onclick=Logout() id="linkedPageClick">Kijelentkezés</a>
+                    </div>
+                </div>
+            </div>
+        
+            <br /><br />
+        
+            <div class="container">
+        
+        <ul class="list-group">
+            <li class="list-group-item"><h3>1. helyezett: </h3></li>
+            <li class="list-group-item"><h3>2. helyezett: </h3></li>
+            <li class="list-group-item"><h3>3. helyezett: </h3></li>
+            <li class="list-group-item active"><h3>Aktuális felhasználó helyezése.</h3></li>
+        </ul>
+        
+            </div>
+        
+            <br /><br />        
 </body>
 
 </html>

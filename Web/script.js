@@ -112,8 +112,16 @@ function DAnswer() {
 
 }
 
+function toAdminPage(){
+  location.href = "Admin.html";
+}
+
 function toPasswordChange() {
   location.href = "PasswordChange.html";
+}
+
+function toAddQuestionPage() {
+  location.href = "AddQuestion.html";
 }
 
 function passwordChange() {
