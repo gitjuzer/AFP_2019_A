@@ -1,8 +1,8 @@
 <?php
-require_once('./config.php');
+require_once './config.php';
 require_once('./DatabaseConnection.php');
 $db = new DatabaseConnection();
-$connection = $db.getConnection();
+$connection = $db->getConnection();
 $request_method = $_SERVER['REQUEST_METHOD'];
 
 
