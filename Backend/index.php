@@ -50,22 +50,30 @@ function getAllQuiz() {
 function getQuizById($id=0)
 {
 	global $connection;
-	$query="SELECT * FROM test";
-
-	if($id != 0)
-	{
-		$query.=" WHERE id=".$id." LIMIT 1";
-	}
-
-	$response=array();
-	$result=mysqli_query($connection, $query);
+    $query="SELECT * FROM question WHERE test='$id'";
+    
+    $result=mysqli_query($connection, $query);
+    $questions = [];
 	while($row=mysqli_fetch_array($result))
 	{
-		$response[]=$row;
-	}
+		$questions[] = $row;
+    }
+    
+    $length = $questions.count();
+    for($i = 0; $i<$length; $i++) {
+        $query = "SELECT * FROM answer WHERE question =".$questions[$i][0].";";
+        $res = mysqli_query($connection, $query);
+        $answers = [];
+        while($row=mysqli_fetch_array($res))
+	    {
+            $answers[] = $row;
+        }
+        $questions[$i]["answers"] = $answers;
+    }
+
 
 	header('Content-Type: application/json');
-	echo json_encode($response);
+	echo json_encode($questions);
 }
 
 
