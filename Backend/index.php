@@ -158,5 +158,22 @@ function checkIfUserExists($user) {
     else {
         return false;
     }
-    
+}
+
+function checkToken($token){
+    global $connection;
+    $query = "SELECT username FROM user WHERE token='".$token."'";
+
+    $result = mysqli_query($connection, $query);
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+
+    if($res != null && !empty($res)){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
