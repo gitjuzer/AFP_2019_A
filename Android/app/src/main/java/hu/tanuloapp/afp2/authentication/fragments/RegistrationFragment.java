@@ -31,8 +31,8 @@ public class RegistrationFragment extends Fragment {
         EditText password = view.findViewById(R.id.Password);
         EditText password2 = view.findViewById(R.id.Password2);
 
-        Button login = view.findViewById(R.id.Login);
-        login.setOnClickListener(v -> {
+        Button registration = view.findViewById(R.id.Registration);
+        registration.setOnClickListener(v -> {
             String user = username.getText().toString();
             String pass = password.getText().toString();
             String pass2 = password2.getText().toString();
