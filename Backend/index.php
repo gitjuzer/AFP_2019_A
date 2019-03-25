@@ -83,11 +83,11 @@ function registerUser() {
         }
         $token = uniqid("");
 
-        $query = $connection->prepare("INSERT INTO user VALUES (?,?,?,?);");
-        $query->bind_param("ssss", $user, $password, $email, $token);
-        $query->execute();
-        $query->close();
-
+        if($query = $connection->prepare("INSERT INTO `user`(`username`, `password`, `email`, `token`) VALUES (?,?,?,?);")) {
+            $query->bind_param("ssss", $user, $password, $email, $token);
+            $query->execute();
+            $query->close();
+        }
         $response = array(
             "status" => 1,
             "status_message" => "User registered."
