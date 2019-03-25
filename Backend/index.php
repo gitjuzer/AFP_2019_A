@@ -19,6 +19,7 @@ switch($request_method) {
 		}
         break;
     case 'POST':
+        login();
         break;
     case 'PUT':
         registerUser();
@@ -67,6 +68,40 @@ function getQuizById($id=0)
 	echo json_encode($response);
 }
 
+
+function login() {
+    global $connection;
+    $data = json_decode(file_get_contents("php://input"), true);
+    $user = $data['user'];
+    $password = $data['password'];
+
+    $query = $connection->prepare("SELECT username, token FROM user WHERE username=? AND password=?");
+    $query->bind_param("ss", $user, $password);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+    
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+ 
+    if($res != null && !empty($res)){
+        $response = array(
+            "status" => 1,
+            "status_message" => $res[0][1]
+        );
+    }
+    else {
+        $response = array(
+            "status" => 0,
+            "status_message" => "Login failed."
+        );
+    }
+
+    header("Content-Type: application/json");
+    echo json_encode($response);
+}
 
 
 function registerUser() {
