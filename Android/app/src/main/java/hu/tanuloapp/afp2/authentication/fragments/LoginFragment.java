@@ -37,6 +37,13 @@ public class LoginFragment extends Fragment {
             String user = username.getText().toString();
             String pass = password.getText().toString();
             // TODO: 2019.03.24. login business logic
+
+            if (user.isEmpty()) {
+                username.setError("Felhasználónév mező nem lehet üres!");
+            } else if (pass.isEmpty()) {
+                password.setError("Jelszó mező nem lehet üres!");
+            }
+
         });
 
         return view;
