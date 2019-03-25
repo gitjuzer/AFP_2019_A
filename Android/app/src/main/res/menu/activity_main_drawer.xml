@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profil"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Profil" />
+        <item
+            android:id="@+id/kviz"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Kvíz" />
+        <item
+            android:id="@+id/test"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Teszt" />
+        <item
+            android:id="@+id/toplist"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Toplista" />
+        <item
+            android:id="@+id/tananyag"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tananyag" />
+    </group>
+
+</menu>
