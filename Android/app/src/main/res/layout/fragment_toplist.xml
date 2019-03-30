@@ -110,7 +110,7 @@
         android:text="Continue"
         android:backgroundTint="#00695c"
         android:textColor="#fafafa"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/layout_toplist_bg"
         />
 
