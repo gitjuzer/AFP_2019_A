@@ -16,5 +16,9 @@
         <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
         <item name="android:minWidth">200dp</item>
     </style>
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#003d33</item>
+        <item name="android:textColor">#fafafa</item>
+    </style>
 
 </resources>
