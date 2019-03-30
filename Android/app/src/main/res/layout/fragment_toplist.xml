@@ -23,7 +23,16 @@
         android:padding="10dp"
         android:textColor="#fafafa"
         />
-<LinearLayout
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="82dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/cup"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/answers_rounded_corner"
