@@ -1,8 +1,8 @@
 <?php
-require_once('./config.php');
+require_once './config.php';
 require_once('./DatabaseConnection.php');
 $db = new DatabaseConnection();
-$connection = $db.getConnection();
+$connection = $db->getConnection();
 $request_method = $_SERVER['REQUEST_METHOD'];
 
 
@@ -19,6 +19,7 @@ switch($request_method) {
 		}
         break;
     case 'POST':
+        login();
         break;
     case 'PUT':
         registerUser();
@@ -49,24 +50,66 @@ function getAllQuiz() {
 function getQuizById($id=0)
 {
 	global $connection;
-	$query="SELECT * FROM test";
-
-	if($id != 0)
-	{
-		$query.=" WHERE id=".$id." LIMIT 1";
-	}
-
-	$response=array();
-	$result=mysqli_query($connection, $query);
+    $query="SELECT * FROM question WHERE test='$id'";
+    
+    $result=mysqli_query($connection, $query);
+    $questions = [];
 	while($row=mysqli_fetch_array($result))
 	{
-		$response[]=$row;
-	}
+		$questions[] = $row;
+    }
+    
+    $length = $questions.count();
+    for($i = 0; $i<$length; $i++) {
+        $query = "SELECT * FROM answer WHERE question =".$questions[$i][0].";";
+        $res = mysqli_query($connection, $query);
+        $answers = [];
+        while($row=mysqli_fetch_array($res))
+	    {
+            $answers[] = $row;
+        }
+        $questions[$i]["answers"] = $answers;
+    }
+
 
 	header('Content-Type: application/json');
-	echo json_encode($response);
+	echo json_encode($questions);
 }
 
+
+function login() {
+    global $connection;
+    $data = json_decode(file_get_contents("php://input"), true);
+    $user = $data['user'];
+    $password = $data['password'];
+
+    $query = $connection->prepare("SELECT username, token FROM user WHERE username=? AND password=?");
+    $query->bind_param("ss", $user, $password);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+    
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+ 
+    if($res != null && !empty($res)){
+        $response = array(
+            "status" => 1,
+            "status_message" => $res[0][1]
+        );
+    }
+    else {
+        $response = array(
+            "status" => 0,
+            "status_message" => "Login failed."
+        );
+    }
+
+    header("Content-Type: application/json");
+    echo json_encode($response);
+}
 
 
 function registerUser() {
@@ -83,11 +126,11 @@ function registerUser() {
         }
         $token = uniqid("");
 
-        $query = $connection->prepare("INSERT INTO user VALUES (?,?,?,?);");
-        $query->bind_param("ssss", $user, $password, $email, $token);
-        $query->execute();
-        $query->close();
-
+        if($query = $connection->prepare("INSERT INTO `user`(`username`, `password`, `email`, `token`) VALUES (?,?,?,?);")) {
+            $query->bind_param("ssss", $user, $password, $email, $token);
+            $query->execute();
+            $query->close();
+        }
         $response = array(
             "status" => 1,
             "status_message" => "User registered."
@@ -123,5 +166,22 @@ function checkIfUserExists($user) {
     else {
         return false;
     }
-    
+}
+
+function checkToken($token){
+    global $connection;
+    $query = "SELECT username FROM user WHERE token='".$token."'";
+
+    $result = mysqli_query($connection, $query);
+    $res = array();
+    while($row = mysqli_fetch_array($result)){
+        $res[] = $row;
+    }
+
+    if($res != null && !empty($res)){
+        return true;
+    }
+    else {
+        return false;
+    }
 }

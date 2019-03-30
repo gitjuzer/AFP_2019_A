@@ -2,10 +2,10 @@
 
 class DatabaseConnection {
 
-    var $server;
-    var $username;
-    var $password;
-    var $db;
+    var $server = SERVERNAME;
+    var $username = USERNAME;
+    var $password = PASSWORD;
+    var $db = DBNAME;
 
     var $connection;
 
@@ -20,13 +20,6 @@ class DatabaseConnection {
         }
         
         return $this->connection;
-    }
-
-    public function __construct() {
-        $this->server = SERVERNAME;
-        $this->username = USERNAME;
-        $this->password = PASSWORD;
-        $this->db = DBNAME;
     }
 }
 

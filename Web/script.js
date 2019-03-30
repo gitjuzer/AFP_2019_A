@@ -19,10 +19,19 @@ function validateRegister() {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem egyezik.");
   } else {
-    registerState.css("color", "green");
-    registerState.html("Regisztráció sikeres.");
+    var data = JSON.parse({"username" : actualUsername,"password": actualPasswd,"email":""});
+    $.ajax({
+      type: "POST",
+      url: "localhost/afp/index.php",
+      data: data,
+      success: function() { registerState.css("color", "green");
+                            registerState.html("Regisztráció sikeres.");},
+      dataType: "json"
+    });
+    
   }
 }
+
 
 function validateLogin() {
   var loginUsername = $("#loginUsername").val();
@@ -112,8 +121,16 @@ function DAnswer() {
 
 }
 
+function toAdminPage(){
+  location.href = "Admin.html";
+}
+
 function toPasswordChange() {
   location.href = "PasswordChange.html";
+}
+
+function toAddQuestionPage() {
+  location.href = "AddQuestion.html";
 }
 
 function passwordChange() {
