@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a5acb7">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="161dp"
+                android:layout_marginTop="25dp"
+                android:layout_height="139dp"
+                app:srcCompat="@drawable/student"
+                tools:layout_editor_absoluteX="125dp"
+                tools:layout_editor_absoluteY="97dp" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/udv"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:gravity="right"
+                android:text="Üdvözöljük:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:text="Name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/Top10"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"                android:text="Üdvözöljük:"
+                android:textColor="@color/black"
+                android:layout_marginRight="100dp"
+                android:textSize="20dp"
+                android:textAlignment="left"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listTop"
+                android:layout_width="match_parent"
+                android:layout_height="325dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
