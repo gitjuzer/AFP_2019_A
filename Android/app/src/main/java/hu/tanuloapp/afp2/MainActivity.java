@@ -2,12 +2,19 @@ package hu.tanuloapp.afp2;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import hu.tanuloapp.afp2.tasks.fragments.ProfileFragment;
+import hu.tanuloapp.afp2.tasks.fragments.QuizFragment;
+import hu.tanuloapp.afp2.tasks.fragments.SyllabusFragment;
+import hu.tanuloapp.afp2.tasks.fragments.ToplistFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,8 +51,30 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
+        switch (id){
+            case R.id.profil:
+                fragment = new ProfileFragment();
+                break;
+            case R.id.kviz:
+                fragment = new QuizFragment();
+                break;
+            case R.id.test:
+                fragment = new QuizFragment();
+                break;
+            case R.id.toplist:
+                fragment = new ToplistFragment();
+                break;
+            case R.id.tananyag:
+                fragment = new SyllabusFragment();
+                break;
+        }
 
-        // TODO: 2019.03.25. menu elemek kattintása
+        if(fragment != null){
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.mainFrame,fragment);
+            ft.commit();
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
