@@ -133,6 +133,10 @@ function toAddQuestionPage() {
   location.href = "AddQuestion.html";
 }
 
+function toSendMessage() {
+  location.href = "SendMessage.html";
+}
+
 function passwordChange() {
   var oldPassword = $("#oldPassword").val();
   var newPassword = $("#newPassword").val();
