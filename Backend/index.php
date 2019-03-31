@@ -12,11 +12,11 @@ switch($request_method) {
 		{
 			$id=intval($_GET["id"]);
 			getQuizById($id);
-		}
-		  else
+        }       
+		else
 		{
-			 getAllQuiz();
-		}
+			getAllQuiz();
+        }   
         break;
     case 'POST':
         login();
@@ -76,6 +76,13 @@ function getQuizById($id=0)
 	echo json_encode($questions);
 }
 
+function getScoresByTestId($id)
+{
+    global $connection;
+
+    $query = $connection->prepare("SELECT score.score, user.username FROM score LEFT JOIN user ON score.user_id = user.id WHERE score.test_id =? ORDER BY score.score DESC;");  
+    
+}
 
 function login() {
     global $connection;
