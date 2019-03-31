@@ -81,7 +81,18 @@ function getScoresByTestId($id)
     global $connection;
 
     $query = $connection->prepare("SELECT score.score, user.username FROM score LEFT JOIN user ON score.user_id = user.id WHERE score.test_id =? ORDER BY score.score DESC;");  
-    
+    $query->bind_param('i', $id);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+
+    $response = array();
+    while($row = mysqli_fetch_array($result)) {
+        $response[] = $row;
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 
 function login() {
