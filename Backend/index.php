@@ -8,7 +8,12 @@ $request_method = $_SERVER['REQUEST_METHOD'];
 
 switch($request_method) {
     case 'GET':
-        if(!empty($_GET["id"]))
+    if (!empty($_GET["testscores"]))
+        {
+            $test_id=intval($_GET["testscores"]);
+            getScoresByTestId($test_id);
+        }
+        else if(!empty($_GET["id"]))
 		{
 			$id=intval($_GET["id"]);
 			getQuizById($id);
