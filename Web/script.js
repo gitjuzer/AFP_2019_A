@@ -9,6 +9,7 @@
     var actualPasswd = $("#password").val();
     var actualPasswd1x = $("#password1x").val();
     var registerState = $("#registerState");
+    registerState.html("");
     if (actualUsername.length < 6) {
       registerState.css("color", "red");
       registerState.html("A beírt név nem lehet 6 karakternél rövidebb.");
@@ -19,15 +20,26 @@
       registerState.css("color", "red");
       registerState.html("A beírt jelszó nem egyezik.");
     } else {
-      var data = JSON.parse({"username" : actualUsername,"password": actualPasswd,"email":""});
-      $.ajax({
-        type: "POST",
-        url: "localhost/afp/index.php",
-        data: data,
-        success: function() { registerState.css("color", "green");
-                              registerState.html("Regisztráció sikeres.");},
-        dataType: "json"
-      });
+      var shaPass = hex_sha256(actualPasswd).toLowerCase();
+          $.post("localhost/afp/index.php",
+          {
+            user : actualUsername,
+            password: shaPass,
+            email:""
+          },
+            function(data){
+              var response = JSON.parse(data);
+              if(respone["status"] == 1){
+                registerState.css("color", "green");
+                registerState.html(response["status_message"]);
+              }
+              else{
+                registerState.css("color", "red");
+                registerState.html(response["status_message"]);
+              }
+            }
+          );
+          
       
     }
   }
