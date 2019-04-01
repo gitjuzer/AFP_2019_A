@@ -219,6 +219,16 @@ function submitScore($token)
         $test_id=$data["test_id"];
         $user_id = $data["user_id"];
         
+        if($query = $connection->prepare("INSERT INTO `score` (`score`, `test_id`, `user_id`) VALUES (?, ?, ?);")) {
+            $query->bind_param("iii", $score,$test_id,$user_id);
+            $query->execute();
+            $query->close();
+            $response = array(
+                "status" => 1,
+                "status_message" => "Score submitted."
+            );
+        }         
+        
 }
 
 function checkToken($token){
