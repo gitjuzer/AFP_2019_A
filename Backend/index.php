@@ -27,7 +27,15 @@ switch($request_method) {
         login();
         break;
     case 'PUT':
-        registerUser();
+        if(!empty($_GET["token"]))
+        {
+            $token=$_GET["token"];
+            submitScore($token);
+        }
+        else
+        {
+            registerUser();
+        }
         break;
     case 'DELETE':
         break;
