@@ -64,7 +64,7 @@ function getQuizById($id=0)
 		$questions[] = $row;
     }
     
-    $length = $questions.count();
+    $length = count($questions);
     for($i = 0; $i<$length; $i++) {
         $query = "SELECT * FROM answer WHERE question =".$questions[$i][0].";";
         $res = mysqli_query($connection, $query);
@@ -106,7 +106,7 @@ function login() {
     $user = $data['user'];
     $password = $data['password'];
 
-    $query = $connection->prepare("SELECT username, token FROM user WHERE username=? AND password=?");
+    $query = $connection->prepare("SELECT username, token, role.name FROM user INNER JOIN user_role ON user.id = user_role.user_id INNER JOIN role ON user_role.role_id = role.id WHERE username=? AND password=?");
     $query->bind_param("ss", $user, $password);
     $query->execute();
     $result = $query->get_result();
@@ -153,6 +153,23 @@ function registerUser() {
             $query->bind_param("ssss", $user, $password, $email, $token);
             $query->execute();
             $query->close();
+
+            $query = $connection->prepare("SELECT id FROM user WHERE username=?");
+            $query->bind_param("s", $user);
+            $query->execute();
+            $result = $query->get_result();
+            $query->close();
+    
+            $res = array();
+            while($row = mysqli_fetch_array($result)){
+                $res[] = $row;
+            }
+
+            $query = $connection->prepare("INSERT INTO `user_role`(`user_id`, `role_id`) VALUES (?,1);");
+            $query->bind_param("i", $res[0]);
+            $query->execute();
+            $query->close();
+
         }
         $response = array(
             "status" => 1,
@@ -189,6 +206,46 @@ function checkIfUserExists($user) {
     else {
         return false;
     }
+}
+
+function submitScore($token)
+{
+    global $connection;
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if(checkToken($token))
+    {
+        $score = $data["score"];
+        $test_id=$data["test_id"];
+        $user_id = $data["user_id"];
+        
+        if($query = $connection->prepare("INSERT INTO `score` (`score`, `test_id`, `user_id`) VALUES (?, ?, ?);")) {
+            $query->bind_param("iii", $score,$test_id,$user_id);
+            $query->execute();
+            $query->close();
+            $response = array(
+                "status" => 1,
+                "status_message" => "Score submitted."
+            );
+        }         
+        else 
+        {
+            $response = array(
+                "status" => 0,
+                "status_message" => "Score submit failed."
+            );
+        }
+    }
+    else
+    {
+        $response = array(
+            "status" => 0,
+            "status_message" => "Invalid token."
+        );
+    }
+
+    header("Content-Type: application/json");
+    echo json_encode($response);
 }
 
 function checkToken($token){

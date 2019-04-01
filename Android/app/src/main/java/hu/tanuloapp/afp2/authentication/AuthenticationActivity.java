@@ -9,16 +9,23 @@ import hu.tanuloapp.afp2.authentication.adapter.FragmentAdapter;
 
 public class AuthenticationActivity extends AppCompatActivity {
 
+
+    public ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
 
-        ViewPager viewPager = findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
         if (viewPager != null) {
             FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
             viewPager.setAdapter(adapter);
         }
 
+    }
+
+    public ViewPager getViewPager() {
+        return viewPager;
     }
 }
