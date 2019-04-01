@@ -208,6 +208,19 @@ function checkIfUserExists($user) {
     }
 }
 
+function submitScore($token)
+{
+    global $connection;
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if(checkToken($token))
+    {
+        $score = $data["score"];
+        $test_id=$data["test_id"];
+        $user_id = $data["user_id"];
+        
+}
+
 function checkToken($token){
     global $connection;
     $query = "SELECT username FROM user WHERE token='".$token."'";
