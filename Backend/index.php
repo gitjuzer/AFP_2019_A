@@ -64,7 +64,7 @@ function getQuizById($id=0)
 		$questions[] = $row;
     }
     
-    $length = $questions.count();
+    $length = count($questions);
     for($i = 0; $i<$length; $i++) {
         $query = "SELECT * FROM answer WHERE question =".$questions[$i][0].";";
         $res = mysqli_query($connection, $query);
