@@ -228,7 +228,24 @@ function submitScore($token)
                 "status_message" => "Score submitted."
             );
         }         
-        
+        else 
+        {
+            $response = array(
+                "status" => 0,
+                "status_message" => "Score submit failed."
+            );
+        }
+    }
+    else
+    {
+        $response = array(
+            "status" => 0,
+            "status_message" => "Invalid token."
+        );
+    }
+
+    header("Content-Type: application/json");
+    echo json_encode($response);
 }
 
 function checkToken($token){
