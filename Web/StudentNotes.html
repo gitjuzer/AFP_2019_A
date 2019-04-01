@@ -17,6 +17,7 @@
 <div class="dropdown">
 <button onclick="dropdownMenu()" class="dropbtn">Admin</button>
 	<div id="myDropdown" class="dropdown-content">
+                <a onclick=toAdminPage() id="linkedPageClick">Admin menü</a>
                 <a onclick=toUserPage() id="linkedPageClick">Felhasználók</a>
                 <a onclick=toAddQuestionPage() id="linkedPageClick">Feladatok létrehozása</a>
                 <a onclick=toStudentNotes() id="linkedPageClick">Diákok jegyei</a>
@@ -29,16 +30,11 @@
 <br /><br />
 
     <div class="container">
-
-        <div class="row">                       
-                    <h2>Események</h2>
-					<h3>-XY regisztrált</h3>
-					<h3>.</h3>
-					<h3>.</h3>
-					<h3>.</h3>
-					<h3>-ZY kitöltötte a tesztet 4-esre....</h3>               
-           
-        </div>
+            <ul class="list-group">
+                <li class="list-group-item">user + érdemjegy</li>
+                <li class="list-group-item">user + érdemjegy</li>
+                <li class="list-group-item">user + érdemjegy</li>
+            </ul>
 
     </div>
 
