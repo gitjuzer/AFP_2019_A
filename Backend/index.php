@@ -153,6 +153,23 @@ function registerUser() {
             $query->bind_param("ssss", $user, $password, $email, $token);
             $query->execute();
             $query->close();
+
+            $query = $connection->prepare("SELECT id FROM user WHERE username=?");
+            $query->bind_param("s", $user);
+            $query->execute();
+            $result = $query->get_result();
+            $query->close();
+    
+            $res = array();
+            while($row = mysqli_fetch_array($result)){
+                $res[] = $row;
+            }
+
+            $query = $connection->prepare("INSERT INTO `user_role`(`user_id`, `role_id`) VALUES (?,1);");
+            $query->bind_param("i", $res[0]);
+            $query->execute();
+            $query->close();
+
         }
         $response = array(
             "status" => 1,
