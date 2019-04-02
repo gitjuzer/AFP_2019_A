@@ -21,7 +21,7 @@
       registerState.html("A beírt jelszó nem egyezik.");
     } else {
       var shaPass = hex_sha256(actualPasswd).toLowerCase();
-          $.post("localhost/afp/index.php",
+          $.put("localhost/afp/index.php",
           {
             user : actualUsername,
             password: shaPass,
@@ -58,7 +58,7 @@
     } else {
   
   //Ez így majdnem jó csak mégse, de átkonvertálja
-      
+      tryLogin(loginUsername,loginPasswd)
       //loginState.html(calc(loginPasswd));
   
       //Login();
@@ -66,6 +66,26 @@
   }
   function Login() {
     location.href = "GameScreen.html";
+  }
+  function tryLogin(username,password){
+    var loginState = $("#loginState");
+    var shaPass = hex_sha256(password).toLowerCase();
+    var userLogin = JSON.stringify({user: username,password: shaPass});
+          $.post("localhost/afp/index.php",
+          userLogin
+          ,
+            function(data){
+              var response = JSON.parse(data);
+              if(respone["status"] == 1){
+                Login();
+                var token = response["token"];
+              }
+              else{
+                loginState.css("color", "red");
+                loginState.html(response["status_message"]);
+              }
+            }
+          );
   }
   function calc(msg)
   {
