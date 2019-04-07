@@ -212,5 +212,8 @@ function validateNewQuestion() {
   if(answer2==""){
     alert("A 2. válasz üres!");
   }
+  if(answer3==""){
+    alert("A 3. válasz üres!");
+  }
 
 }
