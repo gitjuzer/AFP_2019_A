@@ -202,5 +202,8 @@ function toStudentNotes(){
     var answer3=$("#Answer3Input").val();
     var answer4=$("#Answer4Input").val();
 
+    if(!question.includes("?")){
+      alert("Ez nem kérdés! Használjon ? jelet!");
+    }
     
   }
