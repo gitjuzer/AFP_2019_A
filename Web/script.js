@@ -206,22 +206,25 @@ function validateNewQuestion() {
     alert("Ez nem kérdés! Használjon ? jelet!");
   }
 
-  if(answer1==""){
+  if (answer1 == "") {
     alert("Az 1. válasz üres!");
   }
-  if(answer2==""){
+  if (answer2 == "") {
     alert("A 2. válasz üres!");
   }
-  if(answer3==""){
+  if (answer3 == "") {
     alert("A 3. válasz üres!");
   }
-  if(answer4==""){
+  if (answer4 == "") {
     alert("A 4. válasz üres!");
   }
 
-  var r1=$("#radiobutton1").val();
-  var r2=$("#radiobutton2").val();
-  var r3=$("#radiobutton3").val();
-  var r4=$("#radiobutton4").val();
+  var r1 = $("#radiobutton1");
+  var r2 = $("#radiobutton2");
+  var r3 = $("#radiobutton3");
+  var r4 = $("#radiobutton4");
 
+  if (!r1.checked && !r2.checked && !r3.checked && !r4.checked) {
+    alert("Nincs kiválasztva a helyes válasz!");
+  }
 }
