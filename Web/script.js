@@ -219,4 +219,9 @@ function validateNewQuestion() {
     alert("A 4. válasz üres!");
   }
 
+  var r1=$("#radiobutton1").val();
+  var r2=$("#radiobutton2").val();
+  var r3=$("#radiobutton3").val();
+  var r4=$("#radiobutton4").val();
+
 }
