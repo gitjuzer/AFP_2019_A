@@ -196,9 +196,11 @@ function toStudentNotes(){
   }
 
   function validateNewQuestion(){
-    var question=$("QuestionInput").val();
-    var answer1=$("Answer1Input").val();
-    var answer2=$("Answer2Input").val();
-    var answer3=$("Answer3Input").val();
-    var answer4=$("Answer4Input").val();
+    var question=$("#QuestionInput").val();
+    var answer1=$("#Answer1Input").val();
+    var answer2=$("#Answer2Input").val();
+    var answer3=$("#Answer3Input").val();
+    var answer4=$("#Answer4Input").val();
+
+    
   }
