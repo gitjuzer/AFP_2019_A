@@ -194,3 +194,7 @@ function toStudentNotes(){
       toGameScreen();
     }
   }
+
+  function validateNewQuestion(){
+    
+  }
