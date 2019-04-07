@@ -209,5 +209,8 @@ function validateNewQuestion() {
   if(answer1==""){
     alert("Az 1. válasz üres!");
   }
+  if(answer2==""){
+    alert("A 2. válasz üres!");
+  }
 
 }
