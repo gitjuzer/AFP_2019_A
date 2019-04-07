@@ -206,4 +206,8 @@ function validateNewQuestion() {
     alert("Ez nem kérdés! Használjon ? jelet!");
   }
 
+  if(answer1==""){
+    alert("Az 1. válasz üres!");
+  }
+
 }
