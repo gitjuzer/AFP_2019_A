@@ -21,12 +21,10 @@ function validateRegister() {
     registerState.html("A beírt jelszó nem egyezik.");
   } else {
     var shaPass = hex_sha256(actualPasswd).toLowerCase();
+    var userRegister = JSON.stringify({ user: actualUsername, password: shaPass, email:"" });
     $.put("localhost/afp/index.php",
-      {
-        user: actualUsername,
-        password: shaPass,
-        email: ""
-      },
+    userRegister
+    ,
       function (data) {
         var response = JSON.parse(data);
         if (respone["status"] == 1) {
