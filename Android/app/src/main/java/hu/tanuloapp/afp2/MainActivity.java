@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import hu.tanuloapp.afp2.tasks.fragments.ProfileFragment;
+import hu.tanuloapp.afp2.profil.ProfileFragment;
 import hu.tanuloapp.afp2.tasks.fragments.QuizFragment;
 import hu.tanuloapp.afp2.tasks.fragments.SyllabusFragment;
 import hu.tanuloapp.afp2.tasks.fragments.ToplistFragment;
