@@ -14,7 +14,7 @@
         android:layout_marginTop="183dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Név"
+        android:hint="Név"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +26,7 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:hint="Jelszó"
         app:layout_constraintStart_toStartOf="@+id/Name"
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
@@ -36,6 +37,7 @@
         android:layout_marginTop="26dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:hint="Jelszó megerősítése"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password" />
@@ -46,6 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:text="Regisztráció"
+        android:background="@drawable/answers_rounded_corner"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password2" />
