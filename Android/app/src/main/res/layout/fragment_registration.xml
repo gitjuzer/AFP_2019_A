@@ -44,7 +44,7 @@
 
     <Button
         android:id="@+id/Registration"
-        android:layout_width="149dp"
+        android:layout_width="167dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:text="Regisztráció"
