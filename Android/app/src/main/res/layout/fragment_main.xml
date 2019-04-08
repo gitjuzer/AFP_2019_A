@@ -63,11 +63,11 @@
                 android:id="@+id/Top10"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="25dp"                android:text="Üdvözöljük:"
+                android:layout_marginTop="25dp"
+                android:text="Üdvözöljük:"
                 android:textColor="@color/black"
                 android:layout_marginRight="100dp"
                 android:textSize="20dp"
-                android:textAlignment="left"
                 android:textStyle="bold" />
 
             <ListView
