@@ -117,7 +117,7 @@ function login() {
     $user = $data['user'];
     $password = $data['password'];
 
-    $query = $connection->prepare("SELECT username, token, role.name FROM user INNER JOIN user_role ON user.id = user_role.user_id INNER JOIN role ON user_role.role_id = role.id WHERE username=? AND password=?");
+    $query = $connection->prepare("SELECT token FROM user WHERE username=? AND password=?");
     $query->bind_param("ss", $user, $password);
     $query->execute();
     $result = $query->get_result();
@@ -131,7 +131,7 @@ function login() {
     if($res != null && !empty($res)){
         $response = array(
             "status" => 1,
-            "status_message" => $res[0][1]
+            "status_message" => $res[0]
         );
     }
     else {
