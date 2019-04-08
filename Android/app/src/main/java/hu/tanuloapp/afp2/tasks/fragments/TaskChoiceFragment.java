@@ -66,7 +66,8 @@ public class TaskChoiceFragment extends Fragment {
                             if (new JSONObject(result).getInt("status") == 0) {
                                 statusCallback.onFailure(new JSONObject(result).getString("status_message"));
                             } else if (new JSONObject(result).getInt("status") == 1) {
-                                statusCallback.onSuccess(new JSONObject(result).getString("status_message"));
+                                JSONObject jsonResult = new JSONObject(result);
+                                statusCallback.onSuccess(jsonResult.getString("id")+jsonResult.getString("cim"));
                             }
                         } catch (JSONException e) {
                             Log.e("afp", "onResponse: " + e.getLocalizedMessage(), e);
