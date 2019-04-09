@@ -15,3 +15,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+
+$router->put('register', 'AuthController@register');
