@@ -20,6 +20,9 @@ $router->put('register', 'AuthController@register');
 
 $router->post('login', 'AuthController@login');
 
+$router->post('score', ['middleware' => 'auth', 'uses' => 'ToplistController@insertScore']);
+
+$router->get('score/{quiz}', 'ToplistController@getToplistByTest');
 
 $router->get('quiz', 'QuizController@getAllQuiz');
 
