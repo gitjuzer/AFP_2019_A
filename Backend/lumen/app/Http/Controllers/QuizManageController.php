@@ -20,4 +20,13 @@ class QuizManageController extends Controller {
         $insertedId = app('db')->table('question')->insertGetId(['question' => $question, 'test' => $test, 'type' => 1]);
         return response()->json($insertedId);
     }
+
+    public function insertAnswer(Request $request) {
+        $text = $request->input('text');
+        $correct = $request->input('correct');
+        $question = $request->input('question');
+
+        $insertedId = app('db')->table('answer')->insertGetId(['text' => $text, 'correct' => $correct, 'question' => $question]);
+        return response()->json($insertedId);
+    }
 }
