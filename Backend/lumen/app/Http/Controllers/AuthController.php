@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class AuthController extends Controller {
 
-    public function register() {
-        $data = json_decode(file_get_contents("php://input"), true);
-        $user = $data['user'];
+    public function register(Request $request) {
+        $user = $request->input('user');
 
         if (!$this->checkIfUserExists($user)) {
-            $password = $data['password'];
-            $email = $data['email'];
+            $password = $request->input('password');
+            $email = $request->input('email');
             $token = uniqid('');
 
             $result = app('db')->insert('INSERT INTO `user`(`username`, `password`, `email`, `token`) VALUES (?,?,?,?)', [$user, $password, $email, $token]);
