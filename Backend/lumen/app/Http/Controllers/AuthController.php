@@ -37,7 +37,7 @@ class AuthController extends Controller {
         $user = $request->input('user');
         $password = $request->input('password');
 
-        $result = app('db')->select('SELECT token FROM user WHERE username=? AND password=?', [$user, $password]);
+        $result = app('db')->select('SELECT token, name AS role FROM user INNER JOIN user_role ON user.id = user_role.user_id INNER JOIN role ON role.id = user_role.role_id WHERE username=? AND password=?', [$user, $password]);
 
         if ($result != null && !empty($result)) {
             return response()->json(['status' => 1, 'status_message' => $result[0]]);
