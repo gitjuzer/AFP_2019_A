@@ -27,3 +27,9 @@ $router->get('score/{quiz}', 'ToplistController@getToplistByTest');
 $router->get('quiz', 'QuizController@getAllQuiz');
 
 $router->get('quiz/{quiz}', 'QuizController@getQuizById');
+
+$router->post('quiz', ['middleware' => 'auth', 'uses' => 'QuizManageController@insertQuiz']);
+
+$router->post('question', ['middleware' => 'auth', 'uses' => 'QuizManageController@insertQuestion']);
+
+$router->post('answer', ['middleware' => 'auth', 'uses' => 'QuizManageController@insertAnswer']);
