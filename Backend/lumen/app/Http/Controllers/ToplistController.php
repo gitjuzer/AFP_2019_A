@@ -20,4 +20,8 @@ class ToplistController extends Controller {
         }
     }
 
+    public function getToplistByTest($quiz) {
+        $result = app('db')->select('SELECT username, score FROM score INNER JOIN user ON score.user_id = user.id WHERE test_id=? ORDER BY 2 DESC', [$quiz]);
+        return response()->json($result);
+    }
 }
