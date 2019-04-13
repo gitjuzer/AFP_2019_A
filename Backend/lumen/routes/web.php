@@ -19,3 +19,8 @@ $router->get('/', function () use ($router) {
 $router->put('register', 'AuthController@register');
 
 $router->post('login', 'AuthController@login');
+
+
+$router->get('quiz', 'QuizController@getAllQuiz');
+
+$router->get('quiz/{quiz}', 'QuizController@getQuizById');
