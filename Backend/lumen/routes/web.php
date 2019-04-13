@@ -17,3 +17,5 @@ $router->get('/', function () use ($router) {
 
 
 $router->put('register', 'AuthController@register');
+
+$router->post('login', 'AuthController@login');
