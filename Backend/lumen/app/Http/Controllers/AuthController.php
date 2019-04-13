@@ -14,7 +14,9 @@ class AuthController extends Controller {
             $email = $request->input('email');
             $token = uniqid('');
 
-            $result = app('db')->insert('INSERT INTO `user`(`username`, `password`, `email`, `token`) VALUES (?,?,?,?)', [$user, $password, $email, $token]);
+            //$result = app('db')->insert('INSERT INTO `user`(`username`, `password`, `email`, `token`) VALUES (?,?,?,?)', [$user, $password, $email, $token]);
+            $insertedId = app('db')->table('user')->insertGetId(['username' => $user, 'password' => $password, 'email' => $email, 'token' => $token]);
+            app('db')->insert('INSERT INTO user_role VALUES (?,?)', [$insertedId, 1]);
 
             return response()->json(['status' => 1, 'status_message' => 'User registered.']);
         } else {
