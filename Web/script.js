@@ -62,6 +62,9 @@ function validateLogin() {
     //Login();
   }
 }
+function AdminLogin() {
+  location.href = "AdminLogin.html";
+}
 function Login() {
   location.href = "GameScreen.html";
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  lang="hu-HU">
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="contener-regiszter">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="jumbotron text-center">Admin bejelentkezés</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <h3>Felhasználónév:</h3>
+        <input id="loginUsername" class="form-control" placeholder="Felhasználónév" name="username" type="text" />
+        <h3>Jelszó:</h3>
+        <input id="loginPasswd" class="form-control" placeholder="Jelszó" name="password" type="password" /><br />
+
+        <button class="btn btn-primary btn-md" onclick="validateLogin()" name="ellenoriz" title="Bejelentkezés">
+          Bejelentkezés</button><br /><br />
+        <label id="loginState"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+       
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
