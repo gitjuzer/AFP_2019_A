@@ -9,14 +9,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import hu.tanuloapp.afp2.R;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -25,7 +32,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class TaskChoiceFragment extends Fragment {
+public class TaskChoiceFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+
+    private static List<String> tasksname = new ArrayList<>();
+    private static String choosedTask;
 
     public TaskChoiceFragment(){
 
@@ -67,7 +77,8 @@ public class TaskChoiceFragment extends Fragment {
                                 statusCallback.onFailure(new JSONObject(result).getString("status_message"));
                             } else if (new JSONObject(result).getInt("status") == 1) {
                                 JSONObject jsonResult = new JSONObject(result);
-                                statusCallback.onSuccess(jsonResult.getString("id")+jsonResult.getString("cim"));
+                                statusCallback.onSuccess(jsonResult.getInt("id")+jsonResult.getString("cim"));
+                                tasksname.add(jsonResult.getString("cim"));
                             }
                         } catch (JSONException e) {
                             Log.e("afp", "onResponse: " + e.getLocalizedMessage(), e);
@@ -83,7 +94,33 @@ public class TaskChoiceFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        /*View view = inflater.inflate(R.layout.quizselection, container, false);
+
+        Button choose = view.findViewById(R.id.button);
+        Spinner spinner = (Spinner)view.findViewById(R.id.spinnerquizselection);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, tasksname, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
+        choose.setOnClickListener(v -> {
+
+        });
+
+        return view; */
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        choosedTask = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     public interface StatusCallback {
