@@ -1,5 +1,8 @@
 package hu.tanuloapp.afp2;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -11,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import hu.tanuloapp.afp2.authentication.AuthenticationActivity;
 import hu.tanuloapp.afp2.profil.ProfileFragment;
 import hu.tanuloapp.afp2.tasks.fragments.QuizFragment;
 import hu.tanuloapp.afp2.tasks.fragments.SyllabusFragment;
@@ -25,6 +29,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+
+        if (!sharedPreferences.getBoolean("creds", false)) {
+            startActivity(new Intent(this, AuthenticationActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+        }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
