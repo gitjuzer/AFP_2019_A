@@ -43,7 +43,7 @@
                     android:layout_marginVertical="20dp"
                     android:background="@drawable/answers_rounded_corner"
                     android:text="Válasz1"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:layout_marginVertical="20dp"
                     android:background="@drawable/answers_rounded_corner"
                     android:text="Válasz2"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                     android:layout_marginVertical="20dp"
                     android:background="@drawable/answers_rounded_corner"
                     android:text="Válasz3"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                     android:layout_marginVertical="20dp"
                     android:background="@drawable/answers_rounded_corner"
                     android:text="Válasz4"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
