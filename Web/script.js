@@ -198,12 +198,12 @@ function passwordChange() {
       success: function(data) {
         var response = JSON.parse(data);
         if (respone["status"] == 1) {
-          registerState.css("color", "green");
-          registerState.html(response["status_message"]);
+          passwordChangeState.css("color", "green");
+          passwordChangeState.html(response["status_message"]);
         }
         else {
-          registerState.css("color", "red");
-          registerState.html(response["status_message"]);
+          passwordChangeState.css("color", "red");
+          passwordChangeState.html(response["status_message"]);
         }
       }
     });
