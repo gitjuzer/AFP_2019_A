@@ -23,7 +23,7 @@ function validateRegister() {
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
     var userRegister = JSON.stringify({ user: actualUsername, password: actualPasswd, email:"" });
     $.ajax({
-      url: 'localhost/Backend/lumen/public/index.php',
+      url: 'http://www.afp2019a.nhely.hu/public/register',
       type: 'PUT',
       data: userRegister,
       success: function(data) {
@@ -31,10 +31,12 @@ function validateRegister() {
         if (respone["status"] == 1) {
           registerState.css("color", "green");
           registerState.html(response["status_message"]);
+          console.log("siker");
         }
         else {
           registerState.css("color", "red");
           registerState.html(response["status_message"]);
+          console.log("nem siker");
         }
       }
     });
@@ -71,7 +73,7 @@ function tryLogin(username, password) {
   var loginState = $("#loginState");
  // var shaPass = hex_sha256(password).toLowerCase();
   var userLogin = JSON.stringify({ user: username, password: password });
-  $.post("localhost/afp/index.php",
+  $.post('http://www.afp2019a.nhely.hu/public/register',
     userLogin
     ,
     function (data) {
@@ -189,25 +191,6 @@ function passwordChange() {
     registerState.html("A beírt jelszó nem egyezik.");
   }
   else {
-
-    var changePasswd = JSON.stringify({ password: newPassword });
-    $.ajax({
-      url: 'localhost/Backend/lumen/public/index.php',
-      type: 'PUT',
-      data: changePasswd,
-      success: function(data) {
-        var response = JSON.parse(data);
-        if (respone["status"] == 1) {
-          passwordChangeState.css("color", "green");
-          passwordChangeState.html(response["status_message"]);
-        }
-        else {
-          passwordChangeState.css("color", "red");
-          passwordChangeState.html(response["status_message"]);
-        }
-      }
-    });
-
     toGameScreen();
   }
 }
