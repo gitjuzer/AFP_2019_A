@@ -20,12 +20,13 @@ function validateRegister() {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem egyezik.");
   } else {
-    var shaPass = hex_sha256(actualPasswd).toLowerCase();
-    var userRegister = JSON.stringify({ user: actualUsername, password: shaPass, email:"" });
-    $.put("localhost/afp/index.php",
-    userRegister
-    ,
-      function (data) {
+    //var shaPass = hex_sha256(actualPasswd).toLowerCase();
+    var userRegister = JSON.stringify({ user: actualUsername, password: actualPasswd, email:"" });
+    $.ajax({
+      url: 'localhost/Backend/lumen/public/index.php',
+      type: 'PUT',
+      data: userRegister,
+      success: function(data) {
         var response = JSON.parse(data);
         if (respone["status"] == 1) {
           registerState.css("color", "green");
@@ -36,9 +37,7 @@ function validateRegister() {
           registerState.html(response["status_message"]);
         }
       }
-    );
-
-
+    });
   }
 }
 
@@ -70,8 +69,8 @@ function Login() {
 }
 function tryLogin(username, password) {
   var loginState = $("#loginState");
-  var shaPass = hex_sha256(password).toLowerCase();
-  var userLogin = JSON.stringify({ user: username, password: shaPass });
+ // var shaPass = hex_sha256(password).toLowerCase();
+  var userLogin = JSON.stringify({ user: username, password: password });
   $.post("localhost/afp/index.php",
     userLogin
     ,
