@@ -189,6 +189,10 @@ function passwordChange() {
     registerState.html("A beírt jelszó nem egyezik.");
   }
   else {
+
+    var changePasswd = JSON.stringify({ password: newPassword });
+    
+
     toGameScreen();
   }
 }
