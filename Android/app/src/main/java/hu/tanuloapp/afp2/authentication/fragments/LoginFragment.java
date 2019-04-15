@@ -1,7 +1,9 @@
 package hu.tanuloapp.afp2.authentication.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -115,7 +116,13 @@ public class LoginFragment extends Fragment {
             String pass = password.getText().toString();
             // TODO: 2019.03.24. login business logic
 
-            if (user.isEmpty()) {
+            if (user.equals("diak") && pass.equals("diak")) {
+                SharedPreferences sharedPreferences = Objects.requireNonNull(getActivity()).getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+                sharedPreferences.edit().putBoolean("creds", true).apply();
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+
+            /*if (user.isEmpty()) {
                 username.setError("Felhasználónév mező nem lehet üres!");
             } else if (pass.isEmpty()) {
                 password.setError("Jelszó mező nem lehet üres!");
@@ -132,7 +139,7 @@ public class LoginFragment extends Fragment {
                         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
                     }
                 });
-            }
+            }*/
         });
 
         return view;
