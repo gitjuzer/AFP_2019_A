@@ -20,26 +20,36 @@ function validateRegister() {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem egyezik.");
   } else {
+    console.log("ide eljutott");
+    
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
-    var userRegister = JSON.stringify({ user: actualUsername, password: actualPasswd, email:"" });
-    $.ajax({
-      url: 'http://www.afp2019a.nhely.hu/public/register',
-      type: 'PUT',
-      data: userRegister,
-      success: function(data) {
-        var response = JSON.parse(data);
-        if (respone["status"] == 1) {
-          registerState.css("color", "green");
-          registerState.html(response["status_message"]);
-          console.log("siker");
-        }
-        else {
-          registerState.css("color", "red");
+    var userRegister = JSON.stringify({ user: actualUsername, password: actualPasswd, email:"asd123@freemail.hu" });
+    console.log(userRegister);
+//   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+//   xmlhttp.open("PUT", "http://www.afp2019a.nhely.hu/public/register");
+//   xmlhttp.setRequestHeader("Content-Type", "application/json");
+//   xmlhttp.send(userRegister);
+  $.ajax({
+    type: "POST",
+    url: 'http://www.afp2019a.nhely.hu/public/register',
+    data : userRegister,
+    contentType: "application/json",
+    dataType: "json",
+    success : function(data) {
+      var response = JSON.parse(data);
+      console.log("ide eljutotte"+ response);
+      if (respone["status"] == 1) {
+        registerState.css("color", "green");
+        registerState.html(response["status_message"]);
+        console.log("siker");
+      }
+      else {
+        registerState.css("color", "red");
           registerState.html(response["status_message"]);
           console.log("nem siker");
         }
       }
-    });
+  });
   }
 }
 
@@ -229,4 +239,18 @@ function validateNewQuestion() {
   if (!r1.checked && !r2.checked && !r3.checked && !r4.checked) {
     alert("Nincs kiválasztva a helyes válasz!");
   }
+}
+function GetAllQuiz(){
+  console.log("asd");
+  $.get(
+    'http://www.afp2019a.nhely.hu/public/quiz',
+    function(data) {
+      //var response = JSON.stringify(data);
+var asd = JSON.stringify(data);
+var kesz = JSON.parse(asd);
+      console.log("ide eljutotte"+ data[0]["id"]+data[0]["name"]);
+      
+      $("#osszesteszt").html(kesz[0]["id"]+kesz[0]["name"]);
+    }
+  );
 }
