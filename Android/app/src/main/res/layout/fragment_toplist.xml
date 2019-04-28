@@ -9,7 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:stretchColumns="1"
-    android:background="#439889"
+
     >
     
     <TextView
@@ -19,9 +19,9 @@
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:background="@drawable/layout_toplist_bg"
-        android:backgroundTint="#003d33"
+        android:backgroundTint="#006dcc"
         android:padding="10dp"
-        android:textColor="#fafafa"
+
         />
 
     <ImageView
@@ -32,84 +32,166 @@
         android:layout_marginTop="10dp"
         />
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/answers_rounded_corner"
-    android:backgroundTint="#00695c"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:stretchColumns="1"
-    android:padding="20dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
-    >
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
         android:layout_height="wrap_content"
-        android:text="Get rekt: 2450"
-        android:textSize="20sp"
-        android:textColor="#fafafa"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        
+        >
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="1."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_1:"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="3000"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="2."
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yolo king: 2300"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OnlyThird: 2100"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fail hard: 1750"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Noob: 1700"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Danika_10: 900"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jozsika11: 760"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#fafafa"
-        />
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_2:"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="2500"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="3."
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-</LinearLayout>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_3:"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="2000"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="4."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_4:"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="1500"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="5."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_5"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="1000"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="6."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item_6"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="500"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:text="7."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Item7:"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textSize="20sp" />
+        </TableRow>
+
+    </TableLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:theme="@style/AppTheme.Button"
         android:text="Continue"
-        android:backgroundTint="#00695c"
-        android:textColor="#fafafa"
+        android:backgroundTint="#006dcc"
         android:layout_marginTop="30dp"
         android:background="@drawable/layout_toplist_bg"
         />
