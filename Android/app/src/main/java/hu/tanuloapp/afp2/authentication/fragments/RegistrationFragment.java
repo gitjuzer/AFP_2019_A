@@ -18,7 +18,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
+import java.security.MessageDigest;
 
 import hu.tanuloapp.afp2.R;
 import hu.tanuloapp.afp2.authentication.AuthenticationActivity;
@@ -41,20 +43,40 @@ public class RegistrationFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static String getHash(String s){
+        try {
+            MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     public static void register(final String username, final String password, String email, StatusCallback statusCallback) {
         OkHttpClient okHttpClient = new OkHttpClient();
 
         HttpUrl httpUrl = new HttpUrl.Builder()
-                .scheme("") // TODO: 2019.04.01. fix protocol
-                .host("") // TODO: 2019.04.01. fix host
-                .port(0) // TODO: 2019.04.01. fix port
-                .addPathSegment("") // TODO: 2019.04.01. add path segment
+                .scheme("http") // TODO: 2019.04.01. fix protocol
+                .host("www.afp2019a.nhely.hu") // TODO: 2019.04.01. fix host
+                .port(80) // TODO: 2019.04.01. fix port
+                .addPathSegment("public") // TODO: 2019.04.01. add path segment
+                .addPathSegment("register") // TODO: 2019.04.01. add path segment
                 .build();
+
+        String hashedPass = getHash(password);
 
         JSONObject object = new JSONObject();
         try {
-            object.put("username", username);
-            object.put("password", password);
+            object.put("user", username);
+            object.put("password", hashedPass);
             object.put("email", email);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -115,6 +137,7 @@ public class RegistrationFragment extends Fragment {
             String user = username.getText().toString();
             String pass = password.getText().toString();
             String pass2 = password2.getText().toString();
+
             // TODO: 2019.03.24. login business logic
 
             if (user.isEmpty()) {
@@ -127,7 +150,7 @@ public class RegistrationFragment extends Fragment {
                 password.setError("A jelszavak nem egyeznek!");
                 password2.setError("A jelszavak nem egyeznek!");
             } else {
-                register(user, pass, "", new StatusCallback() {
+                register(user, pass, "tesztelek@teszt.com", new StatusCallback() {
                     @Override
                     public void onSuccess(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
