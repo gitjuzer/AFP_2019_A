@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b8babc">
+    android:background="#ffffff">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -74,7 +74,9 @@
             <ListView
                 android:id="@+id/listTop"
                 android:layout_width="match_parent"
-                android:layout_height="325dp" />
+                android:layout_height="325dp"
+                />
+
 
 
         </LinearLayout>
