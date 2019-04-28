@@ -9,6 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:stretchColumns="1"
+    android:background="#ffffff"
 
     >
     
@@ -21,7 +22,6 @@
         android:background="@drawable/layout_toplist_bg"
         android:backgroundTint="#006dcc"
         android:padding="10dp"
-
         />
 
     <ImageView
@@ -30,159 +30,245 @@
         android:layout_height="43dp"
         app:srcCompat="@drawable/cup"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         />
 
     <TableLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
-        
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#f1f1f1"
+
         >
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Placement"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Username"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Score"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="1."
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_1:"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_1"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
                 android:text="3000"
-                android:textSize="20sp" />
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="2."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_2:"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_2"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="2500"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2800"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="3."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_3:"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_3"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="2000"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2600"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="4."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_4:"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_4"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="1500"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2500"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="5."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_5"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_5:"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="1000"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2300"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="6."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item_6"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_6:"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="500"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2000"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
         <TableRow>
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
                 android:text="7."
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
+                android:background="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                />
             <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Item7:"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name_7:"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"/>
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="0"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="1500"
+                android:background="#ffffff"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"/>
         </TableRow>
 
     </TableLayout>
