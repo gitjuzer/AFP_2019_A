@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="Name_5:"
+                android:text="Name_5"
                 android:background="#ffffff"
                 android:layout_marginRight="2dp"/>
             <TextView
@@ -228,7 +228,7 @@
                 android:layout_width="wrap_content"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="Name_6:"
+                android:text="Name_6"
                 android:background="#ffffff"
                 android:layout_marginRight="2dp"/>
             <TextView
@@ -257,7 +257,7 @@
                 android:layout_width="wrap_content"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="Name_7:"
+                android:text="Name_7"
                 android:background="#ffffff"
                 android:layout_marginRight="2dp"/>
             <TextView
@@ -279,7 +279,7 @@
         android:text="Continue"
         android:backgroundTint="#006dcc"
         android:layout_marginTop="30dp"
-        android:background="@drawable/layout_toplist_bg"
+        android:background="@drawable/answers_rounded_corner"
         />
 
 </LinearLayout>
