@@ -134,9 +134,9 @@ public class PasswordChange extends Fragment {
             }
         });
 
-        Button back = view.findViewById(R.id.vissza);
+        /*Button back = view.findViewById(R.id.vissza);
         back.setOnClickListener(v -> Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new LoginFragment()).commit());
-
+        */
         return view;
     }
 
