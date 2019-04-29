@@ -9,14 +9,12 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:stretchColumns="1"
-    android:background="#ffffff"
-
-    >
+    android:background="#ffffff">
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score board"
+        android:text="Helyezéslista"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:background="@drawable/layout_toplist_bg"
@@ -45,7 +43,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Placement"
+                android:text="Helyezés"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -54,7 +52,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Username"
+                android:text="Név"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -63,7 +61,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Score"
+                android:text="Pontszám"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
