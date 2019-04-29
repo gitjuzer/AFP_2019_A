@@ -2,9 +2,13 @@
 	function getConnection(){
 		
 		//az adatbázis adatait át kell írni
-		$connection_string= 'mysql:host=localhost;dbname=Quiz;','root','';
+		$DB_TYPE = 'mysql';
+		$DB_HOST = 'localhost';
+		$DB_NAME = '';
+		$USER = 'root';
+		$PASS = '';
 		
-		$connection = new PDO();
+		$connection = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';',USER, PASS);
 		$connection->exec("SET NAMES 'utf8'");
 		return $connection;
 	}
