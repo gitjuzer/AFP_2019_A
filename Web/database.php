@@ -25,4 +25,9 @@
 
 		$conn->close();
 	}
+	
+	function getRecord($id) {
+		
+	}
+	
 ?> 
