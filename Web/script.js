@@ -30,21 +30,20 @@ function validateRegister() {
 //   xmlhttp.setRequestHeader("Content-Type", "application/json");
 //   xmlhttp.send(userRegister);
   $.ajax({
-    type: "POST",
+    type: "PUT",
     url: 'http://www.afp2019a.nhely.hu/public/register',
     data : userRegister,
     success : function(data) {
-      var response = JSON.parse(data);
-      console.log("ide eljutotte"+ response);
-      if (respone["status"] == 1) {
+      console.log("ide eljutotte"+ data);
+      if (data["status"] == 1) {
         registerState.css("color", "green");
-        registerState.html(response["status_message"]);
+        registerState.html(data["status_message"]);
         console.log("siker");
       }
       else {
         registerState.css("color", "red");
-          registerState.html(response["status_message"]);
-          console.log("nem siker");
+        registerState.html(data["status_message"]);
+        console.log("nem siker");
         }
       }
   });
