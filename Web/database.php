@@ -1,17 +1,12 @@
  <?php
 	function getConnection(){
-		$servername = "localhost";	//nem tudom az adatbázist, aki tudja írja át az adatokat hozzá
-		$username = "root";
-		$password = "";
-		$dbname = "Quiz";
-
-		$conn = new mysqli($servername, $username, $password, $dbname);
-
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
 		
-		return $conn;
+		//az adatbázis adatait át kell írni
+		$connection_string= 'mysql:host=localhost;dbname=Quiz;','root','';
+		
+		$connection = new PDO();
+		$connection->exec("SET NAMES 'utf8'");
+		return $connection;
 	}
 	
 	function insertQuestion($question,$answer1,$answer2,$answer3,$answer4) {
