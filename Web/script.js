@@ -23,7 +23,7 @@ function validateRegister() {
     console.log("ide eljutott");
     
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
-    var userRegister = JSON.stringify({ user: actualUsername, password: actualPasswd, email:"asd123@freemail.hu" });
+    var userRegister = { user: actualUsername, password: actualPasswd, email:"asd123@freemail.hu" };
     console.log(userRegister);
 //   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 //   xmlhttp.open("PUT", "http://www.afp2019a.nhely.hu/public/register");
@@ -33,8 +33,6 @@ function validateRegister() {
     type: "POST",
     url: 'http://www.afp2019a.nhely.hu/public/register',
     data : userRegister,
-    contentType: "application/json",
-    dataType: "json",
     success : function(data) {
       var response = JSON.parse(data);
       console.log("ide eljutotte"+ response);
@@ -82,7 +80,7 @@ function Login() {
 function tryLogin(username, password) {
   var loginState = $("#loginState");
  // var shaPass = hex_sha256(password).toLowerCase();
-  var userLogin = JSON.stringify({ user: username, password: password });
+  var userLogin = { user: username, password: password };
   $.post('http://www.afp2019a.nhely.hu/public/register',
     userLogin
     ,
@@ -241,16 +239,33 @@ function validateNewQuestion() {
   }
 }
 function GetAllQuiz(){
-  console.log("asd");
   $.get(
     'http://www.afp2019a.nhely.hu/public/quiz',
     function(data) {
-      //var response = JSON.stringify(data);
-var asd = JSON.stringify(data);
-var kesz = JSON.parse(asd);
-      console.log("ide eljutotte"+ data[0]["id"]+data[0]["name"]);
+      $("#osszesteszt").html(data[0]["id"]+data[0]["name"]);
+    }
+  );
+  $.get(
+    'http://www.afp2019a.nhely.hu/public/quiz/1',
+    function(data) {
+      var szoveg = "";
+      console.log(data);
+      for(var i = 0;i < data.length;i++){
+        console.log(data[i]["question"]);
+        szoveg += data[i]["question"];
+        for(var j = 0; j < data[i]["answers"].length;j++){
+          console.log(data[i]["answers"][j]["text"]);
+          szoveg += "<p>"+ data[i]["answers"][j]["text"]+"</p>";
+          
+        }
+           
+        $("#osszesteszt").html(szoveg);
+            
+            [{"id":1,"question":"5+5=?","test":1,"type":1,"answers":[{"id":4,"text":"10","correct":1,"pair_id":null,"question":1},{"id":5,"text":"20","correct":0,"pair_id":null,"question":1},{"id":6,"text":"11","correct":0,"pair_id":null,"question":1}]},{"id":2,"question":"2*2=?","test":1,"type":1,"answers":[{"id":1,"text":"5","correct":0,"pair_id":null,"question":2},{"id":2,"text":"3","correct":0,"pair_id":null,"question":2},{"id":3,"text":"4","correct":1,"pair_id":null,"question":2}]},{"id":3,"question":"10-5=?","test":1,"type":1,"answers":[{"id":7,"text":"6","correct":0,"pair_id":null,"question":3},{"id":8,"text":"5","correct":1,"pair_id":null,"question":3},{"id":9,"text":"7","correct":0,"pair_id":null,"question":3}]},{"id":4,"question":"25/5=?","test":1,"type":1,"answers":[{"id":13,"text":"6","correct":0,"pair_id":null,"question":4},{"id":14,"text":"4","correct":0,"pair_id":null,"question":4},{"id":15,"text":"5","correct":1,"pair_id":null,"question":4}]}]
+          
+        }
       
-      $("#osszesteszt").html(kesz[0]["id"]+kesz[0]["name"]);
+     
     }
   );
 }
