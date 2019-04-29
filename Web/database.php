@@ -25,4 +25,17 @@
 
 		$conn->close();
 	}
+	
+	function getRecord($id) {
+		$conn = getConnection();
+		
+		//mező és tábla nevet át kell írni
+		$sql = "SELECT question,1st_answer, 2nd_answer,3rd_answer,4th_answer FROM Quiz WHERE id =".$id;
+		$result = $conn->query($sql);
+		
+		$conn->close();
+		
+		return $result;
+	}
+	
 ?> 
