@@ -34,7 +34,7 @@ function validateRegister() {
     url: 'http://www.afp2019a.nhely.hu/public/register',
     data : userRegister,
     success : function(data) {
-      console.log("ide eljutotte"+ data);
+      console.log("ide eljutotte"+ data["status"]);
       if (data["status"] == 1) {
         registerState.css("color", "green");
         registerState.html(data["status_message"]);
