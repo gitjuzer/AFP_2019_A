@@ -260,8 +260,6 @@ function GetAllQuiz(){
         }
            
         $("#osszesteszt").html(szoveg);
-            
-            [{"id":1,"question":"5+5=?","test":1,"type":1,"answers":[{"id":4,"text":"10","correct":1,"pair_id":null,"question":1},{"id":5,"text":"20","correct":0,"pair_id":null,"question":1},{"id":6,"text":"11","correct":0,"pair_id":null,"question":1}]},{"id":2,"question":"2*2=?","test":1,"type":1,"answers":[{"id":1,"text":"5","correct":0,"pair_id":null,"question":2},{"id":2,"text":"3","correct":0,"pair_id":null,"question":2},{"id":3,"text":"4","correct":1,"pair_id":null,"question":2}]},{"id":3,"question":"10-5=?","test":1,"type":1,"answers":[{"id":7,"text":"6","correct":0,"pair_id":null,"question":3},{"id":8,"text":"5","correct":1,"pair_id":null,"question":3},{"id":9,"text":"7","correct":0,"pair_id":null,"question":3}]},{"id":4,"question":"25/5=?","test":1,"type":1,"answers":[{"id":13,"text":"6","correct":0,"pair_id":null,"question":4},{"id":14,"text":"4","correct":0,"pair_id":null,"question":4},{"id":15,"text":"5","correct":1,"pair_id":null,"question":4}]}]
           
         }
       
