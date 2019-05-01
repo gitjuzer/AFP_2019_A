@@ -13,8 +13,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import hu.tanuloapp.afp2.authentication.AuthenticationActivity;
+import hu.tanuloapp.afp2.models.User;
 import hu.tanuloapp.afp2.profil.ProfileFragment;
 import hu.tanuloapp.afp2.tasks.fragments.QuizFragment;
 import hu.tanuloapp.afp2.tasks.fragments.SyllabusFragment;
@@ -22,6 +25,11 @@ import hu.tanuloapp.afp2.tasks.fragments.ToplistFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static User loggedUser = User.getInstance();
+    TextView username;
+    TextView email;
+    View hView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,11 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+        hView = navigationView.getHeaderView(0);
+        username = hView.findViewById(R.id.userNameText);
+        email = hView.findViewById(R.id.emailText);
+        username.setText(loggedUser.getUserName());
+        email.setText(loggedUser.getEmail());
         navigationView.setNavigationItemSelectedListener(this);
     }
 
