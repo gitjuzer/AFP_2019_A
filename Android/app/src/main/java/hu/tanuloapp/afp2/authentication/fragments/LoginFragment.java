@@ -15,15 +15,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 import hu.tanuloapp.afp2.MainActivity;
 import hu.tanuloapp.afp2.R;
+import hu.tanuloapp.afp2.models.User;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -38,25 +42,46 @@ import okhttp3.Response;
  */
 public class LoginFragment extends Fragment {
 
+    private static User loggedUser = User.getInstance();
 
     public LoginFragment() {
         // Required empty public constructor
+    }
+
+    public static String getHash(String s){
+        try {
+            MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public static void login(final String username, final String password, StatusCallback statusCallback) {
         OkHttpClient okHttpClient = new OkHttpClient();
 
         HttpUrl httpUrl = new HttpUrl.Builder()
-                .scheme("") // TODO: 2019.04.01. fix protocol
-                .host("") // TODO: 2019.04.01. fix host
-                .port(0) // TODO: 2019.04.01. fix port
-                .addPathSegment("") // TODO: 2019.04.01. add path segment
+                .scheme("http")
+                .host("www.afp2019a.nhely.hu")
+                .port(80)
+                .addPathSegment("public")
+                .addPathSegment("login")
                 .build();
+
+        String hashedPass = getHash(password);
 
         JSONObject object = new JSONObject();
         try {
-            object.put("username", username);
-            object.put("password", password);
+            object.put("user", username);
+            object.put("password", hashedPass);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -86,8 +111,14 @@ public class LoginFragment extends Fragment {
                     new Handler(Looper.getMainLooper()).post(() -> {
                         try {
                             if (new JSONObject(result).getInt("status") == 0) {
+                                Log.d("afp", "hashedPassword: " + hashedPass);
                                 statusCallback.onFailure(new JSONObject(result).getString("status_message"));
                             } else if (new JSONObject(result).getInt("status") == 1) {
+                                JSONObject jsonResult = new JSONObject(result);
+                                loggedUser.setToken(jsonResult.getJSONObject("status_message").getString("token"));
+                                loggedUser.setRole(jsonResult.getJSONObject("status_message").getString("role"));
+                                loggedUser.setUserName(jsonResult.getJSONObject("status_message").getString("username"));
+                                loggedUser.setEmail(jsonResult.getJSONObject("status_message").getString("email"));
                                 statusCallback.onSuccess(new JSONObject(result).getString("status_message"));
                             }
                         } catch (JSONException e) {
@@ -116,13 +147,13 @@ public class LoginFragment extends Fragment {
             String pass = password.getText().toString();
             // TODO: 2019.03.24. login business logic
 
-            if (user.equals("diak") && pass.equals("diak")) {
+            /*if (user.equals("diak") && pass.equals("diak")) {
                 SharedPreferences sharedPreferences = Objects.requireNonNull(getActivity()).getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
                 sharedPreferences.edit().putBoolean("creds", true).apply();
                 startActivity(new Intent(getContext(), MainActivity.class));
-            }
+            }*/
 
-            /*if (user.isEmpty()) {
+            if (user.isEmpty()) {
                 username.setError("Felhasználónév mező nem lehet üres!");
             } else if (pass.isEmpty()) {
                 password.setError("Jelszó mező nem lehet üres!");
@@ -131,6 +162,8 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onSuccess(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+                        SharedPreferences sharedPreferences = Objects.requireNonNull(getActivity()).getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+                        sharedPreferences.edit().putBoolean("creds", true).apply();
                         startActivity(new Intent(getContext(), MainActivity.class));
                     }
 
@@ -139,7 +172,7 @@ public class LoginFragment extends Fragment {
                         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
                     }
                 });
-            }*/
+            }
         });
 
         return view;

@@ -64,11 +64,11 @@ public class RegistrationFragment extends Fragment {
         OkHttpClient okHttpClient = new OkHttpClient();
 
         HttpUrl httpUrl = new HttpUrl.Builder()
-                .scheme("http") // TODO: 2019.04.01. fix protocol
-                .host("www.afp2019a.nhely.hu") // TODO: 2019.04.01. fix host
-                .port(80) // TODO: 2019.04.01. fix port
-                .addPathSegment("public") // TODO: 2019.04.01. add path segment
-                .addPathSegment("register") // TODO: 2019.04.01. add path segment
+                .scheme("http")
+                .host("www.afp2019a.nhely.hu")
+                .port(80)
+                .addPathSegment("public")
+                .addPathSegment("register")
                 .build();
 
         String hashedPass = getHash(password);

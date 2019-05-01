@@ -4,10 +4,10 @@ public class User {
 
     private static User instance;
 
-    private static String token;
-    private static String userName;
-    private static String email;
-    private static String role;
+    private String token;
+    private String userName;
+    private String email;
+    private String role;
 
     private User(){}
 
@@ -18,35 +18,33 @@ public class User {
         return instance;
     }
 
-    public static String getToken() {
+    public String getToken() {
         return token;
     }
 
-    public static String getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public static String getRole() {
+    public String getRole() {
         return role;
     }
 
-    public static void setToken(String token) {
-        User.token = token;
+    public void setToken(String token) {
+        this.token = token;
     }
 
-    public static void setUserName(String userName) {
-        User.userName = userName;
+    public void setUserName(String userName) { this.userName = userName; }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public static void setEmail(String email) {
-        User.email = email;
-    }
-
-    public static void setRole(String role) {
-        User.role = role;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
