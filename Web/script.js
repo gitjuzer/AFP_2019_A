@@ -184,6 +184,42 @@ function toSendMessage() {
   location.href = "SendMessage.html";
 }
 
+
+
+//timer
+
+var time =30;
+
+
+function countDown(secs,elem) {
+	
+	var element = document.getElementById(elem);
+	
+	//var sbb = document.getElementById(progressbarStyle.value);
+	
+	
+	element.innerHTML = "Idő:"+secs;
+	
+	if(secs < 1) {
+		
+		
+		clearTimeout(timer);
+		
+		element.innerHTML = '<h2></h2>';
+		
+		element.innerHTML += '<a href="#">Lejárt az idő</a>';
+		
+	}
+	secs--;
+	
+	
+	var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
+}
+
+
+
+
+
 function passwordChange() {
   var oldPassword = $("#oldPassword").val();
   var newPassword = $("#newPassword").val();
