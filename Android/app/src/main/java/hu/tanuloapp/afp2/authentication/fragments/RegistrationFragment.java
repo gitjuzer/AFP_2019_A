@@ -131,12 +131,14 @@ public class RegistrationFragment extends Fragment {
         EditText username = view.findViewById(R.id.Name);
         EditText password = view.findViewById(R.id.Password);
         EditText password2 = view.findViewById(R.id.Password2);
+        EditText emailadd = view.findViewById(R.id.Email);
 
         Button registration = view.findViewById(R.id.Registration);
         registration.setOnClickListener(v -> {
             String user = username.getText().toString();
             String pass = password.getText().toString();
             String pass2 = password2.getText().toString();
+            String email = emailadd.getText().toString();
 
             // TODO: 2019.03.24. login business logic
 
@@ -149,8 +151,12 @@ public class RegistrationFragment extends Fragment {
             } else if (!pass.equals(pass2)) {
                 password.setError("A jelszavak nem egyeznek!");
                 password2.setError("A jelszavak nem egyeznek!");
-            } else {
-                register(user, pass, "tesztelek@teszt.com", new StatusCallback() {
+            }
+            else if (email.isEmpty()){
+                emailadd.setError("Az email mező nem lehet üres!");
+            }
+            else {
+                register(user, pass, email, new StatusCallback() {
                     @Override
                     public void onSuccess(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
