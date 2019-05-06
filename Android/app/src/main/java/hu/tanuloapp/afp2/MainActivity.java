@@ -21,6 +21,7 @@ import hu.tanuloapp.afp2.models.User;
 import hu.tanuloapp.afp2.profil.ProfileFragment;
 import hu.tanuloapp.afp2.tasks.fragments.QuizFragment;
 import hu.tanuloapp.afp2.tasks.fragments.SyllabusFragment;
+import hu.tanuloapp.afp2.tasks.fragments.TaskChoiceFragment;
 import hu.tanuloapp.afp2.tasks.fragments.ToplistFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new ProfileFragment();
                 break;
             case R.id.kviz:
-                fragment = new QuizFragment();
+                fragment = new TaskChoiceFragment();
                 break;
             case R.id.test:
                 fragment = new QuizFragment();
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.toplist:
                 fragment = new ToplistFragment();
                 break;
-            case R.id.tananyag:
+            case R.id.kezdooldal:
                 fragment = new SyllabusFragment();
                 break;
         }

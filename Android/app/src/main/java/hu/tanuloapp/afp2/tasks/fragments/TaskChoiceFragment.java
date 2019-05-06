@@ -34,7 +34,8 @@ import okhttp3.Response;
 
 public class TaskChoiceFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    private static List<String> tasksname = new ArrayList<>();
+    private static ArrayList<String> tasksname = new ArrayList<>();
+    //private static String[] tasksname = {"asd","gdfg","bnbn"};
     private static String choosedTask;
 
     public TaskChoiceFragment(){
@@ -45,10 +46,11 @@ public class TaskChoiceFragment extends Fragment implements AdapterView.OnItemSe
         OkHttpClient okHttpClient = new OkHttpClient();
 
         HttpUrl httpUrl = new HttpUrl.Builder()
-                .scheme("") // TODO: 2019.04.07. fix protocol
-                .host("") // TODO: 2019.04.07. fix host
-                .port(0) // TODO: 2019.04.07. fix port
-                .addPathSegment("") // TODO: 2019.04.07. add path segment
+                .scheme("http")
+                .host(" www.afp2019a.nhely.hu")
+                .port(80)
+                .addPathSegment("public")
+                .addPathSegment("quiz")
                 .build();
 
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
@@ -95,22 +97,24 @@ public class TaskChoiceFragment extends Fragment implements AdapterView.OnItemSe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        /*View view = inflater.inflate(R.layout.quizselection, container, false);
+        View view = inflater.inflate(R.layout.fragment_quizselection, container, false);
 
         Button choose = view.findViewById(R.id.button);
         Spinner spinner = (Spinner)view.findViewById(R.id.spinnerquizselection);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, tasksname, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, tasksname, android.R.layout.simple_spinner_item);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,tasksname);
+        //spinner.setAdapter(adapter);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner.setAdapter(adapter);
+        //spinner.setOnItemSelectedListener(this);
 
 
         choose.setOnClickListener(v -> {
 
         });
 
-        return view; */
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
+        //return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
