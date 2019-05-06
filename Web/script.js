@@ -80,18 +80,18 @@ function tryLogin(username, password) {
   var loginState = $("#loginState");
  // var shaPass = hex_sha256(password).toLowerCase();
   var userLogin = { user: username, password: password };
-  $.post('http://www.afp2019a.nhely.hu/public/register',
+  $.post('http://www.afp2019a.nhely.hu/public/login',
     userLogin
     ,
     function (data) {
-      var response = JSON.parse(data);
-      if (respone["status"] == 1) {
+     
+      if (data["status"] == 1) {
         Login();
-        var token = response["token"];
+        var token = data["token"];
       }
       else {
         loginState.css("color", "red");
-        loginState.html(response["status_message"]);
+        loginState.html(data["status_message"]);
       }
     }
   );
