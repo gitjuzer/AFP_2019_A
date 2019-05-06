@@ -6,6 +6,86 @@
     android:layout_height="match_parent"
     android:background="@color/bgColor">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="75dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="161dp"
+            android:layout_height="106dp"
+            app:srcCompat="@drawable/account_circle_inv"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="97dp" />
+
+        <LinearLayout
+            android:layout_marginTop="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Felhasználónév: "
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Email cím: "
+            android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/mail"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@mail.com"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
     <Button
         android:id="@+id/logout"
         android:layout_width="120dp"
