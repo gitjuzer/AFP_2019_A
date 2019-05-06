@@ -189,32 +189,44 @@ function toSendMessage() {
 //timer
 
 var time =30;
-
+var fill = 100;
 
 function countDown(secs,elem) {
-	
-	var element = document.getElementById(elem);
-	
-	//var sbb = document.getElementById(progressbarStyle.value);
-	
-	
-	element.innerHTML = "Idő:"+secs;
-	
-	if(secs < 1) {
-		
-		
-		clearTimeout(timer);
-		
-		element.innerHTML = '<h2></h2>';
-		
-		element.innerHTML += '<a href="#">Lejárt az idő</a>';
-		
-	}
-	secs--;
-	
-	
-	var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
+    
+    var element = document.getElementById(elem);
+    //var pbelem  = $("#pb");
+    //var sbb = document.getElementById(progressbarStyle.value);
+    
+     
+    element.innerHTML = "Idő:"+secs;
+    
+    if(secs < 1) {
+        
+        
+        clearTimeout(timer);
+        
+        element.innerHTML = '<h2></h2>';
+        
+        element.innerHTML += '<a href="#">Lejárt az idő</a>';
+        
+    }
+    secs--;
+    fill-=3.33;
+    //pbelem.style.css()
+    window.setInterval(function(){
+            // Add 10% for each iteration of the function (should be 10 iterations in total)
+            fill ;
+              if(fill === 1){
+                clearInterval();
+            }
+            else{
+                document.getElementById("pb_one").style.width = fill + "%";
+            }
+ }, 50);
+    
+    var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
 }
+
 
 
 
