@@ -37,10 +37,10 @@
 		return $result;
 	}
 	
-	function registerUser($username, $password, $szerepkor) {
+	function registerUser($username, $password, $role) {
 		$conn = getConnection();
 		
-		$sql = 'Insert INTO Users (username,password,szerepkor) VALUES ('.$username.','.$password.','.$szerepkorkor.')';
+		$sql = 'Insert INTO Users (username,password,role) VALUES ('.$username.','.$password.','.$role.')';
 		
 		if ($conn->query($sql) === TRUE) {
 			echo "Sikeres regisztráció!"
@@ -66,5 +66,9 @@
 		if  ( conn->query($sql) === TRUE) {
 			echo 'Sikeres jelszó módosítás!';
 		}
+	}
+	
+	function changeRole($username, $new_role){
+		
 	}
 ?>
