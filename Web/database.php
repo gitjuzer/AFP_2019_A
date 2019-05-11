@@ -18,7 +18,7 @@
 		//a mező neveit át kell írni!!
 		$sql = 'INSERT INTO Questions (question, 1st_answer, 2nd_answer,3rd_answer,4th_answer) VALUES ('.$question.','.$answer1.','.$answer2.','.$answer3.','.$answer4.')';
 
-		if ($conn->query($sql) === TRUE) {
+		if ($conn->query($sql) == TRUE) {
 			echo "Sikeres felvitel!";
 		}
 
@@ -42,7 +42,7 @@
 		
 		$sql = 'Insert INTO Users (username,password,role) VALUES ('.$username.','.$password.','.$role.')';
 		
-		if ($conn->query($sql) === TRUE) {
+		if ($conn->query($sql) == TRUE) {
 			echo "Sikeres regisztráció!"
 		}
 		
@@ -63,12 +63,18 @@
 		
 		$sql = 'UPDATE Users SET password = '.$new_password.' WHERE username = '.$username;
 		
-		if  ( conn->query($sql) === TRUE) {
+		if  ( conn->query($sql) == TRUE) {
 			echo 'Sikeres jelszó módosítás!';
 		}
 	}
 	
 	function changeRole($username, $new_role){
+		$conn = getConnection();
 		
+		$sql = 'UPDATE Users SET role = '.$new_role.' WHERE username = '.$username;
+		
+		if ($conn->query($sql) == TRUE) {
+			echo 'Sikeres szerepkör változtatás!;
+		}	
 	}
 ?>
