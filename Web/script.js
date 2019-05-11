@@ -4,6 +4,9 @@ function toRegisterPage() {
 function toHomepage() {
   location.href = "Homepage.html";
 }
+function toQuestionSelect(){
+  location.href = "QuestionSelect.html";
+}
 function validateRegister() {
   var actualUsername = $("#username").val();
   var actualPasswd = $("#password").val();
@@ -74,7 +77,7 @@ function AdminLogin() {
   location.href = "AdminLogin.html";
 }
 function Login() {
-  location.href = "GameScreen.html";
+  location.href = "QuestionSelect.html";
 }
 function tryLogin(username, password) {
   var loginState = $("#loginState");
@@ -285,13 +288,17 @@ function validateNewQuestion() {
     alert("Nincs kiválasztva a helyes válasz!");
   }
 }
-function GetAllQuiz(){
+function getQuestions(){
   $.get(
     'http://www.afp2019a.nhely.hu/public/quiz',
     function(data) {
-      $("#osszesteszt").html(data[0]["id"]+data[0]["name"]);
+console.log(data);
+      
     }
   );
+  return data;
+}
+function GetAllQuiz(){
   $.get(
     'http://www.afp2019a.nhely.hu/public/quiz/1',
     function(data) {
