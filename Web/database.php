@@ -52,8 +52,8 @@
 	function getUser($username){
 		$conn = getConnection();
 		
-		$sql = 'SELECT * FROM Users WHERE usrename = '.$username;
-		$result = $cnon=ó->query()ó$sql);
+		$sql = 'SELECT * FROM Users WHERE uername = '.$username;
+		$result = $conn=->query($sql);
 		
 		return $result;
 	}
