@@ -87,4 +87,8 @@
 			echo 'Felhasználó sikeresen törölve';
 		}
 	}
+	
+	function deleteQuestion($id){
+		
+	}
 ?>
