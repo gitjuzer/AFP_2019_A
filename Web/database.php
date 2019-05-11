@@ -20,7 +20,7 @@
 		$sql = 'INSERT INTO Questions (question, 1st_answer, 2nd_answer,3rd_answer,4th_answer) VALUES ('.$question.','.$answer1.','.$answer2.','.$answer3.','.$answer4.')';
 
 		if ($conn->query($sql) === TRUE) {
-			echo "Successful insert!";
+			echo "Sikeres felvitel!";
 		}
 
 		$conn->close();
@@ -39,6 +39,14 @@
 	}
 	
 	function registerUser($username, $password, $szerepkor) {
+		$conn = getConnection();
 		
+		$sql = 'Insert INTO Users (username,password,szerepkor) VALUES ('.$username.','.$password.','.$szerekor.')';
+		
+		if ($conn->query($sql) === TRUE) {
+			echo "Sikeres regisztráció!"
+		}
+		
+		$conn->close();
 	}
 ?>
