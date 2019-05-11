@@ -89,6 +89,12 @@
 	}
 	
 	function deleteQuestion($id){
+		$conn = getConnection();
 		
+		$sql = 'DELETE FROM Questions WHERE id = '.$id;
+		
+		if ($conn->query($sql)) == TRUE){
+			echo 'Kérdés sikeresen törölve!';
+		}
 	}
 ?>
