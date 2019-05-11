@@ -79,6 +79,12 @@
 	}
 	
 	function deleteUser($username){
+		$conn = getConnection();
 		
+		$sql = 'DELETE FROM Users WHERE username = '.$username;
+		
+		if ($conn->query($sql) == TRUE){
+			echo 'Felhasználó sikeresen törölve';
+		}
 	}
 ?>
