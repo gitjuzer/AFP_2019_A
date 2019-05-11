@@ -63,7 +63,7 @@
 		
 		$sql = 'UPDATE Users SET password = '.$new_password.' WHERE username = '.$username;
 		
-		if  ( conn->query($sql) == TRUE) {
+		if  ($conn->query($sql) == TRUE) {
 			echo 'Sikeres jelszó módosítás!';
 		}
 	}
