@@ -10,7 +10,6 @@
 		
 		$connection = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';',USER, PASS);
 		$connection->exec("SET NAMES 'utf8'");
-		echo 'Successful connection';
 		return $connection;
 	}
 	
@@ -19,14 +18,14 @@
 		//a mező neveit át kell írni!!
 		$sql = 'INSERT INTO Questions (question, 1st_answer, 2nd_answer,3rd_answer,4th_answer) VALUES ('.$question.','.$answer1.','.$answer2.','.$answer3.','.$answer4.')';
 
-		if ($conn->query($sql) === TRUE) {
-			echo "Successful insert!";
+		if ($conn->query($sql) == TRUE) {
+			echo "Sikeres felvitel!";
 		}
 
 		$conn->close();
 	}
 	
-	function getRecord($id) {
+	function getQuestion($id) {
 		$conn = getConnection();
 		
 		//mező és tábla nevet át kell írni
@@ -36,5 +35,86 @@
 		$conn->close();
 		
 		return $result;
+	}
+	
+	function getQuestionsList(){
+		$conn = getConnection();
+		
+		$sql = 'SELECT * FROM Questions';
+		
+		$result = $conn->query($sql);
+		
+		return $result;
+	}
+	
+	function getUsersList(){
+		$conn = getConnection();
+		
+		$sql = 'SELECT * FROM Users';
+		
+		$result = $conn->query($sql);
+		
+		return $result;
+	}
+	
+	function registerUser($username, $password, $role) {
+		$conn = getConnection();
+		
+		$sql = 'Insert INTO Users (username,password,role) VALUES ('.$username.','.$password.','.$role.')';
+		
+		if ($conn->query($sql) == TRUE) {
+			echo "Sikeres regisztráció!"
+		}
+		
+		$conn->close();
+	}
+	
+	function getUser($username){
+		$conn = getConnection();
+		
+		$sql = 'SELECT * FROM Users WHERE uername = '.$username;
+		$result = $conn=->query($sql);
+		
+		return $result;
+	}
+	
+	function changePassword($username, $new_password){
+		$conn = getConnection();
+		
+		$sql = 'UPDATE Users SET password = '.$new_password.' WHERE username = '.$username;
+		
+		if  ($conn->query($sql) == TRUE) {
+			echo 'Sikeres jelszó módosítás!';
+		}
+	}
+	
+	function changeRole($username, $new_role){
+		$conn = getConnection();
+		
+		$sql = 'UPDATE Users SET role = '.$new_role.' WHERE username = '.$username;
+		
+		if ($conn->query($sql) == TRUE) {
+			echo 'Sikeres szerepkör változtatás!';
+		}	
+	}
+	
+	function deleteUser($username){
+		$conn = getConnection();
+		
+		$sql = 'DELETE FROM Users WHERE username = '.$username;
+		
+		if ($conn->query($sql) == TRUE){
+			echo 'Felhasználó sikeresen törölve';
+		}
+	}
+	
+	function deleteQuestion($id){
+		$conn = getConnection();
+		
+		$sql = 'DELETE FROM Questions WHERE id = '.$id;
+		
+		if ($conn->query($sql)) == TRUE){
+			echo 'Kérdés sikeresen törölve!';
+		}
 	}
 ?>
