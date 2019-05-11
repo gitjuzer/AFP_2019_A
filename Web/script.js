@@ -288,9 +288,9 @@ function validateNewQuestion() {
     alert("Nincs kiválasztva a helyes válasz!");
   }
 }
-function GetAllQuiz(){
+function GetAllQuizByType(id){
   $.get(
-    'http://www.afp2019a.nhely.hu/public/quiz/1',
+    'http://www.afp2019a.nhely.hu/public/quiz/'+id,
     function(data) {
       var szoveg = "";
       console.log(data);
@@ -303,7 +303,7 @@ function GetAllQuiz(){
           
         }
            
-        $("#osszesteszt").html(szoveg);
+        $("#labelid").html(szoveg);
           
         }
       

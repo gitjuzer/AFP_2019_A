@@ -13,7 +13,7 @@
 
 <body>
     <script>
-
+        var kerdesID = 0;
         var szoveg = "";
         var tomb = {};
         $.get(
@@ -23,8 +23,10 @@
                 tomb = data;
                 console.log(tomb);
                 for (let i = 0; i < tomb.length; i++) {
-                    szoveg += "<button class=\"btn btn-primary btn-md\">" + tomb[i]["name"] + "</button>";
+                    szoveg += "<button class=\"btn btn-primary btn-md\" id=\"quizType"+(i+1)+"\">" + tomb[i]["name"] + "</button>";
+                    szoveg += "<br></br>"
                 }
+                
                 console.log(szoveg);
                 $("#kerdesLista").html(szoveg);
                 console.log(tomb);
@@ -33,7 +35,13 @@
                 console.log(szoveg);
             }
         );
-
+            $("body").click(function(event){
+                if(event.target.id.includes("quizType")){
+                    kerdesID = event.target.id[event.target.id.length -1];
+                    window.sessionStorage.setItem("kerdesID",kerdesID);
+                }
+                
+            })
 
 
     </script>
