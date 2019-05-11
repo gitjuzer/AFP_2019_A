@@ -57,4 +57,8 @@
 		
 		return $result;
 	}
+	
+	function changePassword($username, $new_password){
+		
+	}
 ?>
