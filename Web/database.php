@@ -47,6 +47,16 @@
 		return $result;
 	}
 	
+	function getUsersList(){
+		$conn = getConnection();
+		
+		$sql = 'SELECT * FROM Users';
+		
+		$result = $conn->query($sql);
+		
+		return $result;
+	}
+	
 	function registerUser($username, $password, $role) {
 		$conn = getConnection();
 		
