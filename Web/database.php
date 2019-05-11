@@ -26,7 +26,7 @@
 		$conn->close();
 	}
 	
-	function getRecord($id) {
+	function getQuestion($id) {
 		$conn = getConnection();
 		
 		//mező és tábla nevet át kell írni
@@ -36,5 +36,9 @@
 		$conn->close();
 		
 		return $result;
+	}
+	
+	function registerUser($username, $password, $szerepkor) {
+		
 	}
 ?>
