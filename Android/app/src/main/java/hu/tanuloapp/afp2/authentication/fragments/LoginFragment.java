@@ -119,7 +119,7 @@ public class LoginFragment extends Fragment {
                                 loggedUser.setRole(jsonResult.getJSONObject("status_message").getString("role"));
                                 loggedUser.setUserName(jsonResult.getJSONObject("status_message").getString("username"));
                                 loggedUser.setEmail(jsonResult.getJSONObject("status_message").getString("email"));
-                                statusCallback.onSuccess(new JSONObject(result).getString("status_message"));
+                                statusCallback.onSuccess("Login successful");
                             }
                         } catch (JSONException e) {
                             Log.e("afp", "onResponse: " + e.getLocalizedMessage(), e);

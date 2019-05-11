@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static User loggedUser = User.getInstance();
+    TextView uName;
     TextView username;
     TextView email;
     View hView;
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        uName = findViewById(R.id.name);
+        uName.setText(loggedUser.getUserName());
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
 
