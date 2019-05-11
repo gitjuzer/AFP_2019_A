@@ -294,14 +294,14 @@
         </TableRow>
 
     </TableLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:theme="@style/AppTheme.Button"
-        android:text="Continue"
-        android:backgroundTint="#006dcc"
         android:layout_marginTop="30dp"
         android:background="@drawable/answers_rounded_corner"
-        />
+        android:backgroundTint="@color/white"
+        android:text="Continue"
+        android:theme="@style/AppTheme.Button" />
 
 </LinearLayout>
