@@ -74,7 +74,11 @@
 		$sql = 'UPDATE Users SET role = '.$new_role.' WHERE username = '.$username;
 		
 		if ($conn->query($sql) == TRUE) {
-			echo 'Sikeres szerepkör változtatás!;
+			echo 'Sikeres szerepkör változtatás!';
 		}	
+	}
+	
+	function deleteUser($username){
+		
 	}
 ?>
