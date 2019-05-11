@@ -37,6 +37,16 @@
 		return $result;
 	}
 	
+	function getQuestionsList(){
+		$conn = getConnection();
+		
+		$sql = 'SELECT * FROM Questions';
+		
+		$result = $conn->query($sql);
+		
+		return $result;
+	}
+	
 	function registerUser($username, $password, $role) {
 		$conn = getConnection();
 		
