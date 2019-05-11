@@ -48,4 +48,8 @@
 		
 		$conn->close();
 	}
+	
+	function getUser($username){
+	
+	}
 ?>
