@@ -10,7 +10,6 @@
 		
 		$connection = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';',USER, PASS);
 		$connection->exec("SET NAMES 'utf8'");
-		echo 'Successful connection';
 		return $connection;
 	}
 	
@@ -41,7 +40,7 @@
 	function registerUser($username, $password, $szerepkor) {
 		$conn = getConnection();
 		
-		$sql = 'Insert INTO Users (username,password,szerepkor) VALUES ('.$username.','.$password.','.$szerekor.')';
+		$sql = 'Insert INTO Users (username,password,szerepkor) VALUES ('.$username.','.$password.','.$szerepkorkor.')';
 		
 		if ($conn->query($sql) === TRUE) {
 			echo "Sikeres regisztráció!"
