@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html  lang="hu-HU">
+<html lang="hu-HU">
 <meta charset="UTF-8">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
-<link rel="stylesheet" href="style.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="script.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <script>
-        var kerdesek;
-        window.onload = function(){
-            kerdesek = getQuestions();
-            console.log(kerdesek);
-        };
+
+        var szoveg = "";
+        var tomb = {};
+        $.get(
+            'http://www.afp2019a.nhely.hu/public/quiz',
+            function (data) {
+                // $("#osszesteszt").html(data[0]["id"]+data[0]["name"]);
+                tomb = data;
+                console.log(tomb);
+                for (let i = 0; i < tomb.length; i++) {
+                    szoveg += "<button class=\"btn btn-primary btn-md\">" + tomb[i]["name"] + "</button>";
+                }
+                console.log(szoveg);
+                $("#kerdesLista").html(szoveg);
+                console.log(tomb);
+
+
+                console.log(szoveg);
+            }
+        );
+
+
+
     </script>
 
     <div class="row" id="menuBarColor">
@@ -23,13 +43,13 @@
         <div class="dropdown">
             <button onclick="dropdownMenu()" class="dropbtn">Menü</button>
             <div id="myDropdown" class="dropdown-content">
-                <a onclick="toGameScreen()" id="linkedPageClick">Játék felület</a> 
+                <a onclick="toGameScreen()" id="linkedPageClick">Játék felület</a>
                 <a onclick=toGameScreen() id="linkedPageClick">Quiz játék</a>
                 <a href="#jatek2">Játék 2</a>
                 <a href="#jatek3">Játék 3</a>
                 <a onclick=toTopList() id="linkedPageClick">Eredmények</a>
                 <a onclick=toPasswordChange() id="linkedPageClick">Jelszóváltoztatás</a>
-				<a onclick=AdminLogin() id="linkedPageClick">Bejelentkezés adminként</a>
+                <a onclick=AdminLogin() id="linkedPageClick">Bejelentkezés adminként</a>
                 <a onclick=Logout() id="linkedPageClick">Kijelentkezés</a>
             </div>
         </div>
@@ -38,81 +58,21 @@
     <br /><br />
 
     <div class="container">
-
         <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-6">
-                <div id="labelid">
-                    <h3>Későbbi kérdés helye</h3>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-1">
+                <div id="kerdesLista">
+
                 </div>
+
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-5"></div>
         </div>
+
 
     </div>
 
     <br /><br />
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-2">
-                <button class="btn btn-primary btn-md" id="answerBtnClass" onclick="AAnswer()" name="AAnswer"
-                    title="Avalasz">A
-                    válasz</button>
-            </div>
-
-            <div class="col-sm-1"></div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-primary btn-md" id="answerBtnClass" onclick="BAnswer()" name="BAnswer"
-                    title="Bvalasz">B
-                    válasz</button>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-2">
-                <button class="btn btn-primary btn-md" id="answerBtnClass" onclick="CAnswer()" name="CAnswer"
-                    title="Cvalasz">C
-                    válasz</button>
-            </div>
-
-            <div class="col-sm-1"></div>
-
-            <div class="col-sm-2">
-                <button class="btn btn-primary btn-md" id="answerBtnClass" onclick="DAnswer()" name="DAnswer"
-                    title="Dvalasz">D
-                    válasz</button>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-
-        <br /><br />
-
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <label>
-                <label><div id="status"></div>
-					<script>countDown(time,"status");</script><label></label>
-					</label></label>
-					<div class="progress">
-						<div id="pb_one" class="progress-bar progress-bar-striped active progress-bar-animated"
-						role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30" 
-						style="width: 100%"></div>
-						</div>
-                
-				
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-
-    </div>
-
 </body>
 
 </html>

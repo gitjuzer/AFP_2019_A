@@ -288,16 +288,6 @@ function validateNewQuestion() {
     alert("Nincs kiválasztva a helyes válasz!");
   }
 }
-function getQuestions(){
-  $.get(
-    'http://www.afp2019a.nhely.hu/public/quiz',
-    function(data) {
-console.log(data);
-      
-    }
-  );
-  return data;
-}
 function GetAllQuiz(){
   $.get(
     'http://www.afp2019a.nhely.hu/public/quiz/1',
