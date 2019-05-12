@@ -11,6 +11,7 @@ function validateRegister() {
   var actualUsername = $("#username").val();
   var actualPasswd = $("#password").val();
   var actualPasswd1x = $("#password1x").val();
+   var actualEmail =$("#email").val();
   var registerState = $("#registerState");
   registerState.html("");
   if (actualUsername.length < 6) {
@@ -26,7 +27,7 @@ function validateRegister() {
     console.log("ide eljutott");
     
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
-    var userRegister = { user: actualUsername, password: actualPasswd, email:"asd123@freemail.hu" };
+    var userRegister = { user: actualUsername, password: actualPasswd, email: actualEmail };
     console.log(userRegister);
 //   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 //   xmlhttp.open("PUT", "http://www.afp2019a.nhely.hu/public/register");
