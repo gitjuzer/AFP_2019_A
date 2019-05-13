@@ -271,6 +271,27 @@ function passwordChange() {
   }
 }
 
+function forgottenPassword() {
+  var email = $("#email").val();
+  var newPassword = $("#newPassword").val();
+  var newPasswordAgain = $("#newPasswordAgain").val();
+  var registerState = $("#forgottenChangeState");
+
+  if (newPassword.length < 6 || newPasswordAgain.length < 6) {
+    registerState.css("color", "red");
+    registerState.html("A beírt jelszó nem lehet 6 karakternél rövidebb.");
+  } else if (newPassword != newPasswordAgain) {
+    registerState.css("color", "red");
+    registerState.html("A beírt jelszó nem egyezik.");
+  } else if (email == null) {
+    registerState.css("color", "red");
+    registerState.html("Az E-mail nem lehet üres!");
+  }
+  else {
+    toLoginPage();
+  }
+}
+
 function userNameChange() {
   var oldUserName = $("#oldUserName").val();
   var newUserName = $("#newUserName").val();
