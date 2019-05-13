@@ -9,16 +9,17 @@
 <script src="script.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="REG2">
+<div class="REG_MAIN">
   <div class="contener-regiszter">
     <div class="row">
-      <div class="col-sm-6">
-        <h1 class="jumbotron text-center">Admin bejelentkezés</h1>
+      <div class="col-sm-6; REG_H">
+        <h1 class="jumbotron text-center; REG_H1">Admin bejelentkezés</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-2"></div>
-      <div class="col-sm-4">
+      <div class="col-sm-4; REG_H">
         <h3>Felhasználónév:</h3>
         <input id="loginUsername" class="form-control" placeholder="Felhasználónév" name="username" type="text" />
         <h3>Jelszó:</h3>
@@ -30,11 +31,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4">
-       
-      </div>
+        <div class="col-sm-4, REG_H">
+            <h3>Vissza a Kezdőoldalra:</h3>
+            <button onclick="toHomepage()" class="btn btn-primary btn-md">
+              Kezdőoldal
+            </button>
+          </div>
     </div>
   </div>
+</div>
 </body>
-
 </html>

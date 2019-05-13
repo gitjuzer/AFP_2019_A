@@ -10,6 +10,13 @@ body {
   height: 100%;
 }
 
+.REG2{
+  background-color: #2980B9;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
 .REG_MAIN{
   width: 50%;
   margin-left: 25%;
