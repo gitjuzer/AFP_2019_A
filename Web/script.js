@@ -186,6 +186,10 @@ function toPasswordChange() {
   location.href = "PasswordChange.html";
 }
 
+function toForgottenPassword() {
+  location.href = "ForgottenPassword.html";
+}
+
 function toAddQuestionPage() {
   location.href = "AddQuestion.html";
 }

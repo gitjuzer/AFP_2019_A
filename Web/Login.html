@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <div class="col-sm-2"></div>
-      <div class="col-sm-4, REG_H">
+      <div class="col-sm-4; REG_H">
         <h3>Felhasználónév:</h3>
         <input id="loginUsername" class="form-control" placeholder="Felhasználónév" name="username" type="text" />
         <h3>Jelszó:</h3>
@@ -32,7 +32,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4, REG_H">
+        <div class="col-sm-4; REG_H">
+            <h3>Elfelejtetted a jelszavad?</h3>
+            <button onclick="toForgottenPassword()" class="btn btn-primary btn-md">
+              Jelszó változtatás
+            </button>
+          </div>
+      <div class="col-sm-4; REG_H">
         <h3>Nincs még fiókod?</h3>
         <button onclick="toRegisterPage()" class="btn btn-primary btn-md">
           Regisztráció
