@@ -70,9 +70,11 @@ function validateLogin() {
   if (loginUsername == "" || loginPasswd == "") {
     loginState.css("color", "red");
     loginState.html("Hiányzó felhasználónév vagy jelszó!");
+    return false;
   } else if (loginUsername.length < 6 || loginPasswd.length < 6) {
     loginState.css("color", "red");
     loginState.html("Rövid felhasználónév vagy jelszó!");
+    return false;
   } else {
 
     //Ez így majdnem jó csak mégse, de átkonvertálja
@@ -100,10 +102,12 @@ function tryLogin(username, password) {
       if (data["status"] == 1) {
         Login();
         var token = data["token"];
+        return true;
       }
       else {
         loginState.css("color", "red");
         loginState.html(data["status_message"]);
+        return false;
       }
     }
   );

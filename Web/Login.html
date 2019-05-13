@@ -19,16 +19,24 @@
 </head>
 <body class="REG">
   <script>
-    function getOpposit(bool){
-      return !bool;
-    }
-    describe("Teszt csoport neve ide irjuk",() => {
-      it('megfordítja a logika értéket', () => {
-        var ertek = true;
+    describe("Login ellenőrzése",() => {
+      it('Felhasználónév túl rövid', () => {
+        $("#loginUsername").val("asd");
+        $("#loginPasswd").val("asdasd");
 
-        const eredmeny = getOpposit(ertek);
+        expect(validateLogin()).toBe(false);
+      }),
+      it('Jelszó túl rövid', () => {
+        $("#loginUsername").val("asdaaaa");
+        $("#loginPasswd").val("asdas");
 
-        expect(eredmeny).toBe(false);
+        expect(validateLogin()).toBe(false);
+      }),
+      it('Felhasználó nem létezik', () => {
+        $("#loginUsername").val("");
+        $("#loginPasswd").val("");
+        
+        expect(validateLogin()).toBe(false);
       });
     });
   </script>
