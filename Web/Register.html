@@ -64,6 +64,13 @@ it("Jelszó nem megfelelő hosszúságú",()=>{
   $("#password1x").val("asd");
 
   expect(validateRegister()).toBe(false);
+}),
+it("Jelszó nem egyezik meg",()=>{
+  $("#username").val("asdasd");
+  $("#password").val("asd1111111");
+  $("#password1x").val("asd12212");
+
+  expect(validateRegister()).toBe(false);
 })
 });
 </script>
