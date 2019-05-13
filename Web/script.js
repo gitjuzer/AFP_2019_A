@@ -1,6 +1,9 @@
 function toRegisterPage() {
   location.href = "Register.html";
 }
+function toLoginPage() {
+  location.href = "Login.html";
+}
 function toHomepage() {
   location.href = "Homepage.html";
 }
