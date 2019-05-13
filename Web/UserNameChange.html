@@ -20,7 +20,7 @@
                 <a href="#jatek2">Játék 2</a>
                 <a href="#jatek3">Játék 3</a>
                 <a onclick=toTopList() id="linkedPageClick">Eredmények</a>
-                <a onclick=toUserNameChange() id="linkedPageClick">Felhasználónév változtatás</a>
+                <a onclick=toPasswordChange() id="linkedPageClick">Jelszóváltoztatás</a>
 				        <a onclick=AdminLogin() id="linkedPageClick">Bejelentkezés adminként</a>
                 <a onclick=Logout() id="linkedPageClick">Kijelentkezés</a>
             </div>
@@ -30,25 +30,23 @@
   <div class="contener-regiszter">
     <div class="row">
       <div class="col-sm-6; REG_H">
-        <h1 class="jumbotron text-center; REG_H1">Jelszóváltoztatás</h1>
+        <h1 class="jumbotron text-center; REG_H1">Felhasználónév csere</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-4; REG_H">
 
-        <h3>Régi jelszó:</h3>
+        <h3>Régi felhasználónév:</h3>
         <input class="form-control" placeholder="Régi jelszó" id="oldPassword" type="password" />
-        <h3>Új jelszó:</h3>
+        <h3>Új felhasználónév:</h3>
         <input class="form-control" placeholder="Jelszó mégegyszer" id="newPassword" type="password" />
-        <h3>Új jelszó mégegyszer:</h3>
-        <input class="form-control" placeholder="Jelszó mégegyszer" id="newPasswordAgain" type="password" />
 
-        <br />
+        <br>
 
-        <label id="passwordChangeState"></label>
-        <button class="btn btn-primary btn-md" name="ellenoriz" title="Jelszovaltas" onclick="passwordChange()">
-          Jelszóváltás</button>
+        <label id="UserNameChangeState"></label>
+        <button class="btn btn-primary btn-md" name="ellenoriz" title="Jelszovaltas" onclick="userNameChange()">
+          Felhasználónév csere</button>
         <br /><br />
 
       </div>

@@ -190,6 +190,10 @@ function toForgottenPassword() {
   location.href = "ForgottenPassword.html";
 }
 
+function toUserNameChange() {
+  location.href = "UserNameChange.html";
+}
+
 function toAddQuestionPage() {
   location.href = "AddQuestion.html";
 }
@@ -258,6 +262,26 @@ function passwordChange() {
   } else if (newPassword != newPasswordAgain) {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem egyezik.");
+  } else if (newPassword == oldPassword) {
+    registerState.css("color", "red");
+    registerState.html("Az új jelszó nem egyezhet meg a régivel!");
+  }
+  else {
+    toGameScreen();
+  }
+}
+
+function userNameChange() {
+  var oldUserName = $("#oldUserName").val();
+  var newUserName = $("#newUserName").val();
+  var registerState = $("#UserNameChangeState");
+
+  if (newUserName.length < 4 || newPasswordAgain.length < 12) {
+    registerState.css("color", "red");
+    registerState.html("A beírt felhasználónak 4 és 12 karakter között kell lennie!");
+  } else if (newUserName == oldUserName) {
+    registerState.css("color", "red");
+    registerState.html("Az új felhasználónév nem egyezhet meg a régivel!");
   }
   else {
     toGameScreen();
