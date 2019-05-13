@@ -8,10 +8,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--unit teszt-->
+<link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-3.4.0/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-3.4.0/jasmine.css">
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
 </head>
 
 <body>
-    
+        <script>
+                describe("Üzenetküldés ellenőrzése",() => {
+                  it('Email cím üres', () => {
+                    $("#email").val("");
+            
+                    expect(validateLogin()).toBe(false);
+                  }),
+                  it('Az üzenetnek nincs szövege', () => {
+                    $("#msg").val("");
+            
+                    expect(validateLogin()).toBe(false);
+                  }) 
+                });
+              </script>
         <div class="row" id="menuBarColor">
                 <div class="col-sm-1"></div>
                 <div class="dropdown">
@@ -40,11 +59,11 @@
 							  <label>Üzenet küldése mindenkinek.</label></div>
 							  
                              <div> <label for="QuestionName">Címzett:</label>
-                              <input type="text" class="form-control" placeholder="Címzett e-mail címe.">
+                              <input type="text" class="form-control" placeholder="Címzett e-mail címe." id="email">
                             </div>
 							<div class="form-group">
                               <label for="QuestionName">Üzenet:</label>
-                              <input type="text" class="form-control" placeholder="Üzenet"  >
+                              <input type="text" class="form-control" placeholder="Üzenet" id="msg" >
                             </div>
 							  <button type="submit" class="btn btn-primary">Üzenet küldése</button>
                           </form>  
