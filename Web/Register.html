@@ -28,11 +28,16 @@
         <input class="form-control" placeholder="Jelszó" id="password" type="password" />
 		
         <h3>Jelszó mégegyszer:</h3>
-        <input class="form-control" placeholder="Jelszó mégegyszer" id="password1x" type="password" /><br />
+        <input class="form-control" placeholder="Jelszó mégegyszer" id="password1x" type="password" />
 		
-		<h3>E-mail cím:</h3>
-        <input class="form-control" placeholder="e-mail" id="email" type="text" /><br />
-		
+		    <h3>E-mail cím:</h3>
+        <input class="form-control" placeholder="e-mail" id="email" type="text" />
+
+        <h3>Válasz szerepkört:</h3>
+        <input type="radio" name="szerepkör" value="Tanár" id="tanar" /> Tanár<br>
+        <input type="radio" name="szerepkör" value="Diák" id="diak" /> Diák<br>
+        <input type="radio" name="szerepkör" value="Szülő" id="szülö" /> Szülő<br>
+        	
         <label id="registerState"></label><br/>
         <button class="btn btn-primary btn-md" name="ellenoriz" title="Regisztráció" onclick="validateRegister()">
           Regisztráció</button><br /><br />

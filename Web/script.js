@@ -14,8 +14,11 @@ function validateRegister() {
   var actualUsername = $("#username").val();
   var actualPasswd = $("#password").val();
   var actualPasswd1x = $("#password1x").val();
-   var actualEmail =$("#email").val();
+  var actualEmail =$("#email").val();
   var registerState = $("#registerState");
+  var tanarRoll = $("#tanar");
+  var diakRoll = $("#diak");
+  var szölüRoll = $("#szülö");
   registerState.html("");
   if (actualUsername.length < 6) {
     registerState.css("color", "red");
