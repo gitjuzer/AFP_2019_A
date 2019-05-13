@@ -2,6 +2,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.link{
+  text-decoration: none;
+  color:white;
+}
+
 .REG{
   background-color: #3498DB;
   margin: 0px;
@@ -31,6 +36,14 @@ body {
   padding-bottom: 5.3%;
 }
 
+.REG_MAIN3{
+  width: 75%;
+  margin-left: 12.5%;
+  padding-bottom: 5.3%;
+  background-color: white;
+  border: 2px solid black;
+}
+
 .REG_H1{
   background: rgb(201, 201, 201); 
   text-align: center;
@@ -41,8 +54,43 @@ body {
   padding-right: 20%;
 }
 
+.REG_H2{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
 .REG_R{
   padding-left: 10%;
+}
+
+.REG_BUTTONS{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 15.1%;
+  padding-top: 12%;
+}
+
+.REG_BUTTONS button {
+  background-color: #3498DB;
+  border: 2px solid #2980B9; 
+  color: white; 
+  padding: 22.5px 50px; 
+  cursor: pointer;
+  margin-left: 20px; 
+}
+
+.REG_BUTTONS:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.REG_BUTTONS button:not(:last-child) {
+  border-right: none; 
+}
+
+.REG_BUTTONS button:hover {
+  background-color: rgb(66, 179, 255);
 }
 
 #questionRect {
