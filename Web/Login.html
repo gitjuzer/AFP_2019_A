@@ -9,8 +9,29 @@
 <script src="script.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="sha256.js"></script>	
+<!--unit teszt-->
+<link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-3.4.0/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-3.4.0/jasmine.css">
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
+
 </head>
 <body class="REG">
+  <script>
+    function getOpposit(bool){
+      return !bool;
+    }
+    describe("Teszt csoport neve ide irjuk",() => {
+      it('megfordítja a logika értéket', () => {
+        var ertek = true;
+
+        const eredmeny = getOpposit(ertek);
+
+        expect(eredmeny).toBe(false);
+      });
+    });
+  </script>
 <div class="REG_MAIN">
   <div class="contener-regiszter">
     <div class="row">

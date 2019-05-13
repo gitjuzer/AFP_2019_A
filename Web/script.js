@@ -23,14 +23,16 @@ function validateRegister() {
   if (actualUsername.length < 6) {
     registerState.css("color", "red");
     registerState.html("A beírt név nem lehet 6 karakternél rövidebb.");
+    return false;
   } else if (actualPasswd.length < 6 || actualPasswd1x.length < 6) {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem lehet 6 karakternél rövidebb.");
+    return false;
   } else if (actualPasswd != actualPasswd1x) {
     registerState.css("color", "red");
     registerState.html("A beírt jelszó nem egyezik.");
+    return false;
   } else {
-    console.log("ide eljutott");
     
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
     var userRegister = { user: actualUsername, password: actualPasswd, email: actualEmail };
@@ -44,16 +46,16 @@ function validateRegister() {
     url: 'http://www.afp2019a.nhely.hu/public/register',
     data : userRegister,
     success : function(data) {
-      console.log("ide eljutotte"+ data["status"]);
+
       if (data["status"] == 1) {
         registerState.css("color", "green");
         registerState.html(data["status_message"]);
-        console.log("siker");
+        return true;
       }
       else {
         registerState.css("color", "red");
         registerState.html(data["status_message"]);
-        console.log("nem siker");
+        return false;
         }
       }
   });
