@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
 		<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
 		<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
+		
 </head>
 
 <body>
@@ -48,29 +49,29 @@
                         </div>
                         <div class="form-group">
                                 <label for="Answer1">Válasz 1</label><br></br>
-                                <input class="form-check-input" type="radio" value="" id="radiobutton"
-                                        name="radiobutton">
-                                <input type="text" class="form-control" id="Answer1Input"
+                                <input class="form-check-input" type="radio" value="" id="radiobutton1"
+                                        name="radiobutton1">
+                                <input type="text" class="form-control" value="" id="Answer1Input"
                                         placeholder="Első választási lehetőség">
                         </div>
                         <div class="form-group">
                                 <label for="Answer2">Válasz 2</label><br></br>
-                                <input class="form-check-input" type="radio" value="" id="radiobutton"
-                                        name="radiobutton">
+                                <input class="form-check-input" type="radio" value="" id="radiobutton2"
+                                        name="radiobutton2">
                                 <input type="text" class="form-control" id="Answer2Input"
                                         placeholder="Második választási lehetőség">
                         </div>
                         <div class="form-group">
                                 <label for="Answer3">Válasz 3</label><br></br>
-                                <input class="form-check-input" type="radio" value="" id="radiobutton"
-                                        name="radiobutton">
+                                <input class="form-check-input" type="radio" value="" id="radiobutton3"
+                                        name="radiobutton3">
                                 <input type="text" class="form-control" id="Answer3Input"
                                         placeholder="Harmadik választási lehetőség">
                         </div>
                         <div class="form-group">
                                 <label for="Answer4">Válasz 4</label><br></br>
-                                <input class="form-check-input" type="radio" value="" id="radiobutton"
-                                        name="radiobutton">
+                                <input class="form-check-input" type="radio" value="" id="radiobutton4"
+                                        name="radiobutton4">
                                 <input type="text" class="form-control" id="Answer4Input"
                                         placeholder="Negyedik választási lehetőség">
                         </div>
@@ -84,43 +85,46 @@
 		
 		<script>
   describe("QuestionInput/AnswerInput ellenőrzése",() => {
-    it('Email túl rövid', () => {
-      $("#email").val("@gmail.com");
-      $("#email").val("asd@gmail.com");
-
-      expect(validateLogin()).toBe(false);
-    }),
+   
     it('QuestionInput nem létezik', () => {
-      $("#Question").val("");
-      $("#Question").val("");
+      $("#question").val("");
+    
       
-      expect(validateLogin()).toBe(false);
+      expect(validateNewQuestion()).toBeFalsy;;
     }),
 	it('answer1 nem létezik', () => {
       $("#answer1").val("");
-      $("#answer1").val("");
+    
       
-      expect(validateLogin()).toBe(false);
+      expect(validateNewQuestion()).toBeFalsy;;
     })
 	
 	it('answer2 nem létezik', () => {
       $("#answer2").val("");
-      $("#answer2").val("");
+     
       
-      expect(validateLogin()).toBe(false);
+      expect(validateNewQuestion()).toBeFalsy;;
     }),
 	it('answer3 nem létezik', () => {
       $("#answer3").val("");
-      $("#answer3").val("");
+     
       
-      expect(validateLogin()).toBe(false);
+      expect(validateNewQuestion()).toBeFalsy;
     }),
 	it('answer4 nem létezik', () => {
       $("#answer4").val("");
-      $("#answer4").val("");
+    
       
-      expect(validateLogin()).toBe(false);
+      expect(validateNewQuestion()).toBeFalsy;
+    }),
+	
+	it('Helyes válasz nincs kijelölve', () => {
+      $("#r1").val("")&&$("#r2").val("")&&$("#r3").val("")&&$("#r4").val("");
+    
+      
+      expect(validateNewQuestion()).toBeFalsy;
     })
+	
 	
 	;
 	
