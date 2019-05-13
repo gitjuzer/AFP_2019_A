@@ -1,4 +1,6 @@
  <?php
+ class Database
+ {
 	function getConnection(){
 		
 		//az adatbázis adatait át kell írni
@@ -117,4 +119,5 @@
 			echo 'Kérdés sikeresen törölve!';
 		}
 	}
+ }
 ?>
