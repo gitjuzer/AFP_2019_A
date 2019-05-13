@@ -57,6 +57,13 @@ it("Felhasználónév nem megfelelő hosszúságú",()=>{
   $("#password1x").val("asdasd");
 
   expect(validateRegister()).toBe(false);
+}),
+it("Jelszó nem megfelelő hosszúságú",()=>{
+  $("#username").val("asdasd");
+  $("#password").val("asd");
+  $("#password1x").val("asd");
+
+  expect(validateRegister()).toBe(false);
 })
 });
 </script>
