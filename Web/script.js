@@ -36,7 +36,7 @@ function validateRegister() {
     
     //var shaPass = hex_sha256(actualPasswd).toLowerCase();
     var userRegister = { user: actualUsername, password: actualPasswd, email: actualEmail };
-    console.log(userRegister);
+  
 //   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 //   xmlhttp.open("PUT", "http://www.afp2019a.nhely.hu/public/register");
 //   xmlhttp.setRequestHeader("Content-Type", "application/json");
@@ -355,12 +355,9 @@ function GetAllQuizByType(id){
     'http://www.afp2019a.nhely.hu/public/quiz/'+id,
     function(data) {
       var szoveg = "";
-      console.log(data);
       for(var i = 0;i < data.length;i++){
-        console.log(data[i]["question"]);
         szoveg += data[i]["question"];
         for(var j = 0; j < data[i]["answers"].length;j++){
-          console.log(data[i]["answers"][j]["text"]);
           szoveg += "<p>"+ data[i]["answers"][j]["text"]+"</p>";
           
         }
