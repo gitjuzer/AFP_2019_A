@@ -8,6 +8,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--unit teszt-->
+<link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-3.4.0/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-3.4.0/jasmine.css">
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
 </head>
 <body class="REG2">
 <div class="REG_MAIN">
@@ -40,5 +47,27 @@
     </div>
   </div>
 </div>
+<script>
+  describe("Login ellenőrzése",() => {
+    it('Felhasználónév túl rövid', () => {
+      $("#loginUsername").val("asd");
+      $("#loginPasswd").val("asdasd");
+
+      expect(validateLogin()).toBe(false);
+    }),
+    it('Jelszó túl rövid', () => {
+      $("#loginUsername").val("asdaaaa");
+      $("#loginPasswd").val("asdas");
+
+      expect(validateLogin()).toBe(false);
+    }),
+    it('Felhasználó nem létezik', () => {
+      $("#loginUsername").val("");
+      $("#loginPasswd").val("");
+      
+      expect(validateLogin()).toBe(false);
+    });
+  });
+</script>
 </body>
 </html>
