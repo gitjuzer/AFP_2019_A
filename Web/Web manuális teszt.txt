@@ -14,3 +14,14 @@ Regisztráció felület:
 		-Helytelenül beírt adtatok mellett (pl.: rövid jelszó) sikeresen hibát dob.
 	KezdÕoldal gomb:
 		-Sikeresen átirányít a kezdõlapra.
+GameScreen felület:
+	Menü gomb:
+		-Sikeresen megjeleníti a dropdown menü listet.
+	Menü elemei:
+		-Sikeresen átirányítanak a megfelelõ oldalra.
+		-Ezen belül kiemelten, a kijelentkezés gomb sikeresen kijelentkeztet, és átírányít a kezdõoldalra.
+	Válaszgombok:
+		-Az egeret feléjük helyezve a színük megfelelõen megváltozik.
+	Idõszámláló:
+		-Sikeresen visszaszámlál, ezzel együtt a progressbar értéke is megfelelõen csökken.
+		-Amikor eléri a 0-t, sikeresen írja, hogy lejárt az idõ.
