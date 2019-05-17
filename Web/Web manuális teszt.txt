@@ -1,0 +1,10 @@
+Login felület:
+	Regisztráció gomb:
+		-Klikk hatására az átirányítás a regisztrációs felületre sikeres.
+	Bejelentkezés gomb:
+		-Regisztrált adatokat helyesn megadva sikeresen átirányít a fõoldalra.
+		-Helytelen adatokat megadva sikeresen hibát dob.
+	Elfelejtett jelszó gomb:
+		-Sikeresen átirányít a megfelelõ oldalra.
+	Kezdõoldal gomb:
+		-Sikeresen átirányít a kezdõoldalra.
