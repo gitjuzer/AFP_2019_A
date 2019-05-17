@@ -8,3 +8,9 @@ Login felület:
 		-Sikeresen átirányít a megfelelõ oldalra.
 	Kezdõoldal gomb:
 		-Sikeresen átirányít a kezdõoldalra.
+Regisztráció felület:
+	Regisztráció gomb:
+		-Klikk hatására helyesen beírt adatok mellett sikeresen felveszi a felhasználót a rendszerbe, melybe ezután beléphet.
+		-Helytelenül beírt adtatok mellett (pl.: rövid jelszó) sikeresen hibát dob.
+	KezdÕoldal gomb:
+		-Sikeresen átirányít a kezdõlapra.
