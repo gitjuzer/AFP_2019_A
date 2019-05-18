@@ -25,3 +25,13 @@ GameScreen felület:
 	Idõszámláló:
 		-Sikeresen visszaszámlál, ezzel együtt a progressbar értéke is megfelelõen csökken.
 		-Amikor eléri a 0-t, sikeresen írja, hogy lejárt az idõ.
+
+QuiestionSelect felület:
+	Menü gomb:
+		- Sikeresen megjeleníti a dropdown menü listet.
+	Menü elemei:
+		-Sikeresen átirányítanak a megfelelõ oldalra.
+		-Ezen belül kiemelten, a kijelentkezés gomb sikeresen kijelentkeztet, és átírányít a kezdõoldalra.
+	Feladat választó gombok:
+		-Egér bal gomb lenyomásával a kérdés típust tudjuk kiválasztani. Ennek sikerességét a GameScreen felületen láthatjuk, ahol az adott 
+típus kérdéseit jeleníti meg.
