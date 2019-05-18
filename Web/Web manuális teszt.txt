@@ -35,3 +35,14 @@ QuiestionSelect felület:
 	Feladat választó gombok:
 		-Egér bal gomb lenyomásával a kérdés típust tudjuk kiválasztani. Ennek sikerességét a GameScreen felületen láthatjuk, ahol az adott 
 típus kérdéseit jeleníti meg.
+
+UserNameChange felület:
+	Menü gomb:
+		- Sikeresen megjeleníti a dropdown menü listet.
+	Menü elemei:
+		-Sikeresen átirányítanak a megfelelõ oldalra.
+		-Ezen belül kiemelten, a kijelentkezés gomb sikeresen kijelentkeztet, és átírányít a kezdõoldalra.
+	Felhasználónév csere gomb:
+		-Klikk hatására a beírt aktuális felhasználónevet lecseréli az általunk választott új felhasználónévre.
+	Vissza a fõmenübe gomb:
+		-Sikeresen átirányít a fõmenübe.
