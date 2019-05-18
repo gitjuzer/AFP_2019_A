@@ -1,6 +1,4 @@
  <?php
- class Database
- {
 	function getConnection(){
 		
 		//az adatbázis adatait át kell írni
@@ -10,8 +8,9 @@
 		$USER = 'root';
 		$PASS = '';
 		
-		$connection = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';',USER, PASS);
+		$connection = new PDO($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME.';',$USER, $PASS);
 		$connection->exec("SET NAMES 'utf8'");
+		//echo 'Sikeres csatlakozás!';
 		return $connection;
 	}
 	
@@ -65,7 +64,7 @@
 		$sql = 'Insert INTO Users (username,password,role) VALUES ('.$username.','.$password.','.$role.')';
 		
 		if ($conn->query($sql) == TRUE) {
-			echo "Sikeres regisztráció!"
+			echo "Sikeres regisztráció!";
 		}
 		
 		$conn->close();
@@ -75,7 +74,7 @@
 		$conn = getConnection();
 		
 		$sql = 'SELECT * FROM Users WHERE uername = '.$username;
-		$result = $conn=->query($sql);
+		$result = $conn->query($sql);
 		
 		return $result;
 	}
@@ -115,9 +114,24 @@
 		
 		$sql = 'DELETE FROM Questions WHERE id = '.$id;
 		
-		if ($conn->query($sql)) == TRUE){
+		if ($conn->query($sql) == TRUE){
 			echo 'Kérdés sikeresen törölve!';
 		}
 	}
- }
+
+
+    function getConnectionTest(){
+        
+        $expected = new PDO('mysql:host=localhost;dbname=quiz','root','');
+        if (assert($expected, getConnection()) == true){
+            echo 'getConnection teszt sikeres';
+        }
+        else {
+            echo 'getConnection teszt sikertelen';
+        }
+    }
+    
+
+
+getConnectionTest();
 ?>
