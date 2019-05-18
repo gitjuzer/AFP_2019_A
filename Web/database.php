@@ -1,5 +1,6 @@
  <?php
-	function getConnection(){
+ class Database{
+	public function getConnection(){
 		
 		//az adatbázis adatait át kell írni
 		$DB_TYPE = 'mysql';
@@ -119,11 +120,14 @@
 		}
 	}
 
-
+ }
+ 
     function getConnectionTest(){
         
+        $classDb = new Database();
+        
         $expected = new PDO('mysql:host=localhost;dbname=quiz','root','');
-        if (assert($expected, getConnection()) == true){
+        if (assert($expected, $classDb->getConnection()) == true){
             echo 'getConnection teszt sikeres';
         }
         else {
