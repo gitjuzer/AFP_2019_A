@@ -1,30 +1,34 @@
  <?php
  class Database{
-	public function getConnection(){
+     
+	function getConnection(){
 		
 		//az adatbázis adatait át kell írni
-		$DB_TYPE = 'mysql';
+		//$DB_TYPE = 'mysql';
 		$DB_HOST = 'localhost';
 		$DB_NAME = 'quiz';
 		$USER = 'root';
 		$PASS = '';
 		
-		$connection = new PDO($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME.';',$USER, $PASS);
-		$connection->exec("SET NAMES 'utf8'");
+		//$connection = new PDO($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME.';',$USER, $PASS);
+                $connection = new mysqli($DB_HOST, $USER, $PASS, $DB_NAME);
+                if ($connection->connect_error) {
+                    die("Connection failed: " . $connection->connect_error);
+                } 
+		//$connection->exec("SET NAMES 'utf8'");
 		//echo 'Sikeres csatlakozás!';
 		return $connection;
 	}
 	
-	function insertQuestion($question,$answer1,$answer2,$answer3,$answer4) {
-		$conn = getConnection();
+	function insertQuestion($question,$answer1,$answer2,$answer3,$answer4,$correct) {
+		$conn = $this->getConnection();
 		//a mező neveit át kell írni!!
-		$sql = 'INSERT INTO Questions (question, 1st_answer, 2nd_answer,3rd_answer,4th_answer) VALUES ('.$question.','.$answer1.','.$answer2.','.$answer3.','.$answer4.')';
+		$sql = "insert into questions(question,1st_answer,2nd_answer,3rd_answer,4th_answer,correct_answer) values ('$question','$answer1','$answer2','$answer3','$answer4',$correct);";
 
 		if ($conn->query($sql) == TRUE) {
 			echo "Sikeres felvitel!";
 		}
-
-		$conn->close();
+                $conn->close();
 	}
 	
 	function getQuestion($id) {
@@ -122,6 +126,8 @@
 
  }
  
+ class MyTest{
+     
     function getConnectionTest(){
         
         $classDb = new Database();
@@ -134,8 +140,9 @@
             echo 'getConnection teszt sikertelen';
         }
     }
-    
+ }
 
-
-getConnectionTest();
+$Db = new Database();
+$Db->insertQuestion("test?", "test1", "test2", "test3", "test4",2);
+//getConnectionTest();
 ?>
