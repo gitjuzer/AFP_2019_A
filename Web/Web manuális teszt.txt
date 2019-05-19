@@ -38,8 +38,10 @@ GameScreen felület:
 	Menü elemei:
 		-Sikeresen átirányítanak a megfelelõ oldalra.
 		-Ezen belül kiemelten, a kijelentkezés gomb sikeresen kijelentkeztet, és átírányít a kezdõoldalra.
+		-A játék 2 és játék 3 gomb nem mûködik ugyan azon az oldaon marad.
 	Válaszgombok:
 		-Az egeret feléjük helyezve a színük megfelelõen megváltozik.
+			-Hibatalálat: A felület nem megfelelõen mûködik a háttérben elcsúzik a kérdés és a válaszok illetve a gombokon nem jelenik meg a válasz. Illetve a kérdés sem jelenik meg a kérdés mezõben.
 	Idõszámláló:
 		-Sikeresen visszaszámlál, ezzel együtt a progressbar értéke is megfelelõen csökken.
 		-Amikor eléri a 0-t, sikeresen írja, hogy lejárt az idõ.
