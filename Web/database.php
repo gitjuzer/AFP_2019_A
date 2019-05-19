@@ -66,7 +66,7 @@
 	function registerUser($username, $password, $role) {
 		$conn = getConnection();
 		
-		$sql = 'Insert INTO Users (username,password,role) VALUES ('.$username.','.$password.','.$role.')';
+		$sql = "Insert INTO Users (username,password,role) VALUES ('$username','$password','$role')";
 		
 		if ($conn->query($sql) == TRUE) {
 			echo "Sikeres regisztráció!";
