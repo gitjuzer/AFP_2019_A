@@ -32,19 +32,19 @@
 	}
 	
 	function getQuestion($id) {
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		//mező és tábla nevet át kell írni
-		$sql = "SELECT question,1st_answer, 2nd_answer,3rd_answer,4th_answer FROM Quiz WHERE id =".$id;
+		$sql = "SELECT question,1st_answer, 2nd_answer,3rd_answer,4th_answer FROM Questions WHERE id =$id;";
 		$result = $conn->query($sql);
 		
 		$conn->close();
 		
-		return $result;
+		return mysqli_fetch_array($result);
 	}
 	
 	function getQuestionsList(){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'SELECT * FROM Questions';
 		
@@ -54,7 +54,7 @@
 	}
 	
 	function getUsersList(){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'SELECT * FROM Users';
 		
@@ -64,7 +64,7 @@
 	}
 	
 	function registerUser($username, $password, $role) {
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = "Insert INTO Users (username,password,role) VALUES ('$username','$password','$role')";
 		
@@ -76,7 +76,7 @@
 	}
 	
 	function getUser($username){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'SELECT * FROM Users WHERE uername = '.$username;
 		$result = $conn->query($sql);
@@ -85,7 +85,7 @@
 	}
 	
 	function changePassword($username, $new_password){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'UPDATE Users SET password = '.$new_password.' WHERE username = '.$username;
 		
@@ -95,7 +95,7 @@
 	}
 	
 	function changeRole($username, $new_role){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'UPDATE Users SET role = '.$new_role.' WHERE username = '.$username;
 		
@@ -105,7 +105,7 @@
 	}
 	
 	function deleteUser($username){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'DELETE FROM Users WHERE username = '.$username;
 		
@@ -115,7 +115,7 @@
 	}
 	
 	function deleteQuestion($id){
-		$conn = getConnection();
+		$conn = $this->getConnection();
 		
 		$sql = 'DELETE FROM Questions WHERE id = '.$id;
 		
@@ -132,17 +132,32 @@
         
         $classDb = new Database();
         
-        $expected = new PDO('mysql:host=localhost;dbname=quiz','root','');
+        $expected = new mysqli('localhost', 'root', '', 'quiz');
         if (assert($expected, $classDb->getConnection()) == true){
-            echo 'getConnection teszt sikeres';
+            echo '<br>getConnection teszt sikeres';
         }
         else {
-            echo 'getConnection teszt sikertelen';
+            echo '<br>getConnection teszt sikertelen';
+        }
+    }
+    
+    function getQuestionTest(){
+        
+        $classDb = new Database();
+        
+        $expected = array(0=>'test?', 'question'=>'test?', 1=>'test1', '1st_answer'=>'test1',2=>'test2', '2nd_answer'=>'test2',3=>'test3', '3rd_answer'=>'test3',4=>'test4', '4th_answer'=>'test4');
+        if (assert($expected, $classDb->getQuestion(1)) == true){
+            echo '<br>getQuestion teszt sikeres';
+        }
+        else {
+            echo '<br>getQuestion teszt sikertelen';
         }
     }
  }
 
-$Db = new Database();
-$Db->insertQuestion("test?", "test1", "test2", "test3", "test4",2);
-//getConnectionTest();
+$test = new MyTest();
+
+$test->getConnectionTest();
+
+$test->getQuestionTest();
 ?>
