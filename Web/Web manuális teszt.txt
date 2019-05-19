@@ -1,3 +1,10 @@
+Homepage felület:
+	Bejelentkezés gomb:
+		-Klikk hatására sikeresen átvisz a Login felületre.
+	Regisztráció gomb:
+		-Klikk hatására sikeresen átvisz a Regisztrációs felületre.
+	Admin bejelentkezés:
+		-Klikk hatására sikeresen átvisz az AdminLogin felületre.
 Login felület:
 	Regisztráció gomb:
 		-Klikk hatására az átirányítás a regisztrációs felületre sikeres.
@@ -12,8 +19,19 @@ Regisztráció felület:
 	Regisztráció gomb:
 		-Klikk hatására helyesen beírt adatok mellett sikeresen felveszi a felhasználót a rendszerbe, melybe ezután beléphet.
 		-Helytelenül beírt adtatok mellett (pl.: rövid jelszó) sikeresen hibát dob.
+		-Pl.: Hibát dob az "asdfg" felhasználó névre. Hiba szövege:"A beírt név nem lehet 6 karakternél rövidebb".
+		-Ha felhasználó név megfelelõ hosszúságó pl.:"asdfgh" de a jelszó rövid pl.:"12345" hibát dob. Hiba szöbvege:"A beírt jelszó nem lehet 6 karakternél rövidebb".
+		-Ha felhasználó név megfelelõ hosszúságó pl.:"asdfgh" és a jelszó is elég hosszú pl.:"123456" de a jelszó mégegyszer nem ugyan az pl.:"234567" hibát dob. Hiba szövege:"A jelszö mégegyszer és a jelszó nem eggyeznek meg".
 	KezdÕoldal gomb:
 		-Sikeresen átirányít a kezdõlapra.
+AdminLogin felület:
+	Bejelentkezés gomb:
+		-Regisztrált adatokat helyesn megadva sikeresen átirányít a fõoldalra.
+		-Helytelenül beírt adtatok mellett (pl.: rövid jelszó) sikeresen hibát dob.
+		-Pl.: Hibát dob az "asdfg" felhasználó névre. Hiba szövege:"Rövid felhasználónév vagy jelszó!".
+		-Ha felhasználó név megfelelõ hosszúságó pl.:"asdfgh" de a jelszó rövid pl.:"2345" hivát dob. Hiba szöbvege:"Rövid felhasználónév vagy jelszó!".
+		-Ha felhasználó név megfelelõ hosszúságó pl.:"asdfgh" és a jelszó is elég hosszú de hibás pl.:"FLoot53832n" hibát dob. Hiba szöbvege:"Login failed".
+			-Hibatalálat: Az admin loginon bármilyen használó bejelentkezhet és bejelentkezés után egybõl a Fõoldalra irányítjaa felhasználót.
 GameScreen felület:
 	Menü gomb:
 		-Sikeresen megjeleníti a dropdown menü listet.
