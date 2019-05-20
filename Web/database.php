@@ -3,20 +3,15 @@
      
 	function getConnection(){
 		
-		//az adatbázis adatait át kell írni
-		//$DB_TYPE = 'mysql';
 		$DB_HOST = 'localhost';
 		$DB_NAME = 'quiz';
 		$USER = 'root';
 		$PASS = '';
 		
-		//$connection = new PDO($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME.';',$USER, $PASS);
                 $connection = new mysqli($DB_HOST, $USER, $PASS, $DB_NAME);
                 if ($connection->connect_error) {
                     die("Connection failed: " . $connection->connect_error);
                 } 
-		//$connection->exec("SET NAMES 'utf8'");
-		//echo 'Sikeres csatlakozás!';
 		return $connection;
 	}
 	
@@ -160,4 +155,5 @@ $test = new MyTest();
 $test->getConnectionTest();
 
 $test->getQuestionTest();
+
 ?>
