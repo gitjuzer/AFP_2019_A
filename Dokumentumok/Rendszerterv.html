@@ -893,7 +893,8 @@ Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb. Sok hiba ese
 
 <li>Képesnek kell lennie csatlakozni webes, és androidos klienshez is.</li>
 <li>Képesnek kell lennie egy időben kiszolgálni több klienst is.</li>
-<li>Fel kell tudnia tölteni, és le kell tudnia kérdezni az adatbázis adatait</li>
+<li>Fel kell tudnia tölteni, és le kell tudnia kérdezni az adatbázis adatait.</li>
+<li>Képesnek kell lennie minden felületen elérhető funkciók biztosítására.</li>
 
 </ul>
 
@@ -908,13 +909,29 @@ Elvárt működés: a funkcionális specifikációban szereplő képernyőtervne
 </p>
 </li>
 
+<li><b>Regisztrációs felület: </b>
+<p>A regisztrciós felületnek elérhetőnek kell lennie a program telepítés után a kezdőképernyőn a bejelentkezési lehetésg mellett. Amennyiben a felhasznló még nincs regisztrálva az itt található gombra kattintva kell átirányítani a regisztrációs felületre. Ezen felületen a megfelelő adatok megadása mellett a megerősítés gombra kattintva a felhasználó regisztrációjának a funkcionális speifikációban leírtak szerint végbe kell mennie, majd elérhetővé kell tenni a belejntkezést a felhasználó számára. Hibás regisztrációs adatok megadásakor hibaüzenetet kell kapjon a felhasználó.</p>
+</li>
+
 <li><b>A Bejelentkezés gomb működése:</b>  
 <p>Elvárt működés: Megfelelő felhasználónév és jelszó megadása esetén a bejelentkezés gomb lenyomásakor bejelentkezik. <br>
 Amennyiben a felhasználónév, vagy a jelszó hibás/nincs megadva, egy figyelmeztető üzenetet dob a felhasználó számára, melyben tályékoztatja a hibáról.
 </p>
 </li>
 
+<li><b>Csúsztatható menüsor:</b>
+<p>A csúsztatható menüsornak elérhetőnek kell lennie az alkalmazás valamennyi felületén. A bal oldalról behúzható menülista tartalmazza a profil megtekintése, toplista megtekintése, új játék kezdete, kijelentkezés funkciókat. Egyedül a játék felület alatt nem kell elérhető legyen, hogy véletlenül játék közben ne a kívánt funkciókat indítsa el a felhasználó.</p>
+</li>
+
+<li><b>Jelszóváltoztatásos felület:</b>
+<p>Kinézeti elvárások: Képernyőmérettől függetlenűl kell ugyan úgy megjelennie minden eszközön az elemek szétcsúszása nélkül.
+</p>
+<p>A jelszóváltoztatásos felület elvárt működése: A felülethez csak a már bejelentkezett felhasználkók férhetnek hozzá, egyébként hibaüzenetet kell a felhasználó számára adnia, azzal a szöveggel, hogy először be kell jelentkezni. Amennyiben bejelentkezett felhasználó keresi fel a felületet a helyes paraméterek megadása mellett (régi jelszó és új jelszó kétszer) ha a megerősítés gombra kattint a jelszavának frissülnie kell az új karakterosrozatra, amiről megerősítő üzenetet kell kapnia. Ha a régi megadása vagy az új jelszó duplikált megadása nem az elvártaknak megfelelően következett be, a megerősítés megnyomásakor a jelszó nem szabad, hogy frissüljön és hibaüzenetet kell kapjon a felhasználó.
+	</p>
+</li>
+
 <li><b>Bejelentkezés után megjelenik a játékos felület. Innen tud kijelentkezni a felhasználó.</b></li><br>
+<p>A felületen a felhasználónak látnia kell saját adatait, név, pontszám és egyes menüpontokat, mint a jelszóváltoztatás, adatmódosítás, toplista és játékindítás elérése.</p>
 
 <li><b>Játék felület:</b>
 <p>A játék felület elrendezésének ellenőrzése:
@@ -935,6 +952,7 @@ Az utolsó kérdés után pedig az eredménytáblát.
 </li>
 <li><b>Toplista működése:</b>
 <p>Elvárt működés: A felhasználók maximális pontszámai alapján megjeleníti a felhasználók neveit és pontjait csökkenő sorrendben.
+	Képernyőmérethez igazítva annyit jelenít meg, amennyi egészében kifér. 
 </p>
 </li>
 
