@@ -9,6 +9,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 
+<!--unit teszt-->
+<link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-3.4.0/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-3.4.0/jasmine.css">
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
 
 </head>
 <body class="REG">
@@ -43,6 +49,31 @@
         <label id="registerState"></label><br/>
         <button class="btn btn-primary btn-md" name="ellenoriz" title="Regisztráció" onclick="validateRegister()">
           Regisztráció</button><br /><br />
+<script>
+describe("Regisztráció ellenőrzés",() =>{
+it("Felhasználónév nem megfelelő hosszúságú",()=>{
+  $("#username").val("asd");
+  $("#password").val("asdasd");
+  $("#password1x").val("asdasd");
+
+  expect(validateRegister()).toBe(false);
+}),
+it("Jelszó nem megfelelő hosszúságú",()=>{
+  $("#username").val("asdasd");
+  $("#password").val("asd");
+  $("#password1x").val("asd");
+
+  expect(validateRegister()).toBe(false);
+}),
+it("Jelszó nem egyezik meg",()=>{
+  $("#username").val("asdasd");
+  $("#password").val("asd1111111");
+  $("#password1x").val("asd12212");
+
+  expect(validateRegister()).toBe(false);
+})
+});
+</script>
       </div>
     </div>
     <br>
